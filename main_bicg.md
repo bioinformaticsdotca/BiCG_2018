@@ -90,6 +90,10 @@ This requires time and a good network connection to download completely, so be p
 
 4) [Sequencing Terminology](http://www.ncbi.nlm.nih.gov/projects/genome/glossary.shtml)
 
+## Watch This Before the Workshop:
+
+[Sequencing Technology and Terminology](https://youtu.be/g4m8drG1FEs?t=15m7s)
+
 ## Read These Before the Workshop:
   
 [Database resources of the National Center for Biotechnology Information](http://www.ncbi.nlm.nih.gov/pubmed/26615191)
