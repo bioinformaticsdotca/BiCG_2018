@@ -1,11 +1,11 @@
 ---
 layout: tutorial_page
-permalink: /BiCG_2017_module2_igv
+permalink: /BiCG_2018_module2_igv
 title: BiCG Lab 2 IGV
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics
 image: /site_images/CBW_cancerDNA_icon-16.jpg
-home: https://bioinformaticsdotca.github.io/bicg_2017
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
 # CBW BiCG Module 2 - IGV lab
