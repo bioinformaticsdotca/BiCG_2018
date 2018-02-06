@@ -5,7 +5,7 @@ title: Cancer Genomics
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics
 image: /site_images/CBW_cancerDNA_icon-16.jpg
-home: https://bioinformaticsdotca.github.io/bicg_2017
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
 
