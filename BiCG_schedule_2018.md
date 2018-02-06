@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2017_schedule
+permalink: /bicg_2018_schedule
 title: Cancer Genomics
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics
@@ -9,16 +9,21 @@ home: https://bioinformaticsdotca.github.io/bicg_2017
 ---
 
 
-| | **Day 1** | | **Day 2** | | **Day 3** | | **Day 4** | | **Day 5** |  
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |  
-| 8:00 | Registration and Breakfast | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast |
-| 8:30 | Welcome and Introductions | 8:30 | Module 3a: Genome Alignment (Simpson) | 8:30 | Module 5 : Somatic Mutations and Annotation (Morrissy) | 8:30 | Module 7: Gene Fusion and Rearrangemnts (McPherson) | 8:30 | Module 8: Variants to Networks (Stein and Haw) |  
-| 9:00 | Module 1: Introduction to Cancer Genomics (Pugh) | | | | | | | | |  
-| 10:30 | Coffee Break | 10:00 | Coffee Break | 10:30 | Coffee Break | 10:30 | Coffee Break | 10:30 | Coffee Break |  
-| 11:00 | Module 2: Databases and Visualization Tools (Ouellette) | 10:30 | Module 3b: Genome Assembly (Simpson) | 11:00 | Module 5 Lab | 11:00 | Module 7 Lab | 11:00 | Guest Lecture (Jones) |  
-| 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch |  
-| 1:30 | Module 2 Lab | 1:30 | Module 4: Copy Number Variants (Morrissy) | 1:30 | Module 6: Gene Expression (Yousif) | 1:30 | Module 8 Variants to Networks (Reimand) | 1:30 | Module 9: Clinical Data Integration (Goldenberg) |  
-| 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break |  
-| 3:30 | Logging into the Cloud (Ouellette/Lu) | 3:30 | Module 4 Lab | 3:30 | Module 6 Lab | 3:30 | Module 8 Variants to Networks (Reimand) | 3:30 | Module 9 Lab |  
-| 5:00 | Dinner | 5:00 | Hosted Social | 5:00 | Dinner | 5:00 | Dinner | 5:00 | Survey and Closing Remarks |
-| 6:00 | UNIX and R Review | | | 6:00 | Integrated Assignment | | | | |
+| | **Day 1** | | **Day 2** | | **Day 3** | | **Day 4** | | **Day 5** | | **Day 6** |    
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |:---: | :---: |  
+| 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast |  
+| 8:30 | Welcome and Introductions | 8:30 | Module 4: Genome Alignment (Simpson) | 8:30 | Module 7 : Somatic Mutations and Annotation (Morrissy) | 8:30 | Module 9: Gene Fusion and Rearrangemnts (TBD) | 8:30 | Module 11: Sharing and Scaling a VM (Mihaiescu)| 8:30 | Guest Lecture (Hammell) |    
+| 9:00 | Module 1: Introduction to Cancer Genomics (Pugh) | | | | | | | | | | |   
+| 10:30 | Coffee Break |  10:00 | Coffee Break | 10:30 | Coffee Break | 10:30 | Coffee Break | 10:00 | Coffee Break | 10:00 | Coffee Break |    
+| 11:00 | Module 2: Ethics of Data Usage and Security (Phillips) |10:30 | Module 5: Genome Assembly (Simpson) | 11:00 | Module 7 Lab | 11:00 | Module 9 Lab | 10:30 | Module 12: Big Data Analytics in the Cloud (Yung) | 10:30 | Module 14: Variants to Networks (Stein and Haw) |  
+| 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch |  
+| 1:30 | Module 3a: Cancer Databases (Ouellette) |1:30 | Module 6: Copy Number Variants (Morrissy) | 1:30 | Module 8: Gene Expression (Yousif) | 1:30 | Module 10: Working Reproducibly in the Cloud (O'Connor) | 1:30 | Module 12 lab | 1:30 | Module 15: Clinical Data Integration (Goldenberg) |    
+| 2:30 | Module 3b: Visualization Tools (Meyer) | | | | | | | | | | |   
+| 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break |  
+| 3:30 | Module 3 lab | 3:30 | Module 6 Lab | 3:30 | Module 8 Lab | 3:30 | Module 10 lab | 3:30 | Module 13: Genes to Pathways (Reimand) | 3:30 | Module 15 lab |  
+| 4:00 | Logging into the Cloud (Lu) | | | | | | | | | | |
+| 4:45 | UNIX and R Review | | | | | | | | | | |
+| 5:30 | Dinner | 5:30 | Dinner | 5:00 | Dinner | 5:00 | Dinner | 5:00 | Dinner | 5:30 ||  
+| 7:00 | Welcome Reception | 7:00 | Integrated Assignment | 7:00 | Integrated Assignment | 7:00 | Integrated Assignment | 7:00 | Integrated Assignment | 7:00 | Banquet |  
+
+       
