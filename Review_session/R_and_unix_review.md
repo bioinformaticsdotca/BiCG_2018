@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /bicg-2017-Unix_and_R
+permalink: /bicg-2018-Unix_and_R
 title: BiCG Unix and R Review
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics
