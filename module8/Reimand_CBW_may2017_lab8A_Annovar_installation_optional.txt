@@ -1,0 +1,63 @@
+Annovar installation:
+====================
+
+
+
+1) Download latest annovar by registering here : http://www.openbioinformatics.org/annovar/annovar_download_form.php 
+
+	Downloaded archive file should contain all perl scripts necessary to run annovar ( eg: annovar.latest.tar.gz )
+
+2) Decompress the archive using following command:
+
+	tar -xvf annovar.latest.tar.gz
+
+	This will generate a directory named "annovar" which contain perl scripts and databases.
+        
+        You should see following files/directories in "annovar" directory:
+        annotate_variation.pl
+        coding_change.pl
+        convert2annovar.pl
+        example
+        humandb
+        retrieve_seq_from_fasta.pl
+        table_annovar.pl
+        variants_reduction.pl
+    
+
+3)Installing necessary databases:
+
+cd annovar  ( ie, go to the directory where annovar scripts are installed)
+
+run the following scripts and wait for downloads to complete
+
+./annotate_variation.pl -buildver hg19 -downdb -webfrom annovar refGene humandb/
+./annotate_variation.pl -buildver hg19 -downdb cytoBand humandb/
+./annotate_variation.pl -buildver hg19 -downdb genomicSuperDups humandb/ 
+./annotate_variation.pl -buildver hg19 -downdb -webfrom annovar esp6500siv2_all humandb/
+./annotate_variation.pl -buildver hg19 -downdb -webfrom annovar 1000g2015aug humandb/
+./annotate_variation.pl -buildver hg19 -downdb -webfrom annovar exac03 humandb/ 
+./annotate_variation.pl -buildver hg19 -downdb -webfrom annovar avsnp147 humandb/ 
+./annotate_variation.pl -buildver hg19 -downdb -webfrom annovar dbnsfp30a humandb/
+
+
+Above commands will download and setup all necessary databases and indexes in  humandb/ directory. This includes following files:
+
+annovar_downdb.log              hg19_esp6500siv2_all.txt
+hg19_AFR.sites.2015_08.txt      hg19_esp6500siv2_all.txt.idx
+hg19_AFR.sites.2015_08.txt.idx  hg19_EUR.sites.2015_08.txt
+hg19_ALL.sites.2015_08.txt      hg19_EUR.sites.2015_08.txt.idx
+hg19_ALL.sites.2015_08.txt.idx  hg19_exac03.txt
+hg19_AMR.sites.2015_08.txt      hg19_exac03.txt.idx
+hg19_AMR.sites.2015_08.txt.idx  hg19_genomicSuperDups.txt
+hg19_avsnp147.txt               hg19_refGeneMrna.fa
+hg19_avsnp147.txt.idx           hg19_refGene.txt
+hg19_cytoBand.txt               hg19_refGeneVersion.txt
+hg19_dbnsfp30a.txt              hg19_SAS.sites.2015_08.txt
+hg19_dbnsfp30a.txt.idx          hg19_SAS.sites.2015_08.txt.idx
+hg19_EAS.sites.2015_08.txt      hg19_seq
+hg19_EAS.sites.2015_08.txt.idx
+
+
+ 
+Quick start guide:
+http://www.openbioinformatics.org/annovar/annovar_startup.html

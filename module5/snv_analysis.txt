@@ -1,0 +1,104 @@
+---
+title: "Module 5 - SNV Analysis and Annotation"
+author: "Hamza Farooq"
+date: "May 31, 2017"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+In this R markdown file, we're going to analyze the mutational spectrum of the Mutect output.
+
+Let's begin by loading the relevant libraries, and setting our working directory to our workspace folder.
+
+```{r library, warning=FALSE, message=FALSE}
+
+library(ggplot2) # used for plotting relevant graphs
+library(deconstructSigs) # able to decontruct the mutational signatures present within a sample
+library(BSgenome.Hsapiens.UCSC.hg19) # required by deconstructSigs to determine the kinds of SNVs present
+setwd("~/workspace/Module5/") # changes the currect directory to our Module 5 folder within the workspace
+
+```
+
+
+#Importing and Adjusting Data
+
+In order to run appropriate analysis, we first need to import our data.
+
+```{r import_m}
+HCC_m <- read.delim(file="~/workspace/Module5/snv_analysis/HCC1395.m.txt", sep="\t", header=TRUE, stringsAsFactors = FALSE)
+
+# Add a column indicating the name of the sample that bears each mutation - required by deconstructSigs
+# Calculate the Variant Allele Frequency  by taking the ratio of the alternate allele count by the total count
+# Adjusting the naming convention of each chromosome to be labeled chr1, chr2.. as opposed to 1, 2.. as a requirement for deconstructSigs
+HCC_m$ID <- "HCC1395" 
+HCC_m$VAF <- HCC_m$t_alt_count/(HCC_m$t_alt_count+HCC_m$t_ref_count) 
+HCC_m$mut_chr <- paste("chr",HCC_m$contig,sep="") 
+
+```
+
+#Viewing mutational load and mutational SNV density spectrum
+
+To get a better understanding of the mutations affecting our sample, we can take a look at the mutational burden on each chromosome of the sample.
+
+```{r}
+ggplot(aes(x=contig), data = HCC_m) +
+  geom_bar() +
+  xlab("Chromosome") +
+  ylab("Number of Mutations") +
+  ggtitle("Mutation Load")
+```
+
+
+As we can see, chromosomes 6, X, and 16 appear to bear the highest mutational burden.
+
+Now let's view the variant allelic frequency in the genome:
+
+```{r}
+
+ggplot(aes(x=VAF), data = HCC_m) +
+  geom_density() +
+  xlab("VAF") +
+  ylab("Density") +
+  ggtitle("Distribution of Mutations")
+
+```
+
+As we can see from the density distrubution above, we have mutations that are homozygous, heterozygous, and at a very low frequency.
+
+> Can anyone explain why we see the collection of mutations around the 0.65 mark?
+
+#Deconstructing the mutational signatures
+
+Finally we're going to run a software package called deconstructSigs, which aims to determine which mutational signatures give rise to our viewed mutational spectrum. We're going to use the dataset of signatures available from the COSMIC website, which are already integrated into the software package. A link to the mutational signatures and their explanations is provided: http://cancer.sanger.ac.uk/cosmic/signatures
+
+```{r}
+# Outputs counts of how frequently a mutation is observed within each trinucleotide context
+# Determine how much of each mutational signature is required to best recreate the mutational spectrum we observe
+# Visualize the mutational signatures
+sigs.input <- mut.to.sigs.input(mut.ref=HCC_m, sample.id = "ID", 
+                                chr = "mut_chr",pos = "position", 
+                                ref = "ref_allele",alt = "alt_allele")
+HCC_sigs = whichSignatures(tumor.ref = sigs.input, sample.id = "HCC1395", 
+                           signatures.ref = signatures.cosmic, contexts.needed = TRUE, 
+                           tri.counts.method = 'exome')
+plotSignatures(HCC_sigs, sub = "Mutational Signatures")
+
+```
+
+
+To extract the weight from each mutational signature, we would need the following operate:
+ 
+```{r}
+# Determine which columns in the weight of each mutational signature is not zero, and output them
+HCC_sigs$weights[which(t(HCC_sigs$weights)>0)]
+```
