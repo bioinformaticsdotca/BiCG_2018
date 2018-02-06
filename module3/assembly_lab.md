@@ -1,11 +1,11 @@
 ---
 layout: tutorial_page
-permalink: /BiCG_2017_mod3_assembly
+permalink: /BiCG_2018_mod3_assembly
 title: BiCG Mod3 Lab - Assembly
 header1: Workshop Pages for Students
 header2: Informatics on High-Throughput Sequencing Data
 image: /site_images/CBW_High-throughput_icon.jpg
-home: https://bioinformaticsdotca.github.io/bicg_2017
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
 # Genome Assembly for short and long reads
