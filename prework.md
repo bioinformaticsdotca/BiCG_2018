@@ -1,14 +1,14 @@
 ---
 layout: tutorial_page
-permalink: /BiCG_2017_prework
+permalink: /BiCG_2018_prework
 title: BiCG PreWork
 header1: Workshop Pages for Students
-header2: Bioinformatics for Cancer Genomics 2017 Pre-Work
+header2: Bioinformatics for Cancer Genomics 2018 Pre-Work
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2017
 ---
 
-# Install These Tools Before the Workshop:
+## Install These Tools Before the Workshop:
 
 1) A robust text editor.   
 
@@ -65,7 +65,7 @@ This requires time and a good network connection to download completely, so be p
 12) Sign up for a GenePattern account at [Broad](http://www.broadinstitute.org/cancer/software/genepattern/). When you go to this homepage, there is under the "Getting Started" section an icon for "Run analyses on the Broad public server". Click here and sign up for an account so that in class we can use the tool on the web.
 
 
-# Do These Tutorials Before the Workshop:
+## Do These Tutorials Before the Workshop:
 
 1) **R Preparation tutorials**: You are expected to have completed the following tutorials in **R** beforehand. The tutorial should be very accessible even if you have never used **R** before.
 
@@ -87,7 +87,11 @@ This requires time and a good network connection to download completely, so be p
 
 4) [Sequencing Terminology](http://www.ncbi.nlm.nih.gov/projects/genome/glossary.shtml)
 
-# Read These Before the Workshop:
+## Watch This Before the Workshop:
+
+[Sequencing Technology and Terminology](https://youtu.be/g4m8drG1FEs?t=15m7s)
+
+## Read These Before the Workshop:
   
 [Database resources of the National Center for Biotechnology Information](http://www.ncbi.nlm.nih.gov/pubmed/26615191)
 
@@ -108,3 +112,5 @@ This requires time and a good network connection to download completely, so be p
 [Feature-based classifiers for somatic mutation detection in tumour–normal paired sequencing data](http://www.ncbi.nlm.nih.gov/pubmed/22084253)
 
 [Expression Data Analysis with Reactome](http://www.ncbi.nlm.nih.gov/pubmed/25754994)
+
+Please note that these instructions may change prior to the workshop.
