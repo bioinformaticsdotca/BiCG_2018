@@ -1,11 +1,11 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2017_module4_lab
+permalink: /bicg_2018_module4_lab
 title: Lab Module 4 - Copy Number Alterations
 header1: Workshop Pages for Students
 header2: Lab Module 4 - Copy Number Alterations
 image: /site_images/CBW_cancerDNA_icon-16.jpg
-home: https://bioinformaticsdotca.github.io/bicg_2017
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
 # Table of Contents
