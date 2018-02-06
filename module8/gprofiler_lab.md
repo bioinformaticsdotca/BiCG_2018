@@ -1,11 +1,11 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2017_lab_8_gprofiler
+permalink: /bicg_2018_lab_8_gprofiler
 title: BiCG Module 8
-header1: Bioinformatics for Cancer Genomics 2017
+header1: Bioinformatics for Cancer Genomics 2018
 header2: Lab Module 8 - gProfiler
 image: /site_images/CBW_cancerDNA_icon-16.jpg
-home: https://bioinformaticsdotca.github.io/bicg_2017
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
 # Lab Module 8 - Pathway Over-representation Analysis
