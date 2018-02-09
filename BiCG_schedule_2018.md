@@ -31,6 +31,7 @@ home: https://bioinformaticsdotca.github.io/bicg_2018
 | **Day 4** | | **Day 5** | | **Day 6** |  
 | :---: | :---: | :---: | :---: |:---: | :---: |  
 | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast |  
+
 | 8:30 | Module 9: Gene Fusion and Rearrangements (TBD) | 8:30 | Module 11: Working Reproducibly in the Cloud (O'Connor) | 8:30 | Guest Lecture (Hammell) |  
 
 | 10:30 | Coffee Break | 10:00 | Coffee Break | 10:00 | Coffee Break |  
