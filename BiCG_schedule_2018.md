@@ -31,11 +31,11 @@ home: https://bioinformaticsdotca.github.io/bicg_2018
 | **Day 4** | | **Day 5** | | **Day 6** |  
 | :---: | :---: | :---: | :---: |:---: | :---: |  
 | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast |  
-| 8:30 | Module 9: Gene Fusion and Rearrangemnts (TBD) | 8:30 | Module 11: Sharing and Scaling a VM (Mihaiescu)| 8:30 | Guest Lecture (Hammell) |  
+| 8:30 | Module 9: Gene Fusion and Rearrangemnts (TBD) | 8:30 | Module 11: Working Reproducibly in the Cloud (O'Connor) | 8:30 | Guest Lecture (Hammell) |  
 | 10:30 | Coffee Break | 10:00 | Coffee Break | 10:00 | Coffee Break |  
 | 11:00 | Module 9 Lab | 10:30 | Module 12: Big Data Analytics in the Cloud (Yung) | 10:30 | Module 14: Variants to Networks (Stein and Haw) |  
 | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch |  
-| 1:30 | Module 10: Working Reproducibly in the Cloud (O'Connor) | 1:30 | Module 12 lab | 1:30 | Module 15: Clinical Data Integration (Goldenberg) |  
+| 1:30 | Module 10: Sharing and Scaling a VM (Mihaiescu) | 1:30 | Module 12 lab | 1:30 | Module 15: Clinical Data Integration (Erdman) |  
 | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break |  
 | 3:30 | Module 10 lab | 3:30 | Module 13: Genes to Pathways (Reimand) | 3:30 | Module 15 lab |  
 | 5:00 | Dinner | 5:00 | Dinner | 5:30 ||  
