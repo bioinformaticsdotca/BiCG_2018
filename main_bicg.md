@@ -17,7 +17,7 @@ Welcome to Bioinformatics for Cancer Genomics.
 
 * For Windows/PC - [notepad++](http://notepad-plus-plus.org/)  
 * For Linux - [gEdit](http://projects.gnome.org/gedit/)  
-* For Mac – [TextWrangler](http://www.barebones.com/products/textwrangler/download.html)
+* For Mac – [BBEdit 12](http://www.barebones.com/products/textwrangler/download.html)
 
 2) A file decompression tool.  
 
