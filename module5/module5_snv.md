@@ -1,14 +1,14 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2018_lab_5
+permalink: /bicg_2018_lab_7
 title: BiCG
 header1: Bioinformatics for Cancer Genomics 2018
-header2: Lab Module 5 - Somatic Mutations and Annotation
+header2: Lab Module 7 - Somatic Mutations and Annotation
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io//bicg_2018
 ---
 
-# Lab Module 5 - Somatic Mutations and Annotation
+# Lab Module 7 - Somatic Mutations and Annotation
 
 This lab is designed to provide an introduction into Somatic Nucleotide Variation detection using two common programs: [Strelka](https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/bts271) and [MuTect](http://www.nature.com/nbt/journal/v31/n3/full/nbt.2514.html). This lab will also go over simple annotation of the files using [Annovar](http://annovar.openbioinformatics.org/en/latest/) and manipulation of vcf files using [SnpEff](http://snpeff.sourceforge.net/SnpEff_manual.html)
 
@@ -23,8 +23,8 @@ cd ~/workspace
 In order to keep our files in one location, we're going to create a new directory for this module and enter it:
 
 ```
-mkdir Module5
-cd Module5
+mkdir Module7
+cd Module7
 ```
 
 Now to ease the use of commands that will follow, we're going to set some environment variables. These variables will stand in for the directories where our softwares of interest are location.
