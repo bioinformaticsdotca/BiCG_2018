@@ -102,10 +102,9 @@ $JAVA_6_DIR/java -Xmx4g -jar $MUTECT_DIR/muTect-1.1.4.jar \
 --input_file:tumor HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam \
 --vcf results/mutect/HCC1395.17.7MB-8MB_summary.vcf \
 --out results/mutect/HCC1395.17.7MB-8MB_stats.out
-
 ```
-*You are safe to ignore the final warning*
-WARN  03:59:35,152 RestStorageService - Error Response: PUT '/GATK_Run_Reports/2PPjkmQ1fN3n7utCzrguPxiwxnT7XxwV.report.xml.gz' -- ResponseCode: 403, ResponseStatus: Forbidden...
+*You can ignore the final warning:*  
+`WARN  03:59:35,152 RestStorageService - Error Response: PUT '/GATK_Run_Reports/2PPjkmQ1fN3n7utCzrguPxiwxnT7XxwV.report.xml.gz' -- ResponseCode: 403, ResponseStatus: Forbidden...`
 
 This is a failed attempt to report usage statistics + errors addressed in this [forum post](https://gatkforums.broadinstitute.org/gatk/discussion/1721/warnings-and-errors-during-score-calibration).
 
@@ -227,22 +226,22 @@ Now we can annotate the Strelka output as we did before:
 $ANNOVAR_DIR/table_annovar.pl results/strelka/results/passed.somatic.snvs.txt $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/strelka -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . -csvout
 ```
 
-The output from this is stored in comma separated format as _strelka.hg19_multianno.csv_ under the folder Module5/results/annotated/, which can be downloaded and viewed locally in excel.
+The output from this is stored in comma separated format as results/annotated/strelka.hg19_multianno.csv which can be downloaded and viewed locally in excel.
 
 
 ## Parsing specific fields from our vcf files
 
 The VCF format is sometimes not useful for visualization and data exploration purposes which often requires the data to be in tabular format. We can convert from VCF format to tabular format using the extractField() function from SnpSift/SnpEff. Since each mutation caller has a different set of output values in the VCF file, the command needs be adjusted for each mutation caller depending on the fields present in the header.
 
-From the [SnpSift documentation](http://snpeff.sourceforge.net/SnpSift.html#filter):
+From the [SnpSift documentation](http://snpeff.sourceforge.net/SnpSift.html#filter):  
 All VCF fields can be used as variables names, as long as they are declared in the VCF header OR they are "standard" VCF fields.
 
-For our example:
-Standard fields: `CHROM POS REF ALT` - Defined by VCF 4.1 specification
-Info field variables: `Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147` -  Defined in header lines ##INFO=<ID=...
-Genotype fields: `GEN[0].FA GEN[1].FA` - Defined in header lines ##FORMAT=<ID=FA... where:
-GEN[0] = first sample = sample_HCC1395_tumour
-GEN[1] = second sample = sample_HCC1395_normal
+For our example:\
+Standard fields: `CHROM POS REF ALT` - Defined by VCF 4.1 specification\
+Info field variables: `Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147` -  Defined in header lines ##INFO=<ID=...\
+Genotype fields: `GEN[0].FA GEN[1].FA` - Defined in header lines ##FORMAT=<ID=FA... where:\
+* GEN[0] = first sample = sample_HCC1395_tumour
+* GEN[1] = second sample = sample_HCC1395_normal
 
 Therefore, to convert the MuTect VCF file into a tabular format containing only the chromosome, position, reference allele, alternate allele, function of gene, gene name, cytoband, exonic function, avsnp147 annotation, allele frequency of normal, and allele frequency of control:
 
