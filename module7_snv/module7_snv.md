@@ -49,7 +49,6 @@ For this lab module, we'll be using exome data on the HCC1395 breast cancer cell
 ln -s /home/ubuntu/CourseData/CG_data/Module7/HCC1395
 ln -s /home/ubuntu/CourseData/CG_data/Module7/ref_data
 ln -s /home/ubuntu/CourseData/CG_data/Module7/snv_analysis
-
 ```
 
 For this lab we're going to limit our analysis to just the 7MB and 8MB region of chromosome 17 to ensure processing occurs quickly. The files we'll be focusing on can be viewed using the following command:
@@ -146,11 +145,11 @@ Our data is exome and so the coverage of the file is different, we need to chang
 ```
 nano config/strelka_config_bwa.ini
 ```
-Scroll to isSkipDepthFilters.
-Replace 0 with 1.
-*Ctrl+X* to exit.
-*Y* to save changes.
-*Enter* to maintain the same filename and overwrite.
+* Scroll to isSkipDepthFilters.
+* Replace 0 with 1.
+* *Ctrl+X* to exit.
+* *Y* to save changes.
+* *Enter* to maintain the same filename and overwrite.
 
 The reason why we do this is described on the [Strelka FAQ page](https://sites.google.com/site/strelkasomaticvariantcaller/home/faq):
 
@@ -295,7 +294,7 @@ Manually inspecting these predicted SNVs in IGV is a good way to verify the pred
 
 While IGV is good for visualizing individual mutations, looking at more global characteristics would require loading the data into an analysis language like R.
 
-We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder. Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module5/snv_analysis.txt).  
+We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder. Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2018/master/module7_snv/snv_analysis.txt).  
 
 Now let's launch our RStudio instance and continue our analysis there.  
 
