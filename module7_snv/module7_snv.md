@@ -23,8 +23,8 @@ cd ~/workspace
 In order to keep our files in one location, we're going to create a new directory for this module and enter it:
 
 ```
-mkdir Module7
-cd Module7
+mkdir Module7_snv
+cd Module7_snv
 ```
 
 Now to ease the use of commands that will follow, we're going to set some environment variables. These variables will stand in for the directories where our softwares of interest are location.
@@ -34,9 +34,11 @@ Now to ease the use of commands that will follow, we're going to set some enviro
 Now we'll set out environment variables for MuTect and SnpEff (which will be used for processing the outputs from the callers):
 
 ```
-MUTECT_DIR=/usr/local/mutect
+JAVA_6_DIR=/home/ubuntu/CourseData/CG_data/Module7/install/java/jre1.6.0_45/bin
+MUTECT_DIR=/home/ubuntu/CourseData/CG_data/Module7/install/mutect
 SNPEFF_DIR=/usr/local/snpEff
-ANNOVAR_DIR=/usr/local/annovar
+ANNOVAR_DIR=/home/ubuntu/CourseData/CG_data/Module7/install/annovar
+STRELKA_DIR=/home/ubuntu/CourseData/CG_data/Module7/install/strelka/bin/
 ```
 
 ## Linking the Sequencing and Referencing Data
@@ -44,9 +46,10 @@ ANNOVAR_DIR=/usr/local/annovar
 For this lab module, we'll be using exome data on the HCC1395 breast cancer cell line. The tumour and normal bams have already been processed and placed on the server. So we'll create a soft link to the directory that it's stored. We'll also create a soft link to where the reference genome is stored, as well as a folder we'll use later on in the lab:
 
 ```
-ln -s /home/ubuntu/CourseData/CG_data/Module5/HCC1395
-ln -s /home/ubuntu/CourseData/CG_data/Module5/ref_data
-ln -s /home/ubuntu/CourseData/CG_data/Module5/snv_analysis
+ln -s /home/ubuntu/CourseData/CG_data/Module7/HCC1395
+ln -s /home/ubuntu/CourseData/CG_data/Module7/ref_data
+ln -s /home/ubuntu/CourseData/CG_data/Module7/snv_analysis
+
 ```
 
 For this lab we're going to limit our analysis to just the 7MB and 8MB region of chromosome 17 to ensure processing occurs quickly. The files we'll be focusing on can be viewed using the following command:
@@ -88,14 +91,24 @@ less $MUTECT_DIR/b37_cosmic_v54_120711.vcf
 In order to run MuTect, we'll be running the following command:
 
 ```
-mkdir results; mkdir results/mutect;
-/usr/local/java6/bin/java -Xmx4g -jar $MUTECT_DIR/muTect-1.1.4.jar \
---analysis_type MuTect --reference_sequence ref_data/Homo_sapiens.GRCh37.75.dna.primary_assembly.reordered.fa \
---dbsnp $MUTECT_DIR/dbsnp_132_b37.leftAligned.vcf --cosmic $MUTECT_DIR/b37_cosmic_v54_120711.vcf \
---intervals 17:7000000-8000000 --input_file:normal HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam \
---input_file:tumor HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam --vcf results/mutect/HCC1395.17.7MB-8MB_summary.vcf \
+mkdir results; 
+mkdir results/mutect;
+$JAVA_6_DIR/java -Xmx4g -jar $MUTECT_DIR/muTect-1.1.4.jar \
+--analysis_type MuTect \
+--reference_sequence ref_data/Homo_sapiens.GRCh37.75.dna.primary_assembly.reordered.fa \
+--cosmic $MUTECT_DIR/b37_cosmic_v54_120711.vcf \
+--dbsnp $MUTECT_DIR/dbsnp_132_b37.leftAligned.vcf  \
+--intervals 17:7000000-8000000 \
+--input_file:normal HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam \
+--input_file:tumor HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam \
+--vcf results/mutect/HCC1395.17.7MB-8MB_summary.vcf \
 --out results/mutect/HCC1395.17.7MB-8MB_stats.out
+
 ```
+*You are safe to ignore the final warning*
+WARN  03:59:35,152 RestStorageService - Error Response: PUT '/GATK_Run_Reports/2PPjkmQ1fN3n7utCzrguPxiwxnT7XxwV.report.xml.gz' -- ResponseCode: 403, ResponseStatus: Forbidden...
+
+This is a failed attempt to report usage statistics + errors addressed in this [forum post](https://gatkforums.broadinstitute.org/gatk/discussion/1721/warnings-and-errors-during-score-calibration).
 
 The `-Xmx4g` option allocates 4 GB of RAM for MuTect to run it's analysis. MuTect will output a vcf file with the calls.
 
@@ -121,20 +134,25 @@ tail results/mutect/mutect_passed.vcf
 
 ## Strelka
 
-Next, we'll call mutations using Strelka. Strelka provides aligner specific config files for bwa, eland, and isaac, each with preconfigured default parameters that work well with the aligner used. Since the bam file we're working with were processed using bwa, we'll make a local copy of that file:
+Next, we'll call mutations using Strelka. Strelka provides aligner specific config files for bwa, eland, and isaac, each with preconfigured default parameters that work well with the aligner used. Since the bam files we're working with were processed using bwa, we'll make a local copy of that file:
 
 ```
 mkdir config
-cp /usr/local/etc/strelka_config_bwa_default.ini config/strelka_config_bwa.ini
+cp /home/ubuntu/CourseData/CG_data/Module7/install/strelka/etc/strelka_config_bwa_default.ini config/strelka_config_bwa.ini
 ```
 
-Our data is exome and so the coverage of the file is different, we need to change the `isSkipDepthFilters` parameter in the `strelka_config_bwa.ini` file. The default setting of `isSkipDepthFilters = 0` must simply be changed to `isSkipDepthFilters = 1`, and we'll accomplish this using the vim editor:
+Our data is exome and so the coverage of the file is different, we need to change the `isSkipDepthFilters` parameter in the `strelka_config_bwa.ini` file. The default setting of `isSkipDepthFilters = 0` must simply be changed to `isSkipDepthFilters = 1`, and we'll accomplish this using the nano text editor:
 
 ```
-vim config/strelka_config_bwa.ini
+nano config/strelka_config_bwa.ini
 ```
+Scroll to isSkipDepthFilters.
+Replace 0 with 1.
+*Ctrl+X* to exit.
+*Y* to save changes.
+*Enter* to maintain the same filename and overwrite.
 
-In order to quit the editor while saving changes, press **ESC**, following by **:x!** and pressing enter. The reason why we do this is described on the [Strelka FAQ page](https://sites.google.com/site/strelkasomaticvariantcaller/home/faq):
+The reason why we do this is described on the [Strelka FAQ page](https://sites.google.com/site/strelkasomaticvariantcaller/home/faq):
 
 *The depth filter is designed to filter out all variants which are called above a multiple of the mean chromosome depth, the default configuration is set to filter variants with a depth greater than 3x the chromosomal mean. If you are using exome/targeted sequencing data, the depth filter should be turned off...*  
  
@@ -145,7 +163,7 @@ If you were doing this for whole genome sequencing data, then you should leave t
 A Strelka analysis is performed in 2 steps.  In the first step we provide Strelka with all the information it requires to run the analysis, including the tumour and normal bam filenames, the config, and the reference genome.  Strelka will create an output directory with the setup required to run the analysis.
 
 ```
-configureStrelkaWorkflow.pl \
+$STRELKA_DIR/configureStrelkaWorkflow.pl \
     --tumor HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam \
     --normal HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam \
     --ref ref_data/Homo_sapiens.GRCh37.75.dna.primary_assembly.reordered.fa \
@@ -187,7 +205,7 @@ mkdir results/annotated/
 To run Annovar on the MuTect output, we use the following command:
 
 ```
-table_annovar.pl results/mutect/mutect_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/mutect -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . --vcfinput
+$ANNOVAR_DIR/table_annovar.pl results/mutect/mutect_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/mutect -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . --vcfinput
 ```
 
 We can view the resulting file by going _less_ on it:
@@ -201,13 +219,13 @@ Unfortunately our strelka vcf doesn't have the mandatory info field for genotype
 The following command will remove the header information, format the file as needed by annovar while retaining other information, and storing it into our new file _passed.somatic.snvs.txt_.
 
 ```
-grep -v "##" results/strelka/results/passed.somatic.snvs.vcf | awk '{print $1"\t"$2"\t"$2"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$10"\t"$11}' > results/strelka/results/passed.somatic.snvs.txt'
+grep -v "##" results/strelka/results/passed.somatic.snvs.vcf | awk '{print $1"\t"$2"\t"$2"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$10"\t"$11}' > results/strelka/results/passed.somatic.snvs.txt
 ```
 
 Now we can annotate the Strelka output as we did before:
 
 ```
-table_annovar.pl results/strelka/results/passed.somatic.snvs.txt $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/strelka -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . -csvout
+$ANNOVAR_DIR/table_annovar.pl results/strelka/results/passed.somatic.snvs.txt $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/strelka -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . -csvout
 ```
 
 The output from this is stored in comma separated format as _strelka.hg19_multianno.csv_ under the folder Module5/results/annotated/, which can be downloaded and viewed locally in excel.
@@ -215,20 +233,30 @@ The output from this is stored in comma separated format as _strelka.hg19_multia
 
 ## Parsing specific fields from our vcf files
 
-The VCF format is sometimes not useful for visualization and data exploration purposes which often requires the data to be in tabular format. We can convert from VCF format to tabular format using the extractField() function from SnpSift/SnpEff. Since each mutation caller has a different set of output values in the VCF file, the command needs be adjusted for each mutation caller depending on the fields present in the header. 
+The VCF format is sometimes not useful for visualization and data exploration purposes which often requires the data to be in tabular format. We can convert from VCF format to tabular format using the extractField() function from SnpSift/SnpEff. Since each mutation caller has a different set of output values in the VCF file, the command needs be adjusted for each mutation caller depending on the fields present in the header.
 
-For example, to convert the MuTect VCF file into a tabular format containing only the chromosome, position, reference allele, alternate allele, function of gene, gene name, cytoband, exonic function, allele frequency of normal, and allele frequency of control:
+From the [SnpSift documentation](http://snpeff.sourceforge.net/SnpSift.html#filter):
+All VCF fields can be used as variables names, as long as they are declared in the VCF header OR they are "standard" VCF fields.
+
+For our example:
+Standard fields: `CHROM POS REF ALT` - Defined by VCF 4.1 specification
+Info field variables: `Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147` -  Defined in header lines ##INFO=<ID=...
+Genotype fields: `GEN[0].FA GEN[1].FA` - Defined in header lines ##FORMAT=<ID=FA... where:
+GEN[0] = first sample = sample_HCC1395_tumour
+GEN[1] = second sample = sample_HCC1395_normal
+
+Therefore, to convert the MuTect VCF file into a tabular format containing only the chromosome, position, reference allele, alternate allele, function of gene, gene name, cytoband, exonic function, avsnp147 annotation, allele frequency of normal, and allele frequency of control:
 
 ```
-java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "." results/annotated/mutect.hg19_multianno.vcf CHROM POS REF ALT Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147 GEN[0].FA GEN[1].FA > results/mutect_passed_tabbed.txt
+java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "." results/annotated/mutect.hg19_multianno.vcf CHROM POS REF ALT Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147 GEN[0].FA GEN[1].FA > results/mutect/mutect_passed_tabbed.txt
 ```
 
 We can view the new tab delimited file:
 
-To convert the Strelka VCF file into a tabular format into a similar format containing the chromosome, position, reference allele, alternate allele, depth of normal, depth of tumour, # of A's, C's, G's, and T's in normal and tumour:
+To convert the Strelka VCF file into a tabular format into a similar format containing the chromosome, position, reference allele, alternate allele, depth of normal, depth of tumour, # of A's, C's, G's, and T's in normal and tumour (two values each representing "stringent,permissive" filter tiers):
 
 ```
-java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "."  results/strelka/results/passed.somatic.snvs.vcf CHROM POS REF ALT GEN[0].DP GEN[1].DP GEN[0].AU GEN[1].AU GEN[0].CU GEN[1].CU GEN[0].GU GEN[1].GU GEN[0].TU GEN[1].TU > results/strelka_snvs_tabbed.txt 
+java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "."  results/strelka/results/passed.somatic.snvs.vcf CHROM POS REF ALT GEN[0].DP GEN[1].DP GEN[0].AU GEN[1].AU GEN[0].CU GEN[1].CU GEN[0].GU GEN[1].GU GEN[0].TU GEN[1].TU > results/strelka/strelka_snvs_tabbed.txt 
 ```
 
 The -e parameter specifies how to represent empty fields. In this case, the "." character is placed for any empty fields. This facilitates loading and completeness of data. For more details on the extractField() function see the [SnpSift documentation](http://snpeff.sourceforge.net/SnpSift.html#Extract).
@@ -236,20 +264,20 @@ The -e parameter specifies how to represent empty fields. In this case, the "." 
 We can view the first 10 lines of our tabbed file by running the following commands (one at a time):
 
 ```
-head results/mutect_passed_tabbed.txt
-head results/strelka_snvs_tabbed.txt
+head results/mutect/mutect_passed_tabbed.txt
+head results/strelka/strelka_snvs_tabbed.txt
 ```
-
 ## Data Exploration
 
-### Integrative Genomics Viewer (IGV) 
+### Integrative Genomics Viewer (IGV)
 
 A common step after prediction of SNVs is to visualize these mutations in IGV. Let's load these bam into IGV. Open IGV, then:
 
 1. Change the genome to hg19 (if it isn't already)  
 2. File -> Load from URL ...  
-    * http://cbwxx.dyndns.info/Module5/HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam  
-    * http://cbwxx.dyndns.info/Module5/HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam  
+    * http://xx.oicrcbw.ca/Module7_snv/HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam
+    * http://xx.oicrcbw.ca/Module7_snv/HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam
+
 
 Where the xx is your student number. Once the tumour and normal bam have been loaded into IGV, we can investigate a few predicted positions in IGV:
 

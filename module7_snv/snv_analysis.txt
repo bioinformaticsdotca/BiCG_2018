@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-In this R markdown file, we're going to analyze the mutational spectrum of the Mutect output.
+In this R markdown file, we're going to analyze the mutational spectrum of the mutect output as well as determine which mutational signatures make up our tumour.
 
 Let's begin by loading the relevant libraries, and setting our working directory to our workspace folder.
 
@@ -25,7 +25,7 @@ Let's begin by loading the relevant libraries, and setting our working directory
 library(ggplot2) # used for plotting relevant graphs
 library(deconstructSigs) # able to decontruct the mutational signatures present within a sample
 library(BSgenome.Hsapiens.UCSC.hg19) # required by deconstructSigs to determine the kinds of SNVs present
-setwd("~/workspace/Module5/") # changes the currect directory to our Module 5 folder within the workspace
+setwd("~/workspace/Module7_snv") # changes the currect directory to our Module 5 folder within the workspace
 
 ```
 
@@ -34,8 +34,15 @@ setwd("~/workspace/Module5/") # changes the currect directory to our Module 5 fo
 
 In order to run appropriate analysis, we first need to import our data.
 
+The file snv_analysis/HCC1395.m.txt
+is equivalent to our results/mutect/mutect_passed.stats.out
+However, it contains the genomewide results instead of only chr17.7MB-8MB.
+
+The file snv_analysis/HCC1395.s.txt
+is equivalent to our results/strelka/strelka_snvs_tabbed.txt
+
 ```{r import_m}
-HCC_m <- read.delim(file="~/workspace/Module5/snv_analysis/HCC1395.m.txt", sep="\t", header=TRUE, stringsAsFactors = FALSE)
+HCC_m <- read.delim(file="~/workspace/Module7_snv/snv_analysis/HCC1395.m.txt", sep="\t", header=TRUE, stringsAsFactors = FALSE)
 
 # Add a column indicating the name of the sample that bears each mutation - required by deconstructSigs
 # Calculate the Variant Allele Frequency  by taking the ratio of the alternate allele count by the total count
