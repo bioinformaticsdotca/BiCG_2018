@@ -1,9 +1,9 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2018_module4_lab_preprocessing
-title: Lab Module 4 - Data Preprocessing
+permalink: /bicg_2018_module6_lab_preprocessing
+title: Lab Module 6 - Data Preprocessing
 header1: Workshop Pages for Students
-header2: Lab Module 4 - Data Preprocessing
+header2: Lab Module 6 - Data Preprocessing
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
@@ -21,7 +21,7 @@ In this section, we will set some environment variables to help facilitate the e
 Set your analysis directory:
 
 ```
-CNA_WORKSPACE=~/workspace/Module4
+CNA_WORKSPACE=~/workspace/Module6
 ```
 
 The preprocessing helper scripts can be downloaded from the wiki. Set the directory of where these scripts are stored:
