@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2018_module4_lab_install
+permalink: /bicg_2018_module6_lab_install
 title: Lab Module 6 - Installation
 header1: Workshop Pages for Students
 header2: Lab Module 6 - Installation
