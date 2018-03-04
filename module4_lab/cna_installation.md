@@ -1,9 +1,9 @@
 ---
 layout: tutorial_page
 permalink: /bicg_2018_module4_lab_install
-title: Lab Module 4 - Installation
+title: Lab Module 6 - Installation
 header1: Workshop Pages for Students
-header2: Lab Module 4 - Installation
+header2: Lab Module 6 - Installation
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
