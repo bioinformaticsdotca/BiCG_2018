@@ -1,9 +1,9 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2018_module4_lab
-title: Lab Module 4 - Copy Number Alterations
+permalink: /bicg_2018_module6_lab
+title: Lab Module 6 - Copy Number Alterations
 header1: Workshop Pages for Students
-header2: Lab Module 4 - Copy Number Alterations
+header2: Lab Module 6 - Copy Number Alterations
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
@@ -31,8 +31,8 @@ cd /home/ubuntu/workspace
 Create a sub-directory for this module, and navigate to it:
 
 ```bash
-mkdir Module4
-cd Module4
+mkdir Module6
+cd Module6
 ```
 
 In this section, we will set some environment variables to help facilitate the execution of commands. These variables will store the locations of some important paths we will need.
@@ -41,7 +41,7 @@ In this section, we will set some environment variables to help facilitate the e
 
 For convinience, we first store an environment variable with the path to your Module 4 working directory. 
 ```bash
-CNA_WORKSPACE=/home/ubuntu/workspace/Module4
+CNA_WORKSPACE=/home/ubuntu/workspace/Module6
 ```
 
 When we want to refer to this variable later, we use the $ symbol before the variable name:
@@ -52,10 +52,10 @@ echo $CNA_WORKSPACE
 Now let's create links in this CNA working directory to: (1) the data we will use, (2) the install directory, (3) some helper scripts we will need, and (4) a directory with reference genome files.
 
 ```bash
-ln -s /home/ubuntu/CourseData/CG_data/Module4/data $CNA_WORKSPACE	# link to data
-ln -s /home/ubuntu/CourseData/CG_data/Module4/install $CNA_WORKSPACE	# link to install directory
-ln -s /home/ubuntu/CourseData/CG_data/Module4/scripts $CNA_WORKSPACE	# link to scripts
-ln -s /home/ubuntu/CourseData/CG_data/Module4/ref_data $CNA_WORKSPACE	# link to reference genome data
+ln -s /home/ubuntu/CourseData/CG_data/Module6/data $CNA_WORKSPACE	# link to data
+ln -s /home/ubuntu/CourseData/CG_data/Module6/install $CNA_WORKSPACE	# link to install directory
+ln -s /home/ubuntu/CourseData/CG_data/Module6/scripts $CNA_WORKSPACE	# link to scripts
+ln -s /home/ubuntu/CourseData/CG_data/Module6/ref_data $CNA_WORKSPACE	# link to reference genome data
 ```
 
 Check that you have four new directories in your workspace:
@@ -67,7 +67,7 @@ ls $CNA_WORKSPACE
 You can also access your workspace directory through your web browser (replace XX with your student number):
 
 ```bash
-http://cbwXX.dyndns.info/Module4
+http://cbwXX.dyndns.info/Module6
 ```
 
 Let's create an environment variable for the install directory, so that we can later refer to the locations of individual programs and files relative to this path:
@@ -295,7 +295,7 @@ column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 The final interesting file that OncoSNP produces is a compressed file with plots `HCC1395.*.ps.gz`.  Download the plots you produced by entering this address in your browser:
 
 ```bash
-http://cbwXX.dyndns.info/Module4/analysis/snp6/oncosnp
+http://cbwXX.dyndns.info/Module6/analysis/snp6/oncosnp
 ```
 
 Where XX is your student number. You can see an explanation of the OncoSNP CNA ranks [here](https://sites.google.com/site/oncosnp/user-guide/oncosnpranking). 
@@ -331,7 +331,7 @@ While array analysis involved probe intensities, sequencing analysis uses binned
 ```bash
 mkdir -p $CNA_WORKSPACE/analysis/exome/hmmcopy
 cd $CNA_WORKSPACE/analysis/exome/hmmcopy
-cp /home/ubuntu/CourseData/CG_data/Module4/analysis/exome/hmmcopy/* $CNA_WORKSPACE/analysis/exome/hmmcopy
+cp /home/ubuntu/CourseData/CG_data/Module6/analysis/exome/hmmcopy/* $CNA_WORKSPACE/analysis/exome/hmmcopy
 ```
 
 The output is in the form of `.wig` files for the tumour and normal. These files specify the number of reads that fall into each genomic bin. The format is not very human-friendly, but you can take a look:
@@ -374,7 +374,7 @@ This step has also been completed for you using MutationSeq. Please refer to the
 ```bash
 mkdir -p $CNA_WORKSPACE/analysis/exome/mutationseq
 cd $CNA_WORKSPACE/analysis/exome/mutationseq
-cp /home/ubuntu/CourseData/CG_data/Module4/analysis/exome/mutationseq/* $CNA_WORKSPACE/analysis/exome/mutationseq
+cp /home/ubuntu/CourseData/CG_data/Module6/analysis/exome/mutationseq/* $CNA_WORKSPACE/analysis/exome/mutationseq
 ```
 
 The file `HCC1395_mutationseq.vcf` contains the raw output of MutationSeq, which was run in single-sample mode on the normal exome. This output was processed using a custom script to produce the format needed for Titan. Let's take a look at the processed data:
@@ -466,7 +466,7 @@ less $CNA_WORKSPACE/scripts/run_titan.R
 When the analysis is complete, this script will generate a copy number plot for each chromosome using the default functions provided in the Titan package. This requires X11 forwarding and may fail since we are working on a server. For demonstration purposes, the plots can be copied as follows:
 
 ```bash
-cp /home/ubuntu/CourseData/CG_data/Module4/analysis/exome/titan/*.png $CNA_WORKSPACE/analysis/exome/titan
+cp /home/ubuntu/CourseData/CG_data/Module6/analysis/exome/titan/*.png $CNA_WORKSPACE/analysis/exome/titan
 ```
 
 Finally, a Titan segment file and an IGV compatible `.seg` file can be generated using a Perl script:
@@ -494,14 +494,14 @@ We will also look at Titan profiles from two xenograft passages derived from thi
 We ran Titan on the whole-genome `.bam` files from these three tumours, with three separate runs specifying either 1, 2, or 3 clonal clusters. You can copy the plots and parameter files as follows (actual Titan output is not provided to protect patient confidentiality):
 
 ```bash
-cp /home/ubuntu/CourseData/CG_data/Module4/module4_cna_plots.zip $CNA_WORKSPACE
+cp /home/ubuntu/CourseData/CG_data/Module6/module4_cna_plots.zip $CNA_WORKSPACE
 unzip module4_cna_plots.zip
 ```
 
 You can then download the entire zip file or individual plots from your browser (XX is your student number):
 
 ```bash
-http://cbwXX.dyndns.info/Module4/module4_cna_plots
+http://cbwXX.dyndns.info/Module6/module4_cna_plots
 ```
 
 Titan uses the expectation-maximization (EM) algorithm to find the most likely values of the parameters. When given a more complex model (i.e. more clusters), this approach can over-fit and assign higher likelihood to runs with more clusters. So in order to choose the number of clusters, it is recommended not just to look at the likelihood, but at the DBW validity index which Titan provides at the end of the parameter file (lower index values are better):
@@ -679,7 +679,7 @@ http://cbwXX.dyndns.info:8080
 Where the XX is your student number. Now click on the Console, and run this to set the working directory:
 
 ```r
-setwd("/home/ubuntu/workspace/Module4/analysis/exome/titan")
+setwd("/home/ubuntu/workspace/Module6/analysis/exome/titan")
 ```
 
 Setting the working directory allows us to open and write files in a particular location without specifying the full path. In general, using relative rather than absolute paths is not a good idea, since it makes the code harder to transfer to others. However, for the sake of this tutorial we will do this for convenience. 
