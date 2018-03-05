@@ -80,10 +80,11 @@ In the menu on the left, select "Instances."  Click on the "Launch Instance" but
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/instance_name.png?raw=true" width="750" />
 
+##
 Select Boot Source: Image
 Create New Volume:
 No, Ubuntu 16.04 - latest
-
+##
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/image.png?raw=true" width="750" />
 
 ** Flavor: c1.micro **
