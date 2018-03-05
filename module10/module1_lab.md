@@ -29,7 +29,7 @@ After this lab, you will be able to:
 * Learn how to access protected data in the Cloud using the ICGC storage client 
 * Snapshot your VM and share it with other cloud tenants
 * Launch a new VM from a shared image
-* Scale out your VMs to meet the needs of this task (instructor only)
+* Scale out your VMs to meet the needs of a large analysis (instructor only)
 
 Things to know before you start:
 
@@ -48,7 +48,7 @@ The lab may take between 1-2 hours, depending on your familiarity with Cloud Com
 
 ## Log In to the Collaboratory
 
-In your browser, go to <https://console.cancercollaboratory.org>.  Log in using your provided credentials.
+In your browser, go to <https://console.cancercollaboratory.org> and log in using your provided credentials.
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_a.png?raw=true" width="750" />
 
@@ -60,7 +60,7 @@ Once logged in, the first page open will be the "Overview Page" that shows the r
 
 ### Create a SSH Key-pair
 
-In the bar on the left side of the page, under Project, Compute tab, click on "Access and Security" and then on the "Create Key Pair" button.  Name your key-pair and click on the "Create Key Pair" button.  This will prompt you to save a file to your computer.  Take note where you save this file because you will need to find it later.
+In the bar on the left side of the page, under Project, Compute tab, click on "Key Pairs" and then on the "Create Key Pair" button.  Name your key-pair and click on the "Create Key Pair" button.  This will prompt you to save a file to your computer.  Take note where you save this file because you will need to find it later.
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_c.png?raw=true" width="750" />
 
@@ -80,7 +80,11 @@ In the menu on the left, select "Instances."  Click on the "Launch Instance" but
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/instance_name.png?raw=true" width="750" />
 
-** Select Boot Source: Image, Create New Volume: No, Ubuntu 16.04 - latest**
+**************************
+Select Boot Source: Image, 
+Create New Volume:
+No, Ubuntu 16.04 - latest
+**************************
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/image.png?raw=true" width="750" />
 
@@ -152,14 +156,14 @@ To configure Putty, start Putty and do the following:
 
 * Fill in the "Host name" field with 142.1.177.XXX.
 
-XXX is the last octet from the floating IP address you assign to the instance.
+XXX is the last octet from the floating IP address you assigned to the instance.
 
  
 <img src="https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/resources/Putty_Basic_Options.png?raw=true" alt="Basic Putty Options" class="center" width="750">
 
 * In the left hand categories, under the Connection category choose Data.  In the auto-login username field write ***ubuntu***.
 
-<img src="https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/resources/Putty_Data_Options.png?raw=true" alt="Putty Data Options" class="center" width="750"> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/Putty_Data_Options.png?raw=true" width="750" />
 
 * In the left hand categories, in the Connection category next to SSH click on the **+**. Click on Auth. In the private-key file for authentication field, hit browse and find the private key that you converted previously from a PEM format to a PPK format.
 
@@ -184,17 +188,19 @@ Run the following commands to install the Docker repository and required depende
 
 ```
 sudo apt-get install -y apt-transport-https ca-certificates unzip
+
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
+
 sudo apt-get update
 
 ```
 
-The following commands will install Docker and run hello-world to test the installation:
+The following commands will install Docker and run the hello-world container to test the installation:
 
 ```
 sudo apt-get -y install docker-ce
@@ -225,9 +231,9 @@ Run the container, mounting the sample file inside.
 sudo docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam:/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam -v /tmp:/home/ubuntu quay.io/briandoconnor/dockstore-tool-bamstats
 ```
 
-In this command, `-it` means run interactively and `-v` maps a file or directory from the VM inside the Docker container.  Whatever is created inside "/home/ubuntu" (inside the container) will be in the host "/tmp" directory.  This will allow the files that are created inside the container to survive after the container is terminated.
+In this command, `-it` means run interactively and `-v` maps a file or directory from the VM inside the Docker container.  Whatever is created inside "/home/ubuntu" (inside the container) will be avalable outside the container in the host's "/tmp" directory.  This will allow the files that are created inside the container to survive after the container is terminated.
 
-The OS inside the Docker container is different than that of the host VM, and you can check this with:
+The OS inside the Docker container is different than that of the host VM, and you can check this by executing the following command inside the container:
 
 ```
 cat /etc/lsb-release
