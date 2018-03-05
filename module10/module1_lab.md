@@ -1,14 +1,14 @@
 ---
 layout: tutorial_page
-permalink: /cloudcomputing_2017_module1_lab
-title: Collaboratory Lab 1
+permalink: /BiCG_2018/module10
+title: Bioinformatics for Cancer Genomics
 header1: Workshop Pages for Students
-header2: Working with Big Cancer Data in the Collaboratory Cloud 2017 Module 1 Lab
+header2: Bioinformatics for Cancer Genomics Module 10 Lab
 image: /site_images/CBW_bigdata_icon.jpg
-home: https://bioinformaticsdotca.github.io/CloudComputing_2017
+home: https://bioinformaticsdotca.github.io/bicg_2018
 description: This module will cover the steps required to setup and configure a virtual machine, and will show you how to access data in the Cloud.
 author: George Mihaiescu
-modified: 2017-10-30
+modified: 2018-03-05
 ---
 
 This lab was created by George Mihaiescu
@@ -17,7 +17,7 @@ This lab was created by George Mihaiescu
 
 ### Description of the lab
 
-Welcome to the lab for Working with Big Cancer Data in the Collaboratory Cloud! 
+Welcome to the lab for Bioinformatics for Cancer Genomics!
 
 This lab will take you through the steps required to setup and configure your virtual machine with Docker packages, and will show you how to access data in the Cloud.
 
@@ -27,6 +27,9 @@ After this lab, you will be able to:
 * Install Docker and launch a container inside a virtual machine
 * Setup the ICGC storage client packaged as a docker container
 * Learn how to access protected data in the Cloud using the ICGC storage client 
+* Snapshot your VM and share it with other cloud tenants
+* Launch a new VM from a shared image
+* Scale out your VMs to meet the needs of this task (instructor only)
 
 Things to know before you start:
 
@@ -47,11 +50,11 @@ The lab may take between 1-2 hours, depending on your familiarity with Cloud Com
 
 In your browser, go to <https://console.cancercollaboratory.org>.  Log in using your provided credentials.
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/mod3_a.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_a.png?raw=true" width="750" />
 
 Once logged in, the first page open will be the "Overview Page" that shows the resources available to your project, as well as historical usage.
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/mod3_b.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_b.png?raw=true" width="750" />
 
 ## Before Launching a Virtual Machine
 
@@ -59,47 +62,15 @@ Once logged in, the first page open will be the "Overview Page" that shows the r
 
 In the bar on the left side of the page, under Project, Compute tab, click on "Access and Security" and then on the "Create Key Pair" button.  Name your key-pair and click on the "Create Key Pair" button.  This will prompt you to save a file to your computer.  Take note where you save this file because you will need to find it later.
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/mod3_c.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_c.png?raw=true" width="750" />
 
 
 #### On Windows with PuTTY
 
 Openstack currently creates key-pairs that only work natively with Mac and Linux, so if you are using a Windows computer you will have to convert the pem key provided by Openstack to a format recognized by Putty, the free Windows SSH client utility. In order to do this, you need to start the PuTTY Key Generator <https://www.ssh.com/ssh/putty/windows/puttygen> and follow the instructions about converting the key provided at <https://github.com/naturalis/openstack-docs/wiki/Howto:-Creating-and-using-OpenStack-SSH-keypairs-on-Windows>, or in the screenshot below:
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/key_conversion.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/key_conversion.png?raw=true" width="750" />
 
-### Customize Your Security Groups - this step is not needed because we already customized the security group with a rule allowing all SSH traffic, but it's here for future reference
-
-You will need to know your IP address for this. To find your IP address, open a new tab or window and go to Google and search for "what is my ip".
-
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/mod3_e.png?raw=true" class="center" width="750">
-
-Return to the Collaboratory page.  Select the "Security Groups" tab and click on the "Create Security Group" button.  Name your security group (ie ssh_yourname) and write a description.  Click on "Create Security Group".
-
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/mod3_f.png?raw=true" class="center" width="750">
-
-For this lab, you will need to allow SSH access from your IP address, as well as HTTP.  Beside the name for the security group you just created, click on "Manage Rules".  Click on the "Add Rule" button.  
-
-In the dropdown menus and boxes, select or enter the following to allow SSH traffic:
-* Custom TCP Rule   
-* Ingress  
-* Port  
-* 22  
-* CIDR  
-* your IP address  
-
-Repeat this step and add a second rule allowing access to TCP port 80:
-* Custom TCP Rule   
-* Ingress  
-* Port  
-* 80  
-* CIDR  
-* your IP address  
-
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/mod3_g.png?raw=true" width="750" />
-
-**Note:** If you want to allow access to the entire Internet, use "0.0.0.0/0" as the source when adding the security rules. This is insecure because it opens up your virtual machine to potential malicious traffic, so please use causiously and make sure you secure your virtual machine before doing so.
- 
 
 ### Launch your virtual machine
 
@@ -117,7 +88,7 @@ In the menu on the left, select "Instances."  Click on the "Launch Instance" but
 
 <img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/flavor.png?raw=true" width="750" />
 
-** Network: CCRC_workshop_net (it should be already selected) **
+** Network: Bioinformatics_Cold_Spring_Harbor_workshop_net (it should be already selected) **
 
 <img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/network.png?raw=true" width="750" />
 
@@ -285,9 +256,11 @@ sudo python3 -m http.server 80
 ```
 
 Visit the page to see the statistics for that sample BAM:
-	<http://142.1.177.XXX/bamstats_report.html>
+	<http://142.1.177.XXX/bamstats_report.html.data/20_Coverage.html>
 	
 XXX is the last group of numbers from the floating IP address you assigned to the instance.
+
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/bamstats.png?raw=true" width="750" />
 
 To stop the Python http server, press Ctrl+C.
 
@@ -387,9 +360,9 @@ As the files uploaded for this lab's purposes are open access cell line BAM file
 
 The download time depends on the disk speed which is shared with other VMs running on the same physical server, as well as other shared resources (network load, storage cluster).
 
-For a workflow that runs a few days, the 30 min needed to retrieve the data represent only a small fraction.
+For a workflow that runs a few days, the 30 min needed to retrieve the data represents only a small fraction of the total workflow runtime.
 
-<img src="https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod3/mod3_ddd.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_ddd.png?raw=true" width="750" />
 
 ### Important Notes
 
@@ -402,6 +375,6 @@ It is the responsibility of the users to protect access to the EC2 or Collaborat
 Do not snapshot a VM that contains confidential tokens or protected data if the snapshot is intended to be shared with other cloud users. Also, keep in mind that other members of the same project as you could start instances from your snapshot and by doing so, have access to the data or tokens you left inside.
 
 
-Congratulations, you have completed lab 1.
+Congratulations, you have completed part 1 of the lab.
 
-**Note:** Leave your VM running as it will be used in the second lab.
+**Note:** Leave your VM running as it will be used in the second part.
