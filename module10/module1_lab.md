@@ -117,7 +117,7 @@ By default, the VM will have a private IP allocated that is only reachable from 
 
 It is recommended to associate a floating/public IP address only to a single VM and use that one as a “jumpserver”.
 
-From the "Compute" menu, select "Instances."  Beside the name of your instance, select "Associate Floating IP." and follow the screenshots below to associate a floating IP with your virtual machine.
+From the "Compute" menu, select "Instances."  Beside the name of your instance, select "Associate Floating IP" and follow the screenshots below to associate a floating IP with your virtual machine.
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/floating1.png?raw=true" width="750" />
 
@@ -271,14 +271,14 @@ To stop the Python http server, press Ctrl+C.
 
 ## Access Data in the Cloud
 
-ICGC data (stored at GNOS sites, Collaboratory, AWS S3) and TCGA (stored at cgHub and GDC) are indexed at https://dcc.icgc.org/repositories.
+ICGC data sets (stored at GNOS sites, Collaboratory, AWS S3) and TCGA (stored at cgHub and GDC) are indexed at https://dcc.icgc.org/repositories.
 
 Other data sets are usually available on-line and can be accessed over HTTP(s) protocol.
 
 Data repositories have different access policies and download clients:
 http://docs.icgc.org/cloud/repositories/#download-client-operation_1
 
-OICR created a unified client that can be used to download data from multiple repos http://docs.icgc.org/cloud/icgc-get/, but for this lab we will use the native "ICGC storage client" that can be used only in Collaboratory and AWS.
+OICR created a unified client that can be used to download data from multiple repos http://docs.icgc.org/cloud/icgc-get/, but for this lab we will use the native "ICGC storage client" that can be used only to access the data sets stored in Collaboratory and AWS.
 
 ### Collaboratory Data
 
@@ -337,11 +337,13 @@ free -g
 
 Considering that usually there is no analysys going until the data is retrieved, it is safe to allocate 7 cores and 49 GB of RAM (7 GB per thread) on a VM with 8 cores and 55 GB of RAM, leaving one CPU and 6 GB of RAM for the system. Create a text file `/home/ubuntu/application.properties` that contains the access token and the number of cores and memory per core as below.  Use `cat` to view the file contents.  
 
-```
-cat /home/ubuntu/application.properties
-#accessToken=XXX ## you would have to uncomment this line and add a valid ICGC token in order to access protected-data. For this lab's purposes though, the client will download the files listed above even with the accessToken line commented out or missing
-transport.parallel=7  ## use 7 paralled threads
-transport.memory=7  ## use up to 7 GB of memory per thread to cache the downloaded data
+
+cat << EOF > /home/ubuntu/application.properties
+#accessToken= 
+transport.parallel=7
+transport.memory=7
+EOF
+
 ```
 
 ### How to Download Data using the storage client
@@ -358,9 +360,9 @@ Choose an object_id from the list above containing open-data files, and initiate
 sudo docker run -v /tmp/:/data -v /home/ubuntu/application.properties:/icgc/icgc-storage-client/conf/application.properties --privileged icgc/icgc-storage-client bin/icgc-storage-client --profile collab download --object-id OBJECT_ID --output-dir /data
 ```
 
-As the files uploaded for this lab's purposes are open access cell line BAM files, their size is smaller (~ 5 GB) so the download should complete in a couple of minutes. 
+As the files uploaded for this lab's purposes are open access cell line BAM files, their size is smaller (~ 5 GB), so the download should complete in a couple of minutes. 
 
-**Note:** It takes around 16 min for a 100 GB file to be downloaded using a VM with 8 cores and 56 GB of RAM, and an additional 5-6 min is needed by the storage client to perform an automated checksum to verify downloaded data integrity.
+**Note:** It takes around 16 min for a 100 GB file to be downloaded using a VM with 8 cores and 56 GB of RAM, and an additional 5-6 min is needed by the storage client to perform an automated checksum to verify downloaded data's integrity.
 
 The download time depends on the disk speed which is shared with other VMs running on the same physical server, as well as other shared resources (network load, storage cluster).
 
