@@ -78,36 +78,36 @@ In the menu on the left, select "Instances."  Click on the "Launch Instance" but
 
 ** Instance Name: use your last name **
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/instance_name.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/instance_name.png?raw=true" width="750" />
 
 ** Select Boot Source: Image, Create New Volume: No, Ubuntu 16.04 - latest**
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/image.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/image.png?raw=true" width="750" />
 
 ** Flavor: c1.micro **
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/flavor.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/flavor.png?raw=true" width="750" />
 
 ** Network: Bioinformatics_Cold_Spring_Harbor_workshop_net (it should be already selected) **
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/network.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/network.png?raw=true" width="750" />
 
 ** Network Ports: nothing to change here **  
 ** Security group: default **  
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/sec_group.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/sec_group.png?raw=true" width="750" />
 
 ** Key Pair: your keypair's name (it should be already selected) **
 
 Leave the other tabs as they are and launch the instance by hitting the "Launch" button.
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/launch.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/launch.png?raw=true" width="750" />
 
 It will take a few minutes for the instance to start.
 
 To view your instances, in the left hand menu, click on "Instances".
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/instance_created.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/instance_created.png?raw=true" width="750" />
 
 ## Associate a Floating/Public IP Address
 
@@ -117,13 +117,13 @@ It is recommended to associate a floating/public IP address only to a single VM 
 
 From the "Compute" menu, select "Instances."  Beside the name of your instance, select "Associate Floating IP." and follow the screenshots below to associate a floating IP with your virtual machine.
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/floating1.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/floating1.png?raw=true" width="750" />
 
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/floating2.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/floating2.png?raw=true" width="750" />
 
 
-<img src="https://github.com/bioinformaticsdotca/CloudComp_2017/blob/master/floating3.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/floating3.png?raw=true" width="750" />
 
 ## SSH Into Your Instance
 
@@ -304,7 +304,7 @@ HCC1143_BL.RG15.bam     9717921b-67f3-5914-8c66-db3ef1ad6d61
 HCC1143_BL.RG16.bam     891f33b1-b355-525e-a4e4-87a0397f5be4
 ```
 
-<img src="https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod3/mod3_bbb.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_bbb.png?raw=true" width="750" />
 
 ### Storage Client
 
@@ -317,7 +317,7 @@ Advanced functionality provided by the storage client:
 * Single file download or manifest based download  
 * Generate a pre-signed temporary URL (24 hours) for a file that can be used to download with WGET or cURL  
 
-<img src="https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod3/mod3_ccc.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_ccc.png?raw=true" width="750" />
 
 
 ### Create a Configuration File
