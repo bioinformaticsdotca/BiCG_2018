@@ -112,7 +112,7 @@ Load the data into IGV by performing the following:
 ```
    Open IGV
    Choose 'Load from URL' from the file menu
-   Type: http://cbw#.dyndns.info/Module3-mapping/tumour.sorted.bam where # is your student ID
+   Type: http://##.oicrcbw.ca/Module3-mapping/tumour.sorted.bam where # is your student ID
    Navigate to 9:14,196,087
 ```
 
