@@ -475,7 +475,9 @@ In order to share the snapshot you took with other Openstack projects, you will 
 Install the package python-openstackclient inside your virtual machine.
 
 ```
-sudo apt-get install -y python-openstackclient
+sudo apt install -y python-pip
+
+sudo pip install python-openstackclient
 ```
 
 ## Download the Environment Variables
@@ -500,15 +502,16 @@ If using vi as your editor, press "i" for insert and then CTRL+v to paste the fi
 Execute the following commands to share the snapshot:
 
 ```
-glance image-list  # find the ID of the snapshot
+openstack image list  
+
 ```
 
 In the list, find the ID of your snapshot.
 
-Change the visibility of the image to "shared":
+Change the visibility of the image to "shared". Use the IMAGE_ID obtained above:
 
 ```
-glance image-update --visibility shared
+openstack image set --shared IMAGE_ID
 ```
 
 Share it with the project ID 7c87d460035243d796a7b71e5eb2b687 that the instructor has access to (Project B for the purpose of this exercise).
@@ -517,7 +520,7 @@ Share it with the project ID 7c87d460035243d796a7b71e5eb2b687 that the instructo
 glance member-create IMAGE_ID 7c87d460035243d796a7b71e5eb2b687
 ```
 
-In the command, the first ID is the ID of your snapshot and the second ID is the project ID you wish to share with.
+In the command, the IMAGE_ID is the ID of your snapshot, and "7c87d460035243d796a7b71e5eb2b687" is the project ID you wish to share with.
 
 Now when the instructor whose project ID is 7c87d460035243d796a7b71e5eb2b687 is on the Collaboratory site, in "Images" filtered by "Visibility: Shared With Project" he will see a list of shared snapshots.
 
