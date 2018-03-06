@@ -434,7 +434,7 @@ rm -i ~/.bash_history
 
 **Note:** the `-i` option in `rm` will prompt you to answer yes or no to remove a file.  It's a good idea to use `-i` with `rm` so that you don't inadvertently delete the wrong thing.
 
-Remove your public key from the default user’s “authorized_keys” file, so you don’t have automatically free access to future virtual machines based on the snapshot.
+Remove your public key from the default user’s “authorized_keys” file, so you don’t have automatically free access to future virtual machines based on the snapshot.  
 **Note:** after removing your public key you will not be able to log in again into this virtual machine, and you will have to start a new one from the snapshot.  Your VM session may suspend while you take the snapshot.  Initiating a new ssh session will fail because the public key was removed. 
 
 ```
