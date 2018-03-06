@@ -60,7 +60,7 @@ Once logged in, the first page open will be the "Overview Page" that shows the r
 
 ### Create a SSH Key-pair
 
-In the bar on the left side of the page, under Project, Compute tab, click on "Key Pairs" and then on the "Create Key Pair" button.  Name your key-pair and click on the "Create Key Pair" button.  This will prompt you to save a file to your computer.  Take note where you save this file because you will need to find it later.
+In the bar on the left side of the page, under Project, Compute tab, click on "Key Pairs" and then on the "Create Key Pair" button.  Name your key-pair and click on the "Create Key Pair" button.  This will prompt you to save a file to your computer.  Take note where you save this file because you will need to use it later.
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_c.png?raw=true" width="750" />
 
@@ -74,14 +74,14 @@ Openstack currently creates key-pairs that only work natively with Mac and Linux
 
 ### Launch your virtual machine
 
-In the menu on the left, select "Instances."  Click on the "Launch Instance" button and follow the same screens as in the previous lab to start an instance with the following settings:
+In the menu on the left, select "Instances."  Click on the "Launch Instance" button and follow these instructions to start an instance with the following settings:
 
 ** Instance Name: use your last name **
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/instance_name.png?raw=true" width="750" />
 
 Select Boot Source: Image  
-Create New Volume: No,  
+Create New Volume: No  
 Ubuntu 16.04 - latest  
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/image.png?raw=true" width="750" />
@@ -131,7 +131,7 @@ From the "Compute" menu, select "Instances."  Beside the name of your instance, 
 
 ### Mac/Linux Instructions
 
-You will need to change the file permissions for your private SSH key.
+On Mac or Linux, before you can use a private SSH key you will need to change the file permissions to remove access for all user accounts:
 
 ```bash
  chmod 400 path_to_private_key
@@ -156,18 +156,19 @@ To configure Putty, start Putty and do the following:
 
 XXX is the last octet from the floating IP address you assigned to the instance.
 
- 
-<img src="https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/resources/Putty_Basic_Options.png?raw=true" alt="Basic Putty Options" class="center" width="750">
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/Putty1.png?raw=true" width="750" /> 
 
 * In the left hand categories, under the Connection category choose Data.  In the auto-login username field write ***ubuntu***.
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/Putty_Data_Options.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/Putty2.png?raw=true" width="750" /> 
 
 * In the left hand categories, in the Connection category next to SSH click on the **+**. Click on Auth. In the private-key file for authentication field, hit browse and find the private key that you converted previously from a PEM format to a PPK format.
 
-<img src="https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/resources/Putty_Auth_Options.png?raw=true" alt="Putty Auth Options" class="center" width="750">
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/Putty3.png?raw=true" width="750" /> 
 
 * In the left hand categories, click on Session.  In the Saved Sessions field write **Collaboratory** and click save.
+
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/Putty4.png?raw=true" width="750" /> 
 
 **Now that Putty is configured**, all you have to do is start PuTTY and double-click on "Collaboratory" to login.
 
