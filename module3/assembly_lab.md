@@ -84,7 +84,7 @@ The N50 statistic is the most commonly used measure of assembly contiguity. An N
 Now, we'll use long sequencing reads to assemble the E. coli genome. Long sequencing reads are better at resolving repeats and typically give much more contiguous assemblies. Long reads have a much higher error rate than short reads though, so we need to use a different assembly strategy. In this tutorial, we'll use [canu](https://github.com/marbl/canu) to assemble the 25X PacBio dataset. The canu assembly of the pacbio data should take about 15 minutes on your computer (maybe take a break while it is running).  Run this command to generate the assembly:
 
 ```
-canu gnuplotTested=true -p ecoli-pacbio-canu -d ecoli-pacbio-auto genomeSize=4.6m -pacbio-raw ecoli.pacbio.25x.fastq
+canu java=/usr/local/jre1.8.0_162/bin/java gnuplotTested=true -p ecoli-pacbio-canu -d ecoli-pacbio-auto genomeSize=4.6m -pacbio-raw ecoli.pacbio.25x.fastq
 ```
 
 When it completes, copy the Pacbio assembly to our results directory:
