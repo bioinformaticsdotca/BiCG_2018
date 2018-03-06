@@ -496,7 +496,7 @@ In your browser on the Collaboratory website, in the lefthand side in the expand
 
 Click on the "API Access" tab.  Click on the "Download OpenStack RC File."
 
-![image_a](https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod4/mod4_d.png?raw=true)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod4_d.png?raw=true" width="750" />
 
 ## Source the Credentials
 
@@ -504,7 +504,7 @@ Create a file and paste the contents of the download, then source them.
 
 If using vi as your editor, press "i" for insert and then CTRL+v to paste the file contents that you downloaded.  Hit ESC to exit insert mode.  Press `:wq` to save and exit.
 
-![image_a](https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod4/mod4_e.png?raw=true)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod4_e.png?raw=true" width="750" />
 
 ## Share the Snapshot
 
@@ -557,11 +557,11 @@ cd /tmp && unzip /tmp/bamstats_report.zip
 cd /tmp && sudo python3 -m http.server 80 &
 ```
 
-![image_a](https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod4/mod4_f.png?raw=true)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod4_f.png?raw=true" width="750" />
 
 Monitor the bootstrap progress by checking the boot console output in “Instance details” under the “Log” tab.
 
-![image_a](https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod4/mod4_g.png?raw=true)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod4_g.png?raw=true" width="750" />
 
 When this completes, you can assign a floating IP.  If you browse to the IP, you can see the bamstats report.
 
