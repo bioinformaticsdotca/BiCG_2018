@@ -309,7 +309,8 @@ HCC1143_BL.RG15.bam     9717921b-67f3-5914-8c66-db3ef1ad6d61
 HCC1143_BL.RG16.bam     891f33b1-b355-525e-a4e4-87a0397f5be4
 ```
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_bbb.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_bbb1.png?raw=true" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod3_bbb2.png?raw=true" width="750" />
 
 ### Storage Client
 
