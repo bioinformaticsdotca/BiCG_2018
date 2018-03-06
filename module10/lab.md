@@ -177,7 +177,7 @@ XXX is the last octet from the floating IP address you assigned to the instance.
 Once logged into your virtual machine, you will first need to upgrade the package index and existing packages by running:
 
 ```
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get -y upgrade
 ```
 
 
@@ -212,10 +212,10 @@ sudo docker run hello-world
 
 ## Run a Bioinformatics Tool in Docker
 
-You will first need a data file.  To get the file from the ftp server, we will use the `wget` command inside the virtual machine.
+You will first need a data file.  To get the file from the server where we host it, we will use the `wget` command inside the virtual machine.
 
 ```
-wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
+wget http://142.1.177.224/samples/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
 ```
 
 You will need the Docker container with the "bamstats" tool.  Please use the Docker `pull` command to retrieve the container.
@@ -328,7 +328,7 @@ Advanced functionality provided by the storage client:
 
 ### Create a Configuration File
 
-By default, the storage client only uses a single cpu for its operation, so it's important to tune its configuration to your local environment if you run it on a virtual machine with mutiple CPUs.
+By default, the storage client only uses a single CPU for its operation, so it's important to tune its configuration to your local environment if you run it on a virtual machine with mutiple CPUs in order to make best use of the compute capacity and improved download speed.
 
 First, determine how many cores and how much memory you have available.
 
@@ -337,16 +337,17 @@ cat /proc/cpuinfo | grep -c processor
 free -g
 ```
 
-Considering that usually there is no analysys going until the data is retrieved, it is safe to allocate 7 cores and 49 GB of RAM (7 GB per thread) on a VM with 8 cores and 55 GB of RAM, leaving one CPU and 6 GB of RAM for the system. Create a text file `/home/ubuntu/application.properties` that contains the access token and the number of cores and memory per core as below.  Use `cat` to view the file contents.  
+Create a text file `/home/ubuntu/application.properties` that contains the access token and the number of cores and memory per core as below (1 CPU and 5 GB of RAM).
 
-
+```
 cat << EOF > /home/ubuntu/application.properties
 #accessToken= 
-transport.parallel=7
-transport.memory=7
+transport.parallel=1
+transport.memory=5
 EOF
 
 ```
+NOTE: When doing a real analysis the virtual machine flavor used will most probably be larger, with  8 cores being the most common one. Considering that usually there is no analysys going until the data is retrieved, it is safe to allocate 7 cores and 49 GB of RAM (7 GB per thread) on a VM with 8 cores and 55 GB of RAM, leaving one CPU and 6 GB of RAM for the system. 
 
 ### How to Download Data using the storage client
 
