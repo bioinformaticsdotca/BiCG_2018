@@ -454,7 +454,8 @@ Enter a descriptive name for your snapshot, preferably "your_name_snap" and clic
 
 ## Terminate the Old Instance
 
-To terminate your old instance, place a check mark in the box beside the name of your instance and click on the red "Delete Instances" button.  In the dialogue box, verify the instance name and click on "Delete Instances."
+Once the snapshot was taken (it will take a few minutes for the new image to be uploaded to the image repository) you can terminate your old instance.  
+Go to the "Instances" tab and place a check mark in the box beside the name of your instance and click on the red "Delete Instances" button.  In the dialogue box, verify the instance name and click on "Delete Instances."
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod4_b.png?raw=true" width="750" />
 
