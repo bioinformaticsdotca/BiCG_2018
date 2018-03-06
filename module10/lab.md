@@ -348,7 +348,7 @@ sudo docker run -v /tmp/:/data -v /home/ubuntu/application.properties:/icgc/icgc
 
 As the files uploaded for this lab's purposes are open access cell line BAM files, their size is smaller (~ 5 GB), so the download should complete in a couple of minutes. 
 
-**Note:** It takes around 16 min for a 100 GB file to be downloaded using a VM with 8 cores and 56 GB of RAM, and an additional 5-6 min is needed by the storage client to perform an automated checksum to verify downloaded data's integrity.
+**NOTE:** It takes around 16 min for a 100 GB file to be downloaded using a VM with 8 cores and 56 GB of RAM, and an additional 5-6 min is needed by the storage client to perform an automated checksum to verify downloaded data's integrity.
 
 The download time depends on the disk speed which is shared with other VMs running on the same physical server, as well as other shared resources (network load, storage cluster).
 
@@ -369,7 +369,7 @@ Do not snapshot a VM that contains confidential tokens or protected data if the 
 
 Congratulations, you have completed part 1 of the lab.
 
-**Note:** Leave your VM running as it will be used in the second part.
+**NOTE:** Leave your VM running as it will be used in the second part.
 
 
 ## Introduction - lab part 2
@@ -432,10 +432,11 @@ While being logged into the VM configured in part 1 of the lab, perform the foll
 rm -i ~/.bash_history
 ```
 
-**Note:** the `-i` option in `rm` will prompt you to answer yes or no to remove a file.  It's a good idea to use `-i` with `rm` so that you don't inadvertently delete the wrong thing.
+**NOTE:** the `-i` option in `rm` will prompt you to answer yes or no to remove a file.  It's a good idea to use `-i` with `rm` so that you don't inadvertently delete the wrong thing.
 
 Remove your public key from the default user’s “authorized_keys” file, so you don’t have automatically free access to future virtual machines based on the snapshot.  
-**Note:** after removing your public key you will not be able to log in again into this virtual machine, and you will have to start a new one from the snapshot.  Your VM session may suspend while you take the snapshot.  Initiating a new ssh session will fail because the public key was removed. 
+
+**NOTE:** after removing your public key you will not be able to log in again into this virtual machine, and you will have to start a new one from the snapshot.  Your VM session may suspend while you take the snapshot.  Initiating a new ssh session will fail because the public key was removed. 
 
 ```
 rm –i ~/.ssh/authorized_keys
