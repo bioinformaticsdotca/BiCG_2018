@@ -553,5 +553,6 @@ Monitor the bootstrap progress by checking the boot console output in “Instanc
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod4_g.png?raw=true" width="750" />
 
-When this completes, you can assign a floating IP.  If you browse to the IP (http://142.1.177.xxx/bamstats_report.html.data/20_Coverage.html), you can see the bamstats report.
+When this completes, you can assign a floating IP.  
+If you browse to the IP (http://142.1.177.xxx/bamstats_report.html.data/20_Coverage.html), you can see the bamstats report.
 
