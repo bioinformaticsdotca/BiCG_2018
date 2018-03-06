@@ -128,7 +128,7 @@ samtools index ecoli.illumina.50x.mapped_to_pacbio_contigs.sorted.bam
 Now we can run pilon:
 
 ```
-java -Xmx4G -jar /usr/local/pilon/pilon_2.11-1.21-one-jar.jar --genome assemblies/ecoli.pacbio.25x.canu-contigs.fasta --frags ecoli.illumina.50x.mapped_to_pacbio_contigs.sorted.bam --output assemblies/ecoli.pacbio.25x.canu-contigs-pilon
+java -Xmx4G -jar /usr/local/pilon/pilon-1.22.jar --genome assemblies/ecoli.pacbio.25x.canu-contigs.fasta --frags ecoli.illumina.50x.mapped_to_pacbio_contigs.sorted.bam --output assemblies/ecoli.pacbio.25x.canu-contigs-pilon
 ```
 
 Let's also polish the nanopore assembly:
@@ -137,7 +137,7 @@ Let's also polish the nanopore assembly:
 bwa index assemblies/ecoli.nanopore.50x.canu-contigs.fasta
 bwa mem -t 4 -p assemblies/ecoli.nanopore.50x.canu-contigs.fasta ecoli.illumina.50x.fastq | samtools sort -T tmp -o ecoli.illumina.50x.mapped_to_nanopore_contigs.sorted.bam -
 samtools index ecoli.illumina.50x.mapped_to_nanopore_contigs.sorted.bam
-java -Xmx4G -jar /usr/local/pilon/pilon_2.11-1.21-one-jar.jar --genome assemblies/ecoli.nanopore.50x.canu-contigs.fasta --frags ecoli.illumina.50x.mapped_to_nanopore_contigs.sorted.bam --output assemblies/ecoli.nanopore.50x.canu-contigs-pilon
+java -Xmx4G -jar /usr/local/pilon/pilon-1.22.jar --genome assemblies/ecoli.nanopore.50x.canu-contigs.fasta --frags ecoli.illumina.50x.mapped_to_nanopore_contigs.sorted.bam --output assemblies/ecoli.nanopore.50x.canu-contigs-pilon
 ```
 
 After running pilon on the PacBio and nanopore assemblies, re-run the Quast step to generate a new report including all five assemblies. Did pilon-polishing help the accuracy of the long read assemblies?
