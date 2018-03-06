@@ -480,15 +480,16 @@ sudo apt-get install -y python-openstackclient
 
 ## Download the Environment Variables
 
-In your browser on the Collaboratory website, in the lefthand side in the expanded "Compute" menu, select "Access and Security."
-
-Click on the "API Access" tab.  Click on the "Download OpenStack RC File."
+In your browser on the Collaboratory website, in the lefthand side in the expanded "Compute" menu, click on the "API Access" tab.  
+Click on the "Download OpenStack RC File v3".
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod4_d.png?raw=true" width="750" />
 
 ## Source the Credentials
 
-Create a file and paste the contents of the download, then source them.
+Open the file downloaded with your browser using a text editor and copy its contents.
+
+Inside your virtual machine, create a file and paste the contents of the downloaded file, then source them.
 
 If using vi as your editor, press "i" for insert and then CTRL+v to paste the file contents that you downloaded.  Hit ESC to exit insert mode.  Press `:wq` to save and exit.
 
