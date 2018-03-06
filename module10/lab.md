@@ -378,7 +378,7 @@ Congratulations, you have completed part 1 of the lab.
 
 Welcome to the lab for Sharing and Scaling a VM! 
 
-This part of the exercise simulates a situation where two researchers, John and Mary have accounts in Collaboratory and want to collaborate in their reserch.
+This part of the exercise simulates the case of two researchers, John and Mary who have accounts in Collaboratory and want to collaborate in their reserch.
 Mary is part of Project A and has developed a novel workflow, and she would like to share the end-result with John who is part of Project B in Collaboratory. Mary will snapshot the VM customized with the workflow she developed and she will share it only with the users of Project B.
 
 After this lab, you will be able to:
