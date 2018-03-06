@@ -424,9 +424,9 @@ echo "My name is <your name> and my favourite food is <food>" > /home/ubuntu/stu
 
 ## Prepare to Take a Snapshot
 
-While being logged into the VM configured in part 1 of the lab, do the followin steps:
+While being logged into the VM configured in part 1 of the lab, perform the following steps:
 
-### Clean Up Its History
+### Clean Up the Bash History
 
 ```
 rm -i ~/.bash_history
