@@ -392,6 +392,9 @@ Congratulations, you have completed part 1 of the lab.
 
 Welcome to the lab for Sharing and Scaling a VM! 
 
+This part of the exercise simulates a situation where two researchers, John and Mary who both accounts in Collaboratory want to collaborate in their reserch.
+Mary is part of Project A and has developed a novel workflow and she wants to share the end-result with John who is part of Project B in Collaboratory. Mary will snapshot the VM customized with the workflow she developed and she will share it only with the users of Project B.
+
 After this lab, you will be able to:
 
 * Snapshot a VM and share it with other cloud tenants.  
@@ -513,21 +516,27 @@ glance image-list  # find the ID of the snapshot
 
 In the list, find the ID of your snapshot.
 
-Share it with the project ID a295a12382ef451b9bf2353d624455bb
+Change the visibility of the image to "shared":
 
 ```
-glance member-create b42a556a-9525-4575-9828-9f01833a939d a295a12382ef451b9bf2353d624455bb
+glance image-update --visibility shared
+```
+
+Share it with the project ID 7c87d460035243d796a7b71e5eb2b687 that the instructor has access to (Project B for the purpose of this exercise).
+
+```
+glance member-create IMAGE_ID 7c87d460035243d796a7b71e5eb2b687
 ```
 
 In the command, the first ID is the ID of your snapshot and the second ID is the project ID you wish to share with.
 
-Now when the instructor whose project ID is a295a12382ef451b9bf2353d624455bb is on the Collaboratory site, in "Images" under the "Shared with Me" tab he will see a list of shared snapshots.
+Now when the instructor whose project ID is 7c87d460035243d796a7b71e5eb2b687 is on the Collaboratory site, in "Images" filtered by "Visibility: Shared With Project" he will see a list of shared snapshots.
 
-## Using `cloud-init` to Bootstrap a VM
+## Extra lab task: Using `cloud-init` to Bootstrap a VM
 
-You can use `cloud-init` to automate all the steps that you did manually from the previous lab.
+You can use `cloud-init` to automate all the steps that you did manually from the previous lab (installing docker, downloading the sample file and running bamstats on it as well as serving the html report over an ad-hoc python web server).
 
-Launch a new Ubuntu 16.04 instance using flavor c1.micro.  Under the “Post-creation” tab select “Direct Input” from the drop-down menu and paste the following:
+Launch a new Ubuntu 16.04 instance using flavor c1.micro.  Under the “Post-creation” tab select “Direct Input” from the drop-down menu, and paste the following commands:
 
 ```
 #!/bin/sh
