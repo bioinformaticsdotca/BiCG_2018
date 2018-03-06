@@ -524,7 +524,7 @@ Now when the instructor whose project ID is 7c87d460035243d796a7b71e5eb2b687 is 
 
 ## Extra lab task: Using `cloud-init` to Bootstrap a VM
 
-You can use `cloud-init` to automate all the steps that you did manually from the previous lab (installing docker, downloading the sample file and running bamstats on it as well as serving the html report over an ad-hoc python web server).
+You can use `cloud-init` to automate all the steps that you did manually in the previous lab (installing docker, downloading the sample file and running bamstats on it as well as serving the html report over an ad-hoc python web server).
 
 Launch a new Ubuntu 16.04 instance using flavor c1.micro.  Under the “Post-creation” tab select “Direct Input” from the drop-down menu, and paste the following commands:
 
@@ -553,5 +553,5 @@ Monitor the bootstrap progress by checking the boot console output in “Instanc
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/images/mod4_g.png?raw=true" width="750" />
 
-When this completes, you can assign a floating IP.  If you browse to the IP, you can see the bamstats report.
+When this completes, you can assign a floating IP.  If you browse to the IP (http://142.1.177.xxx/bamstats_report.html.data/20_Coverage.html), you can see the bamstats report.
 
