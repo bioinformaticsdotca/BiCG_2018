@@ -499,16 +499,14 @@ If using vi as your editor, press "i" for insert and then CTRL+v to paste the fi
 
 ## Share the Snapshot
 
-Execute the following commands to share the snapshot:
+Execute the following command to find the IMAGE_ID of your snapshot:
 
 ```
 openstack image list  
 
 ```
 
-In the list, find the ID of your snapshot.
-
-Change the visibility of the image to "shared". Use the IMAGE_ID obtained above:
+Change the visibility of the image to "shared". Use the IMAGE_ID of your snapshot obtained above:
 
 ```
 openstack image set --shared IMAGE_ID
