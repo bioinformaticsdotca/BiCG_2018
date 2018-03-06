@@ -174,7 +174,7 @@ XXX is the last octet from the floating IP address you assigned to the instance.
 
 ## Customize Your Virtual Machine
 
-You will first need to upgrade your package index and existing packages by running:
+Once logged into your virtual machine, you will first need to upgrade the package index and existing packages by running:
 
 ```
 sudo apt-get update && sudo apt-get upgrade
@@ -212,7 +212,7 @@ sudo docker run hello-world
 
 ## Run a Bioinformatics Tool in Docker
 
-You will first need a data file.  To get the file from the ftp server, we will use the `wget` command.
+You will first need a data file.  To get the file from the ftp server, we will use the `wget` command inside the virtual machine.
 
 ```
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
@@ -238,7 +238,7 @@ The OS inside the Docker container is different than that of the host VM, and yo
 cat /etc/lsb-release
 ```
 
-Recall that you chose Ubuntu 16.04 for our VM, but the container is built based on a Ubuntu 14.04 image.
+Recall that you chose Ubuntu 16.04 for your VM, but the container is built based on a Ubuntu 14.04 image.
 
 Inside the Docker container, execute the bamstats binary against the sample file.
 
@@ -279,7 +279,7 @@ Other data sets are usually available on-line and can be accessed over HTTP(s) p
 Data repositories have different access policies and download clients:
 http://docs.icgc.org/cloud/repositories/#download-client-operation_1
 
-OICR created a unified client that can be used to download data from multiple repos http://docs.icgc.org/cloud/icgc-get/, but for this lab we will use the native "ICGC storage client" that can be used only to access the data sets stored in Collaboratory and AWS.
+OICR created a unified client that can be used to download data from multiple repos http://docs.icgc.org/cloud/icgc-get/, but for this lab we will use the native "ICGC storage client" http://docs.icgc.org/cloud/guide/#install-from-docker-image that can be used only to access the data sets stored in Collaboratory and AWS.
 
 ### Collaboratory Data
 
