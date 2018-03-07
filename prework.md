@@ -5,16 +5,16 @@ title: BiCG PreWork
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics 2018 Pre-Work
 image: /site_images/CBW_cancerDNA_icon-16.jpg
-home: https://bioinformaticsdotca.github.io/bicg_2017
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
-## Install These Tools Before the Workshop:
+## Install These Tools Before the Workshop: <a id="preworkshop"></a>
 
 1) A robust text editor.   
 
 * For Windows/PC - [notepad++](http://notepad-plus-plus.org/)  
 * For Linux - [gEdit](http://projects.gnome.org/gedit/)  
-* For Mac – [TextWrangler](http://www.barebones.com/products/textwrangler/download.html)
+* For Mac – [BBEdit 12](http://www.barebones.com/products/textwrangler/download.html)
 
 2) A file decompression tool.  
 
