@@ -288,10 +288,30 @@ OICR created a unified client that can be used to download data from multiple re
 
 In order to access ICGC data stored in the Cloud you need DACO approval, but for this workshop we uploaded a BAM file that is open access and can be used to test the functionality of the storage client. The same methodology can be used to download protected data, if a valid access token is added in the storage client's configuration file.
 
-Below is the name and object ID for the open-access BAM file stored in Collaboratory:
+Below are the names and object IDs for the open-access BAM files stored in Collaboratory:
 
 ```
-hg19.chr22.5x.normal.bam 26ed125c-bc28-552c-b82d-1de2561b3911
+Size(MB)   Object ID                            Name
+4229    561d9ddf-bbbc-5988-91c5-3c46d0d67ebe    HCC1143_BL.bam
+244     75931e5b-ac08-57d6-b6d2-792e1609c588    HCC1143_BL.RG8.bam
+243     fd858cf7-e19b-566a-98cc-63516d607f2d    HCC1143_BL.RG6.bam
+243     09a31178-48e9-5632-9085-a8a34c6144e3    HCC1143_BL.RG2.bam
+241     ddd9d9e0-ac67-50b4-8a57-d8854372269c    HCC1143_BL.RG4.bam
+240     caa34f59-f93f-53d3-aca0-03a18b8f7892    HCC1143_BL.RG1.bam
+239     3825dd85-cd0c-5121-9c05-0ce3e5883a08    HCC1143_BL.RG5.bam
+239     95ce9fda-b0aa-5e79-ae2b-74555031fee4    HCC1143_BL.RG10.bam
+239     08a65e40-4ff0-547d-89cf-b0a2859a5602    HCC1143_BL.RG3.bam
+238     891f33b1-b355-525e-a4e4-87a0397f5be4    HCC1143_BL.RG16.bam
+237     cff12c98-3ce7-5afa-8509-ba4a69880119    HCC1143_BL.RG9.bam
+236     9ea3f173-2c6a-5dc8-974c-a0887f99c15f    HCC1143_BL.RG7.bam
+234     b5e1eb25-c297-53f9-b04f-0261b7c2a1f7    HCC1143_BL.RG14.bam
+231     9717921b-67f3-5914-8c66-db3ef1ad6d61    HCC1143_BL.RG15.bam
+226     927dd39e-1199-55ac-b051-58b738c88bcb    HCC1143_BL.RG12.bam
+215     147356e1-80cb-598a-ad0b-86007b92cb5e    HCC1143_BL.RG13.bam
+207     350d1d46-ddd1-5d67-bad0-94b29358cd2a    HCC1143_BL.RG11.bam
+6       dae332b8-107f-5e58-aefa-5c00de5d0bb3    HCC1143.bam.bai
+6       40c1b7a1-980e-57c5-9b82-538f1fdd5fc1    HCC1143_BL.bam.bai
+
 ```
 
 
