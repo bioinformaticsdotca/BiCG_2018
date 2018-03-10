@@ -1,7 +1,7 @@
 ---
 layout: tutorial_page
-permalink: /BiCG_2018_module2_igv
-title: BiCG Lab 2 IGV
+permalink: /BiCG_2018_module3_igv
+title: BiCG Lab 3 IGV
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics
 image: /site_images/CBW_cancerDNA_icon-16.jpg
