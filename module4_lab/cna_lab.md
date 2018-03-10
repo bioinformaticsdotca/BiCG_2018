@@ -487,7 +487,7 @@ We would like to be able to identify copy number heterogeneity, and select betwe
 
 The copy number profiles we will be looking at come from a primary triple-negative breast cancer patient tumour (SA501T) sequenced as part of [this study](http://www.nature.com/nature/journal/v518/n7539/full/nature13952.html) which looked at clonal dynamics in patient-derived xenografts. 
 
-We will also look at Titan profiles from two xenograft passages derived from this patient: SA501X3F, a third-passage xenograft tumour; and SA501X4F, a fourth-passage xenograft tumour derived from SA501X3F. The copy number landscape of these two xenograft tumours were examined with single cell whole-genome sequencing in a [recent paper](http://www.nature.com/nmeth/journal/v14/n2/full/nmeth.4140.html), so we can assess the validity of Titan's predictions.
+We will also look at Titan profiles from two xenograft passages derived from this patient: SA501X3F, a third-passage xenograft tumour; and SA501X4F, a fourth-passage xenograft tumour derived from SA501X3F.
 
 ### Choosing the Number of Clusters
 
@@ -630,17 +630,7 @@ Answers:
 (5) Chromosome X.  
 (6) A sub-clone with only one copy of chromosome X emerges and becomes dominant over time. The original patient tumour SA501T has one major population, which has 2 copies of chromosome X. In the third-passage xenograft SA501X3F, most of the population has lost one copy of X, leading to loss-of-heterozygosity and an "outward" shift in BAF values. Only a minor population (about 15%) of cells with 2 copies of chromosome X remain. By the fourth-passage SA501X4F, the ancestral population with two copies of X is no longer detectable, and Titan predicts one major population with a single copy of X.   
 
-### Comparison with Single Cell Sequencing
 
-As mentioned above, a recent study carried out single cell whole-genome sequencing on the SA501X3F and SA501X4F tumours. It turns out that the SA501X3F tumour indeed has two major copy number populations, with either one or two copies of chromosome X. Here are three single-cell profiles from this tumour, with copy number inferred using the HMMcopy R package:
-
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/zahn_et_al_2017_SA501X3F_single_cells.png?raw=true" alt="zahn_et_al_2017_SA501X3F_single_cells" width="750" /> 
-
-Below is a copy number heatmap showing 260 single cells from SA501X3F (each row is one cell). It turns out that 46 out of these 260 cells had two copies of chromosome X, which corresponds to 17.7% of the sampled population. This appears to agree quite well with Titan's prediction (14%).
-
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/zahn_et_al_2017_SA501X3F_260_single_cells_heatmap.png?raw=true" alt="zahn_et_al_2017_SA501X3F_260_single_cells_heatmap" width="750" /> 
-
-Further more, sequencing 254 single cells from SA501X4F showed no trace of the population with two copies of chromosome X. See the paper for details. 
 
 ## Troubleshooting
 
