@@ -39,6 +39,6 @@ home: https://bioinformaticsdotca.github.io/bicg_2018
 | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break |  
 | 3:30 | Module 10 lab | 3:30 | Module 13: Genes to Pathways (Reimand) | 3:30 | Module 15 lab |  
 | 5:00 | Dinner | 5:00 | Dinner | 5:30 ||  
-| 7:00 | Integrated Assignment | 7:00 | Integrated Assignment | 7:00 | Banquet |  
+| 7:00 | Integrated Assignment | 7:00 | Banquet | | |  
 
        
