@@ -8,7 +8,7 @@ image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
-# BBioinformatics for Cancer Genomics 12 Lab
+# Bioinformatics for Cancer Genomics 12 Lab
 
 This lab was created by Solomon Shorser
 
@@ -47,9 +47,9 @@ ssh -i path_to_private_key ubuntu@10.0.0.XXX
 ### Install Java
 
 ```
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:webupd8team/java (you will get some warnings, but hit Enter to add)
 sudo apt-get update
-sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java9-installer
 ```
 
 ### Get the dockstore tool
@@ -58,7 +58,7 @@ sudo apt-get install oracle-java8-installer
 mkdir -p ~/sbin
 cd ~/sbin
 sudo apt-get install wget
-wget https://github.com/ga4gh/dockstore/releases/download/1.0/dockstore
+wget https://github.com/ga4gh/dockstore/releases/download/1.3.6/dockstore
 chmod u+x dockstore
 ```
 
@@ -109,7 +109,7 @@ sudo apt-get install curl
 curl -sSL https://get.docker.com/ | sh
 ```
 
-This will take a few minutes. Detailed installation information can be found [here] (https://docs.docker.com/v1.8/installation/ubuntulinux/)
+This will take a few minutes. Detailed installation information can be found [here] (https://docs.docker.com/)
 
 #### Add your user to the docker user group
 
