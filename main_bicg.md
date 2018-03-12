@@ -17,7 +17,7 @@ Pre-readings, pre-work, and laptop setup instructions can be found here [here](h
 
 If you have questions or comments, visit the workshop [Q&A forum](https://classroom.google.com). You may need to join the group by clicking on the "+" symbol and entering the class code.
 
-You can download the printed course manual (here)[https://drive.google.com/a/bioinformatics.ca/file/d/1akmOOcb5zRjC7-CNvjUaHTD0iHbJZYwv/view?usp=sharing].  
+You can download the printed course manual [here](https://drive.google.com/a/bioinformatics.ca/file/d/1akmOOcb5zRjC7-CNvjUaHTD0iHbJZYwv/view?usp=sharing).  
 
 # Day 1 <a id="day1"></a>
 
