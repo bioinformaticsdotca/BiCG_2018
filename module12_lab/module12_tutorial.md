@@ -1,13 +1,14 @@
 ---
-layout: post2
-permalink: /bioinformatics_on_big_data_module5_lab/
-title: Bioinformatics on Big Data 2016 Module 5 Lab
-header1: Bioinformatics on Big Data 2016
-header2: Module 5 Lab
-image: CBW_bigdata_icon.jpg
+layout: tutorial_page
+permalink: /BiCG_2018_module12
+title: BiCG Lab 12
+header1: Workshop Pages for Students
+header2: Bioinformatics for Cancer Genomics
+image: /site_images/CBW_cancerDNA_icon-16.jpg
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
-# Bioinformatics on Big Data Module 5 Lab
+# BBioinformatics for Cancer Genomics 12 Lab
 
 This lab was created by Solomon Shorser
 
