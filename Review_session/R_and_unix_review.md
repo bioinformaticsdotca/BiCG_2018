@@ -128,7 +128,7 @@ head test.fasta | grep TTT
 ### Connecting To RStudio
 
 * Open an internet browser.  
-* In the URL bar, enter *http://cbwxx.dyndns.info:8080* replacing *xx* with your provided student number.  
+* In the URL bar, enter *http://##.oicrcbw.ca:8080* replacing *xx* with your provided student number.  
 * Enter the supplied username and password.  
 
 ### RStudio Notebooks
