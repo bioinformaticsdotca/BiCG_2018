@@ -8,7 +8,7 @@ image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
-# CBW BiCG Module 2 - IGV lab
+# CBW BiCG Module 3 - IGV lab
 
 This lab was created by Sorana Morrissy, then modified by Florence Cavalli
 
