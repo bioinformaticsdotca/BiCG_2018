@@ -57,7 +57,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lab Practical: Connecting to the Cloud](http://bioinformaticsdotca.github.io/AWS_setup)
 
-[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1VzrLRW-pF2t0KS2OYTmH-bp3SU8TyZ9y/view?usp=sharing)  
+[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/18VP5qcIFeHv1k47tuGVRUT7yffXBtcJI/view?usp=sharing)  
 
 * We have set up 27 instances on the Amazon cloud - one for each student. In order to log in to your instance, you will need a security certificate. If you plan on using Linux or Mac OS X, please download [this certificate](http://main.oicrcbw.ca/private/CBWNY.pem). Otherwise if you plan on using Windows (with Putty and Winscp), please download [this certificate](http://main.oicrcbw.ca/private/CBWNY.ppk).  
 
