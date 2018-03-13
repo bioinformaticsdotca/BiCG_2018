@@ -67,7 +67,7 @@ ls $CNA_WORKSPACE
 You can also access your workspace directory through your web browser (replace XX with your student number):
 
 ```bash
-http://cbwXX.dyndns.info/Module6
+http://XX.oicrcbw.ca/Module6
 ```
 
 Let's create an environment variable for the install directory, so that we can later refer to the locations of individual programs and files relative to this path:
@@ -667,7 +667,7 @@ We can use a programming language like R to further explore the Titan results. F
 Let's start an RStudio instance by opening the web browser and entering:
 
 ```
-http://31.oicrcbw.ca:8080
+http://XX.oicrcbw.ca:8080
 ```
 
 Where the XX is your student number. Now click on the Console, and run this to set the working directory:
