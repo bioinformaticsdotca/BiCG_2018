@@ -5,7 +5,7 @@ title: BiCG
 header1: Bioinformatics for Cancer Genomics 2018
 header2: Integrative Assignment using Galaxy
 image: /site_images/CBW_cancerDNA_icon-16.jpg
-home: https://bioinformaticsdotca.github.io//bicg_2017
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
 # Galaxy
