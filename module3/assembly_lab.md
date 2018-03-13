@@ -58,6 +58,12 @@ Now we'll assemble the E. coli 50x Illumina data using the [spades](http://bioin
 spades.py -o ecoli-illumina-50-spades/ -t 4 --12 ecoli.illumina.50x.fastq
 ```
 
+In this command:
+
+`o` specifies the output directory  
+`-t` specifies the number of threads; in this case 4  
+`--12` specifies the k-mer size  
+
 After the assembly completes, let's move the results to a new directory that we'll use to keep track of all of our assemblies:
 
 ```
@@ -77,6 +83,8 @@ We'll use `abyss-fac.pl` to calculate how contiguous our spades assembly is. Typ
 abyss-fac.pl -t 500 assemblies/ecoli.illumina.50x.spades-contigs.fasta | column -t
 ```
 
+In this command, `-t 500` specifies that we only want to look at contigs that are at least 500bp in length.  
+
 The N50 statistic is the most commonly used measure of assembly contiguity. An N50 of x means that 50% of the assembly is represented in contigs x bp or longer. What is the N50 of the spades assembly? How many contigs were produced?
 
 ## E. coli Genome Assembly with Long Reads
@@ -86,6 +94,12 @@ Now, we'll use long sequencing reads to assemble the E. coli genome. Long sequen
 ```
 canu java=/usr/local/jre1.8.0_162/bin/java gnuplotTested=true -p ecoli-pacbio-canu -d ecoli-pacbio-auto genomeSize=4.6m -pacbio-raw ecoli.pacbio.25x.fastq
 ```
+
+In this command:  
+`-p` is the prefix of output files  
+`-d` is the output directory  
+`genomeSize` is the expected genome size  
+`-pacbio-raw` indicates the reads were generated on a PacBio RS II instrument, and have had no processing done to them.  
 
 When it completes, copy the Pacbio assembly to our results directory:
 
