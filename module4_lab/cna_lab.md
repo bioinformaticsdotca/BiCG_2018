@@ -295,7 +295,7 @@ column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 The final interesting file that OncoSNP produces is a compressed file with plots `HCC1395.*.ps.gz`.  Download the plots you produced by entering this address in your browser:
 
 ```bash
-http://cbwXX.dyndns.info/Module6/analysis/snp6/oncosnp
+http://##.oicrcbw.ca/Module6/analysis/snp6/oncosnp
 ```
 
 Where XX is your student number. You can see an explanation of the OncoSNP CNA ranks [here](https://sites.google.com/site/oncosnp/user-guide/oncosnpranking). 
@@ -475,8 +475,8 @@ Finally, a Titan segment file and an IGV compatible `.seg` file can be generated
 perl $CNA_WORKSPACE/scripts/createTITANsegmentfiles.pl \
 	-id=test \
 	-infile=$CNA_WORKSPACE/analysis/exome/titan/HCC1395.titan_results.txt \
-	-outfile=$CNA_WORKSPACE/analysis/exome/titan/HCC1395.titan_results.segs.txt \
-	-outIGV=$CNA_WORKSPACE/analysis/exome/titan/HCC1395.titan_results.segs
+	-outfile=$CNA_WORKSPACE/analysis/exome/titan/HCC1395.titan_results.seg.txt \
+	-outIGV=$CNA_WORKSPACE/analysis/exome/titan/HCC1395.titan_results.seg
 ```
 
 The `.seg` files can be opened in IGV to compare multiple samples. See the [IGV website](https://software.broadinstitute.org/software/igv/SEG) for more details regarding the `.seg` format.
@@ -501,7 +501,7 @@ unzip module4_cna_plots.zip
 You can then download the entire zip file or individual plots from your browser (XX is your student number):
 
 ```bash
-http://cbwXX.dyndns.info/Module6/module4_cna_plots
+http://##.oicrcbw.ca/Module6/module4_cna_plots
 ```
 
 Titan uses the expectation-maximization (EM) algorithm to find the most likely values of the parameters. When given a more complex model (i.e. more clusters), this approach can over-fit and assign higher likelihood to runs with more clusters. So in order to choose the number of clusters, it is recommended not just to look at the likelihood, but at the DBW validity index which Titan provides at the end of the parameter file (lower index values are better):
@@ -663,7 +663,7 @@ We can use a programming language like R to further explore the Titan results. F
 Let's start an RStudio instance by opening the web browser and entering:
 
 ```
-http://cbwXX.dyndns.info:8080
+http://31.oicrcbw.ca:8080
 ```
 
 Where the XX is your student number. Now click on the Console, and run this to set the working directory:
