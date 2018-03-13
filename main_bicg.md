@@ -93,7 +93,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 *<font color="#827e9c">Sorana Morrissy</font>* 
 
-[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1jETO0NyarSNdi_PTg89ivQnI-cFwlI6g/view?usp=sharing)  
+[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1cO1Vqznqvcd0PDjnzYhOUW_V4cdwyKG5/view?usp=sharing)  
 
 [Lab Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1QXtbr8sZGF2UTVLIDROUjI4i2HgUqNgY/view?usp=sharing)  
 
