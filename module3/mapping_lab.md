@@ -8,6 +8,8 @@ image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
+This tutorial was created by Jared Simpson.
+
 # Introduction
 
 In this tutorial we will use [bwa](https://github.com/lh3/bwa) to map reads from a breast cancer cell line to the human reference genome.
@@ -35,6 +37,14 @@ In the following command we provide bwa with the location of the reference genom
 bwa mem -t 4 -p ~/CourseData/CG_data/Module3/human_g1k_v37.fasta ~/CourseData/CG_data/Module3/reads.tumour.fastq > tumour.sam
 ```
 
+In this command:  
+
+`mem` specifies the bwa algorithm to run.  
+`-t 4` specifies the number of threads to use for the alignment; in this case we use 4 threads.  
+`-p` indicates the reference genome (in fasta format) that we want to align to.  
+We also need to specify the fastq file we want to align.
+`>` redirects the output from bwa mem to tumour.sam instead of printing it to the screen.  
+
 
 ## Exploring the alignments
 
@@ -51,6 +61,8 @@ In this SAM file, the reads are ordered by their position in the original FASTQ 
 ```
 samtools view -Sb tumour.sam | samtools sort -o tumour.sorted.bam
 ```
+
+In this command, `-o` specifies the output file. The `|` sends the output from the first half of the command to the second half.  
 
 The samtools view command can also be used to convert BAM to SAM:
 
@@ -106,6 +118,8 @@ The individual's genotype at this position is likely A/G.
 ```
 samtools mpileup -f ~/CourseData/CG_data/Module3/human_g1k_v37.fasta -r 9:14,196,087-14,196,087 tumour.sorted.bam
 ```
+
+In this command, `-f` indicates our reference (in fasta format), `-r` specifies the region we want to look at.  
 
 Load the data into IGV by performing the following:
 
