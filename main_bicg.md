@@ -188,9 +188,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/14hVisQRtn30K6pycWfCYj3TKlX3v1fiz/view?usp=sharing)  
 
-[Lab Practical - Annovar](https://bioinformaticsdotca.github.io/bicg_2017_lab_8_annovar)  
-
-[Lab Practical - gProfiler](https://bioinformaticsdotca.github.io/bicg_2017_lab_8_gprofiler)  
+[Lab Practical - gProfiler](https://bioinformaticsdotca.github.io/bicg_2018_lab_8_gprofiler)  
 
 ***
 
@@ -198,7 +196,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 ## Guest Lecture
 
-*<font color="#827e9c">Hammell</font>*
+*<font color="#827e9c">Molly Hammell</font>*
 
 [Lecture]()
 
