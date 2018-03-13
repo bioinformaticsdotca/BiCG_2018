@@ -126,9 +126,11 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lab Practical](https://github.com/griffithlab/rnaseq_tutorial/wiki/Integrated-Assignment)  
 
-[Ballgown code](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module_6_gene_expression/assignment_ballgown.R)  
+[Ballgown code](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdbFlCeHEzcDBDSmZ4aTZ4dHpiQUVET0c1TU1j/view?usp=sharing)  
 
-[Supplementary code](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module_6_gene_expression/assignment_Supplementary.R)  
+[Supplementary code](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdZndNNy1LYVVWNEJaT0x3Ykp3WTQteW9jTzhv/view?usp=sharing)
+
+[Supplementary R output](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdNWZ2UEtUSDlTaVM2VGpWMTFQMkRoamFLYXdF/view?usp=sharing)
 
 ## Integrated Assignment
 
