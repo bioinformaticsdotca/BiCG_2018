@@ -62,7 +62,7 @@ In this command:
 
 `o` specifies the output directory  
 `-t` specifies the number of threads; in this case 4  
-`--12` specifies the k-mer size  
+`--12` indicates that the reads are paired and interleaved; first read in pair folllowed by second read in pair in the fastq file    
 
 After the assembly completes, let's move the results to a new directory that we'll use to keep track of all of our assemblies:
 
