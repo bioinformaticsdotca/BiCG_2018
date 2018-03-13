@@ -102,6 +102,10 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 * [Installation](https://bioinformaticsdotca.github.io/bicg_2018_module6_lab_install)  
 * [Data Preprocessing](https://bioinformaticsdotca.github.io/bicg_2018_module6_lab_preprocessing)
 
+## Integrative Assignment  
+
+[Assignment](https://bioinformaticsdotca.github.io/bicg_2018_ia2)
+
 ***
 
 # Day 3 <a id="day3"></a>  
