@@ -59,28 +59,28 @@ To compensate on time, we're going to upload our data directly from the AWS to t
 
 The link needed for the next step is:
 
-* http://cbwXX.dyndns.info/IntegrativeAssignment/refs/Homo_sapiens.GRCh38.86.chr9.gtf
+* http://##.oicrcbw.ca/IntegrativeAssignment/refs/Homo_sapiens.GRCh38.86.chr9.gtf
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/DataUp01.jpg?raw=true" alt="Upload file" width="1000" /> 
 The next link needed is:
 
-* http://cbwXX.dyndns.info/IntegrativeAssignment/refs/Homo_sapiens.GRCh38.dna.chromosome.9.fa
+* http://##.oicrcbw.ca/IntegrativeAssignment/refs/Homo_sapiens.GRCh38.dna.chromosome.9.fa
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/DataUp03.jpg?raw=true" alt="Choose local file" width="1000" /> 
 Finally, the following links are needed for the next step:
 
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C02_read1.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C02_read2.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C03_read1.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C03_read2.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C06_read1.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C06_read2.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N02_read1.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N02_read2.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N03_read1.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N03_read2.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N06_read1.fasta
-* http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N06_read2.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/carcinoma_C02_read1.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/carcinoma_C02_read2.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/carcinoma_C03_read1.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/carcinoma_C03_read2.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/carcinoma_C06_read1.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/carcinoma_C06_read2.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/normal_N02_read1.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/normal_N02_read2.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/normal_N03_read1.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/normal_N03_read2.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/normal_N06_read1.fasta
+* http://##.oicrcbw.ca/IntegrativeAssignment/fasta/normal_N06_read2.fasta
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/DataUp04.jpg?raw=true" alt="Choose local file" width="1000" /> 
 
