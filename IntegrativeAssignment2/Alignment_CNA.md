@@ -145,12 +145,18 @@ $PYTHON_DIR/bin/python $SCRIPTS_DIR/transform_vcf_to_counts.py \
 	--outfile $IA_HOME/mutationseq/HCC1395_mutationseq_postprocess.txt
 ```
 
+We're now going to link our install directory and scripts directory:
+```
+ln -s /home/ubuntu/CourseData/CG_data/Module6/install $IA_HOME
+ln -s /home/ubuntu/CourseData/CG_data/Module6/scripts $IA_HOME
+```
+
 Finally we can run Titan using all the files we've created:
 
 ```
 mkdir -p $IA_HOME/titan
-cd $CNA_WORKSPACE/analysis/exome/titan
-Rscript $CNA_WORKSPACE/scripts/run_titan.R \
+cd $IA_HOME/titan
+Rscript $IA_HOME/scripts/run_titan.R \
 	--sample_id HCC1395 \
 	--tumour_wig $IA_HOME/hmmcopy/HCC1395_exome_tumour.wig \
 	--normal_wig $IA_HOME/hmmcopy/HCC1395_exome_normal.wig \
@@ -165,12 +171,4 @@ Rscript $CNA_WORKSPACE/scripts/run_titan.R \
 	> $JOB_OUT/run_titan.log \
 	2> $JOB_OUT/run_titan.err &
 ```
-
-
-Questions:
-
-* *Do the reads map only to chromosome 6? If they were extracted from a previous bam file, what possible reasons could there be for them mapping to other chromosomes?*
-
-* *Why is indexing of the bam file required?*
-
-* *Compare the resulting TitanCNA output with the plots generated from Module 6 - what possible reason(s) could explain any differences?*
+In this case, the error that's created is due to the fact that Titan cannot create a valid error model at the "correctReadDepth" stage of the script due to lack of input data. This is because we're using exome data and only focused on chromosome 20, so the number of input data is too low. It's always a good idea to [search any errors](https://github.com/benjjneb/dada2/issues/171) you might come across during your own analysis.
