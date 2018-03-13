@@ -14,7 +14,7 @@ The following assignment will involve aligning a subset of reads from the the tu
 
 The fastq files for this assignment are stored in the following directory:
 
-Task list:
+Task list:  
 1) Build a bwa and bowtie2 index, as well as index our fasta  
 2) Align our reads to the reference genome using bwa  
 3) Convert the sam file to a sorted bam  
