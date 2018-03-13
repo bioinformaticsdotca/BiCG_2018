@@ -494,8 +494,8 @@ We will also look at Titan profiles from two xenograft passages derived from thi
 We ran Titan on the whole-genome `.bam` files from these three tumours, with three separate runs specifying either 1, 2, or 3 clonal clusters. You can copy the plots and parameter files as follows (actual Titan output is not provided to protect patient confidentiality):
 
 ```bash
-cp /home/ubuntu/CourseData/CG_data/Module6/module4_cna_plots.zip $CNA_WORKSPACE
-unzip module4_cna_plots.zip
+cp /home/ubuntu/CourseData/CG_data/Module6/module6_cna_plots.zip $CNA_WORKSPACE
+unzip module6_cna_plots.zip
 ```
 
 You can then download the entire zip file or individual plots from your browser (XX is your student number):
@@ -658,7 +658,11 @@ Answer: the "matched normal" sample used in the analysis was not actually from t
 
 ## Plotting with R
 
-We can use a programming language like R to further explore the Titan results. For example, the default Titan functions plot each chromosome separately, and we may want to visualize the entire genome. The plots also don't have a legend, and we may want to customize the colours used for the different states for easier interpretation. To do this, we will use the popular R package `ggplot2`. 
+We can use a programming language like R to further explore the Titan results. For example, the default Titan functions plot each chromosome separately, and we may want to visualize the entire genome. The plots also don't have a legend, and we may want to customize the colours used for the different states for easier interpretation. To do this, we will use the popular R package `ggplot2`. We'll first copy the relevant scripts for plotting our figures into our titan folder.
+
+```
+
+```
 
 Let's start an RStudio instance by opening the web browser and entering:
 
