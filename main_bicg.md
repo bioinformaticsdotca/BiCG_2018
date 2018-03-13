@@ -112,8 +112,6 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1pm8Y0vllGdOoTfWO0iUCced7OHOaI2Xq/view?usp=sharing)  
   
-[Lab Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1Mqxaon4VXRh5vCX328DKgW4ukjGKFq2_/view?usp=sharing)
-
 [Lab Practical](https://bioinformaticsdotca.github.io/bicg_2018_lab_7)  
 
 ## Module 8: Gene Expression  
