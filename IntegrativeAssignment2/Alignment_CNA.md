@@ -75,7 +75,7 @@ INSTALL_DIR=~/CourseData/CG_data/Module6/install
 HMMCOPY_DIR=~/CourseData/CG_data/Module6/install/hmmcopy/HMMcopy
 ```
 
-Now we'll generate a reference genome mappability file. The following step typically takes about an hour even with our analysis being focused on just chromosome 20, so alternatively the processed file is available here[https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/IntegrativeAssignment2/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa.map.ws_1000.wig].
+Now we'll generate a reference genome mappability file. The following step typically takes about an hour even with our analysis being focused on just chromosome 20, so alternatively the processed file is available [here](https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/IntegrativeAssignment2/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa.map.ws_1000.wig).
 
 ```
 cd ref; curl -o Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa.map.ws_1000.wig https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/IntegrativeAssignment2/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa.map.ws_1000.wig
