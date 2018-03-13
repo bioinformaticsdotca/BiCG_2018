@@ -42,7 +42,7 @@ In this command:
 `mem` specifies the bwa algorithm to run.  
 `-t 4` specifies the number of threads to use for the alignment; in this case we use 4 threads.  
 `-p` indicates the reference genome (in fasta format) that we want to align to.  
-We also need to specify the fastq file we want to align.
+We also need to specify the fastq file we want to align.  
 `>` redirects the output from bwa mem to tumour.sam instead of printing it to the screen.  
 
 
