@@ -15,16 +15,16 @@ The following assignment will involve aligning a subset of reads from the the tu
 The fastq files for this assignment are stored in the following directory:
 
 Task list:
-1) Build a bwa and bowtie2 index, as well as index our fasta
-2) Align our reads to the reference genome using bwa
-3) Convert the sam file to a sorted bam
-4) Generate a reference genome mappability file [^1]
-5) Generate a reference genome GC content file
-6) Calculate tumor and normal depth
-7) Identify heterozygous germline positions in the normal
-8) Call CNAs with Titan
+1) Build a bwa and bowtie2 index, as well as index our fasta  
+2) Align our reads to the reference genome using bwa  
+3) Convert the sam file to a sorted bam  
+4) Generate a reference genome mappability file \*  
+5) Generate a reference genome GC content file  
+6) Calculate tumor and normal depth  
+7) Identify heterozygous germline positions in the normal  
+8) Call CNAs with Titan  
 
-[^1]: Because this step takes about an hour, we're going to copy the results from the command for the sake of time.
+\* Because this step takes about an hour, we're going to copy the results from the command for the sake of time.
 
 First let's set up our working folder and create an environment variable to help navigate our paths. We're also going to make a folder to hold our logs and errors for our processes in a separate folder called "jobs"
 
