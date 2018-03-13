@@ -95,7 +95,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1cO1Vqznqvcd0PDjnzYhOUW_V4cdwyKG5/view?usp=sharing)  
 
-[Lab Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1QXtbr8sZGF2UTVLIDROUjI4i2HgUqNgY/view?usp=sharing)  
+[Lab Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1WrPblzAsi2x4sb_PnzZ4cK89Rvhtv9ZC/view?usp=sharing)  
 
 [Lab Practical](https://bioinformaticsdotca.github.io/bicg_2018_module6_lab)  
 
