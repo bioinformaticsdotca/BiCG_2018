@@ -5,7 +5,7 @@ title: BiCG
 header1: Bioinformatics for Cancer Genomics 2018
 header2: Integrative Assignment Day 2
 image: /site_images/CBW_cancerDNA_icon-16.jpg
-home: https://bioinformaticsdotca.github.io//bicg_2018
+home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
 # Integrated Assignment - Overview of Day 2
@@ -15,16 +15,16 @@ The following assignment will involve aligning a subset of reads from the the tu
 The fastq files for this assignment are stored in the following directory:
 
 Task list:
-* 1) Build a bwa and bowtie2 index, as well as index our fasta
-* 2) Align our reads to the reference genome using bwa
-* 3) Convert the sam file to a sorted bam
-* 4) Generate a reference genome mappability file*
-* 5) Generate a reference genome GC content file
-* 6) Calculate tumor and normal depth
-* 7) Identify heterozygous germline positions in the normal
-* 8) Call CNAs with Titan
+1) Build a bwa and bowtie2 index, as well as index our fasta
+2) Align our reads to the reference genome using bwa
+3) Convert the sam file to a sorted bam
+4) Generate a reference genome mappability file[^1]
+5) Generate a reference genome GC content file
+6) Calculate tumor and normal depth
+7) Identify heterozygous germline positions in the normal
+8) Call CNAs with Titan
 
-*Because this step takes about an hour, we're going to copy the results from the command for the sake of time.
+[^1]:Because this step takes about an hour, we're going to copy the results from the command for the sake of time.
 
 First let's set up our working folder and create an environment variable to help navigate our paths. We're also going to make a folder to hold our logs and errors for our processes in a separate folder called "jobs"
 
@@ -38,6 +38,7 @@ JOB_OUT=$IA_HOME"/jobs"
 ```
 
 Now that we've setup our working directory, we can link our reference data and our tumour/normal data
+
 ```
 ln -s ~/CourseData/CG_data/IA_tuesday/data
 mkdir ref;
@@ -45,6 +46,7 @@ ln -s ~/CourseData/CG_data/IA_tuesday/refs/chr20_adj/Homo_sapiens.GRCh37.75.dna.
 ```
 
 Let's start with building our reference indices for bwa and bowtie2. Make sure to consult each respective tool's page in the future to view all the options available.
+
 ```
 bwa index $IA_HOME/ref/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa > $JOB_OUT/bwa_index.log 2>$JOB_OUT/bwa_index.err &
 bowtie2-build -t 8 $IA_HOME/ref/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa $IA_HOME/ref/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa > $JOB_OUT/bowtie2_index.log 2>$JOB_OUT/bowtie2_index.err &
@@ -52,18 +54,21 @@ samtools faidx $IA_HOME/ref/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_ad
 ```
 
 Once this is complete, we're going to use bwa to align our fastq files to the reference genome. This will take just under 3 minutes.
+
 ```
 bwa mem -t 4 $IA_HOME/ref/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa $IA_HOME/data/HCC1395_norm.chr20.comb.fq | samtools view -bS | samtools sort > $IA_HOME/bams/HCC1395_norm.chr20.sorted.bam &
 bwa mem -t 4 $IA_HOME/ref/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa $IA_HOME/data/HCC1395_tum.chr20.comb.fq | samtools view -bS | samtools sort > $IA_HOME/bams/HCC1395_tum.chr20.sorted.bam &
 ```
 
 When our alignment is completed, we're going to index our bam files for easier parsing
+
 ```
 samtools index $IA_HOME/bams/HCC1395_norm.chr20.sorted.bam 2>$JOB_OUT/index_norm.err &
 samtools index $IA_HOME/bams/HCC1395_tum.chr20.sorted.bam 2>$JOB_OUT/index_tum.err &
 ```
 
 Now that the setup has been done, we can start with actually analyzing our samples. Let's set up some more environment variables to where a few key scripts are stored.
+
 ```
 SCRIPTS_DIR=~/CourseData/CG_data/Module6/scripts
 INSTALL_DIR=~/CourseData/CG_data/Module6/install
@@ -77,6 +82,7 @@ cd ref; curl -o Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa.ma
 ```
 
 However, to run it yourself, the following two commands are needed (wait till the first one is done before running the second one)
+
 ```
 cd ref;
 $HMMCOPY_DIR/util/mappability/internal/fastaToRead -w 35 Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa | bowtie2 -x $IA_HOME/ref/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa -f /dev/stdin -p 16 -N 0 -k 5 --quiet | grep "20:" | cut -f 1 | uniq -c | awk '{print $2"\tign\tign\tign\tign\tign\t"$1}' | $HMMCOPY_DIR/util/mappability/internal/readToMap.pl -m 4 | $HMMCOPY_DIR/util/bigwig/wigToBigWig stdin Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa.sizes Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa.map.bw &
@@ -88,6 +94,7 @@ $HMMCOPY_DIR/bin/mapCounter \
 ```
 
 We will now also generate our reference GC content file
+
 ```
 $HMMCOPY_DIR/bin/gcCounter \
 	$IA_HOME/ref/Homo_sapiens.GRCh37.75.dna.primary_assembly.chr20_adjusted.fa \
@@ -95,6 +102,7 @@ $HMMCOPY_DIR/bin/gcCounter \
 ```
 
 Now that our coverage and mappability files have been created, we can calculate our tumor and normal depth for chromosome 20
+
 ```
 cd $IA_HOME;
 mkdir -p $IA_HOME/hmmcopy
@@ -107,6 +115,7 @@ $HMMCOPY_DIR/bin/readCounter \
 ```
 
 Our last step before running Titan is to identify heterozygous germline positions in the normal and extract allele counts in the tumour. Since this requires running mutationseq which calls python, we're going to add python to our PATH so that our system can use the program. We'll also use environment variables for ease of use
+
 ```
 PYTHON_DIR=$INSTALL_DIR/miniconda/miniconda2
 MUSEQ_DIR=$INSTALL_DIR/mutationseq/mutationseq/museq
@@ -127,7 +136,9 @@ $PYTHON_DIR/bin/python $MUSEQ_DIR/preprocess.py \
 	--config $MUSEQ_DIR/metadata.config \
 	2> run_mutationseq.err
 ```
+
 Once mutationseq is completed, we'll use our custom script to transform the vcf file to a counts file
+
 ```
 $PYTHON_DIR/bin/python $SCRIPTS_DIR/transform_vcf_to_counts.py \
 	--infile $IA_HOME/mutationseq//HCC1395_mutationseq.vcf \
@@ -135,6 +146,7 @@ $PYTHON_DIR/bin/python $SCRIPTS_DIR/transform_vcf_to_counts.py \
 ```
 
 Finally we can run Titan using all the files we've created:
+
 ```
 mkdir -p $IA_HOME/titan
 cd $CNA_WORKSPACE/analysis/exome/titan
