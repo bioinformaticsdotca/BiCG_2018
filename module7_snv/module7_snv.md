@@ -236,10 +236,10 @@ The VCF format is sometimes not useful for visualization and data exploration pu
 From the [SnpSift documentation](http://snpeff.sourceforge.net/SnpSift.html#filter):  
 All VCF fields can be used as variables names, as long as they are declared in the VCF header OR they are "standard" VCF fields.
 
-For our example:\
-Standard fields: `CHROM POS REF ALT` - Defined by VCF 4.1 specification\
-Info field variables: `Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147` -  Defined in header lines ##INFO=<ID=...\
-Genotype fields: `GEN[0].FA GEN[1].FA` - Defined in header lines ##FORMAT=<ID=FA... where:\
+For our example:  
+Standard fields: `CHROM POS REF ALT` - Defined by VCF 4.1 specification  
+Info field variables: `Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147` -  Defined in header lines ##INFO=<ID=...  
+Genotype fields: `GEN[0].FA GEN[1].FA` - Defined in header lines ##FORMAT=<ID=FA... where:  
 * GEN[0] = first sample = sample_HCC1395_tumour
 * GEN[1] = second sample = sample_HCC1395_normal
 
