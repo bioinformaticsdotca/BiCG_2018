@@ -271,7 +271,7 @@ Therefore, to convert the MuTect VCF file into a tabular format containing only 
 java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "." results/annotated/mutect.hg19_multianno.vcf CHROM POS REF ALT Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147 GEN[0].FA GEN[1].FA > results/mutect/mutect_passed_tabbed.txt
 ```
 
-We can view the new tab delimited file:
+We can view the new tab delimited file in our browser at http://XX.oicrcbw.ca/Module7_snv.
 
 To convert the Strelka VCF file into a tabular format into a similar format containing the chromosome, position, reference allele, alternate allele, depth of normal, depth of tumour, # of A's, C's, G's, and T's in normal and tumour (two values each representing "stringent,permissive" filter tiers):
 
