@@ -12,7 +12,8 @@ home: https://bioinformaticsdotca.github.io/bicg_2018
 
 The [Trinity Cancer Transcriptome Analysis Toolkit (CTAT)](https://github.com/NCIP/Trinity_CTAT/wiki) includes a suite of tools focused on identifying and characterizing fusion transcripts in cancer.  The tools and comprehensive workflow for fusion study via Trinity CTAT is illustrated below:
 
-<img src="images/TrinityCTAT-Fusion_overview.png" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module_9_CTAT_fusion_lab/images/TrinityCTAT-Fusion_overview.png?raw=true" width="750" />
+
 
 Tools leveraged within CTAT include [STAR-Fusion](https://github.com/STAR-Fusion/STAR-Fusion/wiki), [FusionInspector](https://github.com/FusionInspector/FusionInspector/wiki), and [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki). The tutorial below demonstrates the use of each of these utilities in identifying and characterizing cancer fusion transcripts.  Note that the STAR-Fusion software incorporates FusionInspector and several companion utilities that will be used for fusion analysis. 
 
@@ -174,7 +175,7 @@ If you need the IGV software, you can launch it from [here](http://software.broa
 
 This FusionInspector view of the data would look like so:
 
-<img src="images/finspector_bcr--abl.png" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module_9_CTAT_fusion_lab/images/finspector_bcr--abl.png?raw=true" width="750" />
 
 More details about FusionInspector can be found on the [FusionInspector documentation wiki](https://github.com/FusionInspector/FusionInspector/wiki).
 
