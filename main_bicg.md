@@ -114,7 +114,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 *<font color="#827e9c">Sorana Morrissy</font>* 
 
-[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1pm8Y0vllGdOoTfWO0iUCced7OHOaI2Xq/view?usp=sharing)  
+[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1loSEwod3wt-gs5xJF-RcgbeUHdSUls-U/view?usp=sharing)  
   
 [Lab Practical](https://bioinformaticsdotca.github.io/bicg_2018_lab_7)  
 
