@@ -8,6 +8,27 @@ Tools leveraged within CTAT include [STAR-Fusion](https://github.com/STAR-Fusion
 
 The Trinity CTAT Fusion workflow involves first running STAR-Fusion to identify candidate fusion transcripts based on discordant read alignments.  Predicted fusions are then 'in silico validated' using FusionInspector, which performs a more refined exploration of the candidate fusion transcripts, runs Trinity to de novo assemble fusion transcripts from the RNA-Seq reads, and provides the evidence in a suitable format to facilitate visualization.  Predicted fusions are annotated according to prior knowledge of fusion transcripts relevant to cancer biology (or previously observed in normal samples and less likely to be relevant to cancer), and assessed for the impact of the predicted fusion event on coding regions, indicating whether the fusion is in-frame or frame-shifted along with combinations of domains that are expected to exist in the chimeric protein.
 
+
+## Tutorial Software
+
+All software and data we'll be using for this tutorial are installed on the server.  To configure the software for your use, you'll need to copy the bundle to your workspace like so:
+
+    % cp -r ~/CourseData/CG_data/Module9/STAR-Fusion .
+
+Then configure an environmental variable that indicates the installation directory.
+
+First, enter your new STAR-Fusion subdirectory/
+
+    %  cd STAR-Fusion
+
+and set the following environmental variable like so:
+
+    %  export STAR_FUSION_HOME=`pwd`
+
+
+and that's the only configuration that should be necessary.
+
+
 ## Tutorial Data
 
 The tutorial includes a small data set that can be leveraged using modest computational resources, so it should run on a any hardware having at least 4G of RAM (so suitable for most contemporary personal computing machines).  The tutorial data consists of the following files:
@@ -23,37 +44,32 @@ The tutorial includes a small data set that can be leveraged using modest comput
     Meta data:
         CTAT_HumanFusionLib.mini.dat.gz : a small fusion annotation library
 
-Obtain the tutorial data by [downloading it from the tutorial release page](https://github.com/STAR-Fusion/STAR-Fusion-Tutorial/releases/tag/v0.0.1), or you can obtain it using 'git' like so:
-
-    # Optionally, obtain data set using git:
-    % git clone https://github.com/STAR-Fusion/STAR-Fusion-Tutorial.git
 
 
+These data are included in a STAR-Fusion-Tutorial/ subdirectory. Change to this directory:
 
-## Software requirements
+    % cd STAR-Fusion-Tutorial
 
-To run the full tutorial, you would need the following software installed (unless you use Docker (see below)):
+and examine the files that exist there:
 
-* [STAR-Fusion](https://github.com/STAR-Fusion/STAR-Fusion/wiki)
-* [STAR aligner](https://github.com/alexdobin/STAR)
-* [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki)
-* [GMAP](http://research-pub.gene.com/gmap/)
-* [NCBI BLAST+](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
+    % ls -l
 
->Note, each tool above may have it's own additional software installation dependencies, such as samtools, jellyfish, salmon, etc...   It's easiest to just use our Docker image, if that's an option, as everything's already installed in it.
 
-###  Using Docker
+```
+-rw-rw-r-- 1 ubuntu ubuntu     1719 Mar 14 09:05 AnnotFilterRule.pm
+-rwxrwxr-x 1 ubuntu ubuntu      188 Mar 14 09:05 cleanMe.sh
+-rw-rw-r-- 1 ubuntu ubuntu     6586 Mar 14 09:05 CTAT_HumanFusionLib.mini.dat.gz
+-rw-rw-r-- 1 ubuntu ubuntu 11299925 Mar 14 09:05 minigenome.fa
+-rw-rw-r-- 1 ubuntu ubuntu 15636276 Mar 14 09:05 minigenome.gtf
+-rw-rw-r-- 1 ubuntu ubuntu      129 Mar 14 09:05 README.md
+-rw-rw-r-- 1 ubuntu ubuntu 41380839 Mar 14 09:05 rnaseq_1.fastq.gz
+-rw-rw-r-- 1 ubuntu ubuntu 45350714 Mar 14 09:05 rnaseq_2.fastq.gz
+drwxrwxr-x 2 ubuntu ubuntu     4096 Mar 14 09:05 STAR-Fusion-Tutorial.wiki
+```
 
-Our [trinityctat/ctatfusion](https://hub.docker.com/r/trinityctat/ctatfusion/) Docker image contains all the above tools and their dependencies.  If you have Docker installed, you can use it very effectively here.
 
-    # First, cd into the STAR-Fusion-Tutorial directory (or whatever it's named in your download)
-    # Then, run Docker like so:
-    
-    docker run --rm -it -v `pwd`:/data trinityctat/ctatfusion:latest bash
+The following will take you through some initial data processing followed by fusion-finding via STAR-Fusion.
 
-    # The above should put you into the Docker environment.  
-    # Then go to the /data directory, where you'll find the tutorial data
-    cd /data
 
 ## Preparing a CTAT Genome Lib
 
@@ -61,7 +77,7 @@ Using the Trinity CTAT ecosystem of tools requires a CTAT genome lib, which is e
 
 To build our custom tutorial-supporting CTAT genome lib, run the following along with using the provided tutorial data files: 
 
->Below, we refer to ${STAR_FUSION_HOME} as the path to the base installation directory for STAR-Fusion.   In the Docker image, this is set as an environmental variable, so you can refer to it directly as $STAR_FUSION_HOME.  If you're not using Docker, consider setting this as an environmental variable for convenience.  
+
 
     % ${STAR_FUSION_HOME}/FusionFilter/prep_genome_lib.pl \
             --genome_fa minigenome.fa \
@@ -69,8 +85,6 @@ To build our custom tutorial-supporting CTAT genome lib, run the following along
             --fusion_annot_lib CTAT_HumanFusionLib.mini.dat.gz
 
     # takes ~5 minutes
-
->Optional, if you want to include Pfam domain information and have [Pfam](https://pfam.xfam.org/) locally installed, you can include the parameter '--pfam_db /path/to/Pfam-A.hmm'
 
 Running the above will create a 'ctat_genome_lib_build_dir/' directory and populate it with the reference data, perform blast searches to identify sequence similar sequences, and build some databases that will be leveraged by CTAT fusion tools.
 
