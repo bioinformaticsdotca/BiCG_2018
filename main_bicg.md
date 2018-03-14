@@ -123,16 +123,16 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 *<font color="#827e9c">Fouad Yousif</font>* 
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1B4TAAm9pHQPeVpGV3HE34zPCqJCQ9FF8/view?usp=sharing)  
-
-[Lab Practical](https://github.com/griffithlab/rnaseq_tutorial/wiki/Integrated-Assignment)  
-
+ 
 [Ballgown code](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdbFlCeHEzcDBDSmZ4aTZ4dHpiQUVET0c1TU1j/view?usp=sharing)  
 
 [Supplementary code](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdZndNNy1LYVVWNEJaT0x3Ykp3WTQteW9jTzhv/view?usp=sharing)
 
 [Supplementary R output](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdNWZ2UEtUSDlTaVM2VGpWMTFQMkRoamFLYXdF/view?usp=sharing)
 
-[Questions with Answers](https://drive.google.com/a/bioinformatics.ca/file/d/1qvrULzdtZ8SIU28kLMl4E3M_XFo94QyM/view?usp=sharing)  
+[Questions with Answers PDF](https://drive.google.com/a/bioinformatics.ca/file/d/1qvrULzdtZ8SIU28kLMl4E3M_XFo94QyM/view?usp=sharing)  
+
+[Questions with Answers Word](https://drive.google.com/a/bioinformatics.ca/file/d/1Zstc8oAqLgppQF-wdvJzHZU6xbYBNAjc/view?usp=sharing)  
 
 ## Integrated Assignment
 
