@@ -132,6 +132,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Supplementary R output](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdNWZ2UEtUSDlTaVM2VGpWMTFQMkRoamFLYXdF/view?usp=sharing)
 
+[Questions with Answers](https://drive.google.com/a/bioinformatics.ca/file/d/1qvrULzdtZ8SIU28kLMl4E3M_XFo94QyM/view?usp=sharing)  
+
 ## Integrated Assignment
 
 [Integrated Assignment](https://bioinformaticsdotca.github.io/bicg_2018_ia)  
