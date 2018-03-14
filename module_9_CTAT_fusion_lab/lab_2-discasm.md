@@ -1,3 +1,13 @@
+---
+layout: tutorial_page
+permalink: /BiCG_2018_module9_discasm
+title: Bioinformatics for Cancer Genomics 2018 Gene Fusions Tutorial
+header1: Bioinformatics for Cancer Genomics 2018
+header2: Gene Fusions Tutorial - DISCASM and GMAP-Fusion
+image: /site_images/CBW_cancerDNA_icon-16.jpg
+home: https://bioinformaticsdotca.github.io/bicg_2018
+---
+
 # DISCASM and GMAP-Fusion Tutorial
 
 [DISCASM](https://github.com/DISCASM/DISCASM/wiki) and [GMAP-fusion](https://github.com/GMAP-fusion/GMAP-fusion/wiki) are software focused on exploring transcripts that are ill-represented within a reference genome, either lacking genome representation (missing genes, foreign transcripts) or otherwise not well represented in the reference genome sequence due to chromosomal rearrangements. This is highly relevant for cancer biology for detecting fusion transcripts and oncoviruses from RNA-Seq data. DISCASM and GMAP-Fusion were developed as components of the broader [Trinity Cancer Transcriptome Analysis Toolkit (CTAT)](https://github.com/NCIP/Trinity_CTAT/wiki).  Each tool is briefly described below.
