@@ -150,6 +150,28 @@ nano config/strelka_config_bwa.ini
 * *Y* to save changes.
 * *Enter* to maintain the same filename and overwrite.
 
+
+OOOPS! That didn't work. Why?  
+"Error writing config/strelka_config_bwa.ini: Permission denied"  
+
+To see the file permissions:  
+```
+ls -lh config/strelka_config_bwa.ini
+```
+We only see the letter "r" meaning we can only read.  
+We need write permission before we can edit a file.  
+
+Give yourself write permissions using the command chmod.  
+Then, check the permissions on this file again.  
+```
+chmod u+w config/strelka_config_bwa.ini
+ls -lh config/strelka_config_bwa.ini
+```
+Now, edit this file with nano as specified above.  
+  
+    
+
+
 The reason why we do this is described on the [Strelka FAQ page](https://sites.google.com/site/strelkasomaticvariantcaller/home/faq):
 
 *The depth filter is designed to filter out all variants which are called above a multiple of the mean chromosome depth, the default configuration is set to filter variants with a depth greater than 3x the chromosomal mean. If you are using exome/targeted sequencing data, the depth filter should be turned off...*  
@@ -291,10 +313,19 @@ Manually inspecting these predicted SNVs in IGV is a good way to verify the pred
 
 ### Exploration in R
 
-While IGV is good for visualizing individual mutations, looking at more global characteristics would require loading the data into an analysis language like R.
+While IGV is good for visualizing individual mutations, looking at more global characteristics would require loading the data into an analysis language like R.  
 
-We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder. Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2018/master/module7_snv/snv_analysis.txt).  
+We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder.
 
 Now let's launch our RStudio instance and continue our analysis there.  
 
+In a web browser, navigate to:  
+http://xx.oicrcbw.ca:8080/  
+Replacing xx with your student number.
+
+Within RStudio, navigate to workspace/Module7_snv/snv_analysis  
+Open snv_analysis.Rmd
+
+
+(Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2018/master/module7_snv/snv_analysis.txt).)    
 ***
