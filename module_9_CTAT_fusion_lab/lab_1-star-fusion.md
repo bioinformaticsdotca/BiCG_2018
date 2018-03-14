@@ -1,3 +1,13 @@
+---
+layout: tutorial_page
+permalink: /BiCG_2018_module9_star_fusion
+title: Bioinformatics for Cancer Genomics 2018 Gene Fusions Tutorial
+header1: Bioinformatics for Cancer Genomics 2018
+header2: Gene Fusions Tutorial - Star Fusion
+image: /site_images/CBW_cancerDNA_icon-16.jpg
+home: https://bioinformaticsdotca.github.io/bicg_2018
+---
+
 # Tutorial for the CTAT Fusion Toolkit, leveraging STAR-Fusion, FusionInspector, and Trinity
 
 The [Trinity Cancer Transcriptome Analysis Toolkit (CTAT)](https://github.com/NCIP/Trinity_CTAT/wiki) includes a suite of tools focused on identifying and characterizing fusion transcripts in cancer.  The tools and comprehensive workflow for fusion study via Trinity CTAT is illustrated below:
