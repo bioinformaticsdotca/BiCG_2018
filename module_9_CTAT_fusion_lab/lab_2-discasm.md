@@ -237,7 +237,7 @@ name	taxID	taxRank	genomeSize	numReads	numUniqueReads	abundance
 Bos taurus polyomavirus 1	1891754	species	4697	11	11	1
 ```
 
-Remember, this was a cancer cell line RNA-Seq data set.  Why might we find the above polyomavirus in such a sample?  (Try using Google and see what you find)
+Remember, this was a cancer cell line RNA-Seq data set.  Why might we find the above polyomavirus in such a sample?  (Try using Google with terms 'Bos taurus polyomavirus cell culture' and see what you find)
 
 ## Concluding remarks
 
