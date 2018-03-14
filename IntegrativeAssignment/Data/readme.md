@@ -2,8 +2,13 @@ Due to the nature of Galaxy being a public server, the data processing does run 
 
 The data is broken up into:
 * Raw Data
-* Reference Sequences
+* Reference GTF
 * Aligned bams using HISAT2
 * Quantified transcripts using Cufflinks
 * Merged transcripts using Cuffmerge
 * Differential expression results from Cuffdiff
+
+You will need to download the chromosome9 fasta from your AWS by going to your home directory and the reference folder for this assignment:
+```
+http://##.oicrcbw.ca/IntegrativeAssignment/refs/
+```
