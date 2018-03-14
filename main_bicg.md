@@ -148,19 +148,9 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1YM4fh1CZNZHmUeITCfvw8y1-dKZPHxOj/view?usp=sharing)  
 
-### Rearrangements
+[Lab Practical - CTAT Fusion Toolkit](https://bioinformaticsdotca.github.io/BiCG_2018_module9_star_fusion)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/BiCG_2018_module4_rearrangements)
-
-### Gene Fusions
-
-[Lab Practical - Installation](https://bioinformaticsdotca.github.io/BiCG_2018_module4_genefusions_installation)
-
-[Lab Practical - Prediction](https://bioinformaticsdotca.github.io/BiCG_2018_module4_genefusions_prediction)
-
-[Lab Practical - Exploration](https://bioinformaticsdotca.github.io/BiCG_2018_module4_genefusions_exploration)
-
-[Lab Practical - Visualization](https://bioinformaticsdotca.github.io/BiCG_2018_module4_genefusions_visualization)
+[Lab Practical - DISCASM and GMAP-Fusion](https://bioinformaticsdotca.github.io/BiCG_2018_module9_discasm)
 
 ## Module 10: Sharing and Scaling a VM  
 
