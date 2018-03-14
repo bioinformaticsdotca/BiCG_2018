@@ -151,7 +151,7 @@ Now instead of looking at example data, we can also look at workflows published 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy24_lookingatdatawhilewaiting.JPG?raw=true" alt="Looking at our gtf file 2" width="1000" />
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy25_lookingatdatawhilewaiting.JPG?raw=true" alt="Looking at our gtf file 2" width="1000" />
 
-Let's go back to the home page and see whether the alignment has finished.
+Let's go back to the home page and see whether the alignment has finished. Alternatively, we can download the aligned bams here: [carcinoma](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/bams_carcinoma.zip) and [normal](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/bams_normal.zip)
 
 ## Transcript assembly and quantification using Cufflinks
 
@@ -168,6 +168,7 @@ Make sure to select all the outputs in the _SAM or BAM of aligned RNA-Seq reads_
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy28.JPG?raw=true" alt="Running Cufflinks" width="1000" />
 
+You would expect the following [output](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/cufflinks.zip).
 
 ## Merging transcript quantification from Cufflinks
 
@@ -179,6 +180,8 @@ Next, we're going to combine our transcript abundances from Cufflinks using the 
 Select only the assembled Transcripts in the _GTF file(s) produced by Cufflinks_. Leave all other options on default, and press run.
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy31.JPG?raw=true" alt="Running Cuffmerge" width="1000" />
+
+The merged transcript will look as [follows](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/cuffmerge.zip)
 
 ## Differential expression analysis using Cuffdiff
 
@@ -195,7 +198,7 @@ Leave everything else on default, and execute the command.
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy32.JPG?raw=true" alt="Running Cuffdiff" width="1000" />
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy32_2.JPG?raw=true" alt="Running Cuffdiff" width="1000" />
 
-Cuffdiff will generate differential expression results based on genes, transcripts, TSS, promoters, CDS, and splicing. We're going to look into the gene based differential expression, but feel free to peer into the other files.
+Cuffdiff will generate differential expression results based on genes, transcripts, TSS, promoters, CDS, and splicing. We're going to look into the gene based differential expression, but feel free to peer into the [other files](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/cuffdiff.zip).
 
 Click on the eye of the _Cuffdiff on data 20, data 19, and others: gene differential expression testing_ to view the contents of the file. As we can see from the file, it contains the gene id, gene name, locus, the annotation for the samples, whether a test for significant differential expression was/could be performed, the normalized gene counts, log2 fold change, significance, false positive value, and finally whether the gene is significantly differentially expressed.
 
