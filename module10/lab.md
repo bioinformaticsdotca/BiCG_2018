@@ -4,7 +4,7 @@ permalink: /BiCG_2018/module10
 title: Bioinformatics for Cancer Genomics
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics Module 10 Lab
-image: /site_images/CBW_bigdata_icon.jpg
+image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 description: This module will cover the steps required to setup and configure a virtual machine, and will show you how to access data in the Cloud.
 author: George Mihaiescu
