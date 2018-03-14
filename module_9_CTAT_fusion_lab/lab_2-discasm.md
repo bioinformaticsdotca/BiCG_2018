@@ -186,13 +186,13 @@ Visit the [UCSC Genome Browser](http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38)
 
 From the menu, go to 'Tools'->'Blat'
 
-<img src="images/blat_search.png" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module_9_CTAT_fusion_lab/images/blat_search.png?raw=true" width="750" />
 
 Paste your fusion transcript into the form field and submit.
 
 You should find the following results similar to this:
 
-<img src="images/blat_search_results.png" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module_9_CTAT_fusion_lab/images/blat_search_results.png?raw=true" width="750" />
 
 
 Explore the top two hits that are 100% identical to regions of chromosome 2. 
