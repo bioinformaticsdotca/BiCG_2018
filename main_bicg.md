@@ -158,7 +158,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1Z70mWcwNPKrMiCHOZhKeY4bbM7Unh367/view?usp=sharing)  
 
-[Lab practical]()  
+[Lab practical](https://bioinformaticsdotca.github.io/BiCG_2018/module10)  
 
 ***
 
@@ -178,7 +178,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1SUpP8pFMnmEyksKCCwtyyFnij59f4b1c/view?usp=sharing)  
 
-[Lab practical]()  
+[Lab practical](https://bioinformaticsdotca.github.io/BiCG_2018_module12)  
 
 ## Module 13: Genes to Pathways
 
