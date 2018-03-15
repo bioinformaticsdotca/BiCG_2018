@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /BiCG_2018/module10
+permalink: /BiCG_2018_module10
 title: Bioinformatics for Cancer Genomics
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics Module 10 Lab
