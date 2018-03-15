@@ -191,3 +191,58 @@ samtools view -bh \
 12:48000000-50000000 \
 -o /home/ubuntu/CourseData/CG_data/sample_data/HCC1395_subset/HCC1395_exome_tumour.12.48MB-50MB.bam
 ```
+
+
+
+
+## Some cool resources
+
+
+### Database resources
+#### UCSC Genome Browser
+```
+https://genome.ucsc.edu/
+```
+* Downloads
+* Genome Data
+* Human
+* Full Dataset
+
+Download a zip containining separate fasta files for each chromosome, unzip, then concatenate these files into one.
+
+```
+wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
+gunzip hg38.fa.gz
+cat *.fa > hg38_all.fa
+```
+
+
+#### TCGA
+#### moved to "Genomic Data Commons"
+```
+https://gdc.cancer.gov/
+```
+* Launch Data Portal
+
+#### cBioPortal
+Data for cancer genomics
+```
+http://www.cbioportal.org/
+```
+
+
+### StatQuest YouTube Series (Joshua Starmer @ UNC-Chapel Hill)
+[StatQuest Home](https://www.youtube.com/user/joshstarmer/about)
+
+Some personal favorites:
+[RPKM, FPKM and TPM](https://www.youtube.com/watch?v=TTUrtCY2k-w)
+[Principal Component Analysis (PCA)](https://www.youtube.com/watch?v=_UVHneBUBW0)
+[FDR and the Benjamini-Hochberg Method](https://www.youtube.com/watch?v=K8LQSvtjcEo)
+
+
+### Fastq Screen
+A cool tool for checking for contamination in your sequencing libraries
+
+```
+https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/
+```
