@@ -8,10 +8,6 @@ image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
-# TODO:
-
-* George to provide his feedback on launching
-
 # Bioinformatics on Big Data Module 11 Lab
 
 This lab was originally created by Solomon Shorser and adapted by Brian O'Connor for the 2018 class.
@@ -40,12 +36,14 @@ Things to know before you start:
 
 ### Launching a VM
 
-Set up a fresh VM by following the instructions in [Module 3 lab] (https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod3/module3_lab.md), but with the following changes:
+Set up a fresh VM by following the instructions in the [Module 10 lab] (https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/lab.md), with the following characteristics:
 
 * choose flavor c1.large
-* don't assign a floating IP
+* assign a floating IP
 
-Without a floating IP, this VM is only accessible from Collaboratory.  Note that there are often not enough floating IPs for all VMs when you're running a fleet.  So you'll have to set up a "jump server" as a gateway to ssh from outside into Collaboratory.  Then from the jump server, you can ssh into any of the VMs in your fleet.  We'll use the VM (c1.micro) you've set up for Modules 3 and 4 as a jump server.  If you haven't already done so, add your private key to the jump server.  From the console, find the IP address of the new c1.large VM and ssh into it.
+> **Tip:** We'll only use a jump or gateway server if we don't have enough float IP addresses.
+
+Without a floating IP, this VM is only accessible from Collaboratory.  Note that there are often not enough floating IPs for all VMs when you're running a fleet.  So you may want to set up a "jump server" as a gateway to ssh from outside into Collaboratory.  Then from the jump server, you can ssh into any of the VMs in your fleet.  You can use a VM (c1.micro) as a jump server.  If you haven't already done so, add your private key to the jump server.  From the console, find the IP address of the new c1.large VM and ssh into it.
 
 ```
 ssh -i path_to_private_key ubuntu@10.0.0.XXX
@@ -183,6 +181,25 @@ pip install setuptools==36.5.0
 pip install cwl-runner cwltool==1.0.20170828135420 schema-salad==2.6.20170806163416 avro==1.8.1 ruamel.yaml==0.14.12 requests==2.18.4
 ```
 
+### Testing Your Install
+
+At this point you can check to see if everything is installed
+properly:
+
+```
+$ dockstore --version
+Dockstore version 1.3.6
+$ java -version
+java version "1.8.0_144"
+Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
+Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
+$ cwltool --version
+/usr/local/bin/cwltool 1.0.20170828135420
+$ docker run hello-world
+Hello from Docker!
+...
+```
+
 ## Creating a New Docker-based Tool
 
 Here we are making a Docker image that contains a simple tool bamstats.
@@ -245,6 +262,8 @@ Docker image to another person and have them figure out how it was constructed,
 where the binary is installed, how to call it, etc.  That's where the Common
 Workflow Language comes in.  It allows you to *describe* the tool inside the
 Docker image, making it much easier to share it with others.
+
+Here is the `bamstat_tool/Dockstore.cwl` file for `bamstat`:
 
 ```
 #!/usr/bin/env cwl-runner
@@ -310,7 +329,7 @@ So the Docker image + the CWL file clearly describe what this is and how
 to use it!
 
 You can use either the Dockstore or cwltool command to run this tool.  Let's
-try.  First, create a configuration:
+try.  First, create a configuration (see `bamstat_tool/sample_configs.json`):
 
 ```
 {
