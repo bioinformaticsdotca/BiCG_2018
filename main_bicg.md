@@ -123,14 +123,16 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 *<font color="#827e9c">Fouad Yousif</font>* 
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1B4TAAm9pHQPeVpGV3HE34zPCqJCQ9FF8/view?usp=sharing)  
-
-[Lab Practical](https://github.com/griffithlab/rnaseq_tutorial/wiki/Integrated-Assignment)  
-
+ 
 [Ballgown code](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdbFlCeHEzcDBDSmZ4aTZ4dHpiQUVET0c1TU1j/view?usp=sharing)  
 
 [Supplementary code](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdZndNNy1LYVVWNEJaT0x3Ykp3WTQteW9jTzhv/view?usp=sharing)
 
 [Supplementary R output](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdNWZ2UEtUSDlTaVM2VGpWMTFQMkRoamFLYXdF/view?usp=sharing)
+
+[Questions with Answers PDF](https://drive.google.com/a/bioinformatics.ca/file/d/1qvrULzdtZ8SIU28kLMl4E3M_XFo94QyM/view?usp=sharing)  
+
+[Questions with Answers Word](https://drive.google.com/a/bioinformatics.ca/file/d/1Zstc8oAqLgppQF-wdvJzHZU6xbYBNAjc/view?usp=sharing)  
 
 ## Integrated Assignment
 
@@ -146,19 +148,9 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1YM4fh1CZNZHmUeITCfvw8y1-dKZPHxOj/view?usp=sharing)  
 
-### Rearrangements
+[Lab Practical - CTAT Fusion Toolkit](https://bioinformaticsdotca.github.io/BiCG_2018_module9_star_fusion)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/BiCG_2018_module4_rearrangements)
-
-### Gene Fusions
-
-[Lab Practical - Installation](https://bioinformaticsdotca.github.io/BiCG_2018_module4_genefusions_installation)
-
-[Lab Practical - Prediction](https://bioinformaticsdotca.github.io/BiCG_2018_module4_genefusions_prediction)
-
-[Lab Practical - Exploration](https://bioinformaticsdotca.github.io/BiCG_2018_module4_genefusions_exploration)
-
-[Lab Practical - Visualization](https://bioinformaticsdotca.github.io/BiCG_2018_module4_genefusions_visualization)
+[Lab Practical - DISCASM and GMAP-Fusion](https://bioinformaticsdotca.github.io/BiCG_2018_module9_discasm)
 
 ## Module 10: Sharing and Scaling a VM  
 
@@ -166,7 +158,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1Z70mWcwNPKrMiCHOZhKeY4bbM7Unh367/view?usp=sharing)  
 
-[Lab practical]()  
+[Lab practical](https://bioinformaticsdotca.github.io/BiCG_2018/module10)  
 
 ***
 
@@ -186,7 +178,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1SUpP8pFMnmEyksKCCwtyyFnij59f4b1c/view?usp=sharing)  
 
-[Lab practical]()  
+[Lab practical](https://bioinformaticsdotca.github.io/BiCG_2018_module12)  
 
 ## Module 13: Genes to Pathways
 

@@ -18,24 +18,29 @@ The purpose of this integrative assignment is to help you familiarize yourself w
 
 More in depth information is provided on the [Galaxy website](https://galaxyproject.org/tutorials/rb_rnaseq/#read-mapping) as well as the notes in Module 6.
 
-To accomplish this goal, we're going to be using the softwares [Hisat](https://ccb.jhu.edu/software/hisat/index.shtml) for alignment of the reads, [Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/) for efficient transcript quantification, [Cuffmerge](http://cole-trapnell-lab.github.io/cufflinks/cuffmerge/) to combine transcript counts, and finally [CuffDiff](http://cole-trapnell-lab.github.io/cufflinks/cuffdiff/index.html) to determine differenially expressed genes.
+To accomplish this goal, we're going to be using the softwares [Hisat2](https://ccb.jhu.edu/software/hisat2/index.shtml) for alignment of the reads, [Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/) for efficient transcript quantification, [Cuffmerge](http://cole-trapnell-lab.github.io/cufflinks/cuffmerge/) to combine transcript counts, and finally [CuffDiff](http://cole-trapnell-lab.github.io/cufflinks/cuffdiff/index.html) to determine differenially expressed genes.
 
 >Note: The tools used for RNA-Sequencing pipelines do vary, so the above tools can be swapped out with others provided that the outputs from one program are compatible with another.
 
 ## Some configuration for our data
 
-To be able to upload our data onto the Galaxy server, we need to make a few modifications. Login into the AWS instance through either terminal or PuTTy, and make a soft link to where the data is stored:
+To be able to upload our data onto the Galaxy server, we need to make a few modifications. Login into the AWS instance through either terminal or PuTTy, and make a soft link to where the data is stored, as well as copy the reference that'll be used:
 
 ```
-cd workspace
-ln -s /home/ubuntu/CourseData/CG_data/IntegrativeAssignment/
+cd workspace;
+mkdir IntegrativeAssignment;
+cd IntegrativeAssignment;
+mkdir refs; mkdir fasta;
+cp ~/CourseData/CG_data/sample_data/2017_datasets/Module6/refs/Homo_sapiens.GRCh38.86.chr9.gtf refs/;
+cp ~/CourseData/CG_data/sample_data/2017_datasets/Module6/refs/Homo_sapiens.GRCh38.dna.chromosome.9.fa refs/;
+cp ~/CourseData/CG_data/sample_data/2017_datasets/Module6/fasta/* fasta/;
 ```
 
 Now to be make the reference accessible, we need to change the permissions of the reference files by running the following command:
 
 ```
-chmod ugo+wr IntegrativeAssignemnt/refs
-chmod ugo+wr IntegrativeAssignemnt/refs/*
+chmod ugo+wr refs/*
+chmod ugo+wr fasta/*
 ```
 
 We can now navigate to Galaxy server by following the link: https://usegalaxy.org. You'll be greeted by the following page, the main contents of which are as follows:
@@ -56,6 +61,8 @@ Follow the following steps below to register for Galaxy:
 To compensate on time, we're going to upload our data directly from the AWS to the Galaxy server by going through the following steps:
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy02.JPG?raw=true" alt="Get data" width="1000" /> 
+
+*If you don't see any box to paste the link to our data, press the "Paste/Fetch data" button*
 
 The link needed for the next step is:
 
@@ -95,25 +102,24 @@ At the end of this section, we should see 14 files in our history.
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy11.JPG?raw=true" alt="End of load data" width="250" /> 
 
 
-Now that our data is uploaded, we can begin our analysis. __Normally we'd begin with doing some QC on our rna-sequencing data; unfortunately however, our data is in fasta format, and so we have to forego that step__
+Now that our data is uploaded, we can begin our analysis. __Normally we'd begin with doing some QC on our rna-sequencing data; however, our data is in fasta format, and so we have to forego that step__
 
-## Transcript alignment using Hisat
+## Transcript alignment using Hisat2
 
-Let's begin with our transcript alignment/assembly using Hisat. Navigate to the *NGS: RNA Analysis* button on the left hand side, click it, find *Hisat*, and click on that. Alternatively, you can search for *Hisat* in the search tools bar.
+Let's begin with our transcript alignment/assembly using Hisat. Navigate to the *NGS: RNA Analysis* button on the left hand side, click it, find *Hisat2*, and click on that. Alternatively, you can search for *Hisat2* in the search tools bar.
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy12.JPG?raw=true" alt="Finding Hisat" width="1000" /> 
 
-Now to run Hisat, we're going to make a few modifications. Change:
-* *Input data format* to FASTA
-* *Single end or paired end?* to Individual paired reads
-* *Forward reads* to multiple datasets
-* *Reverse reads* to multiple datasets
+Now to run Hisat2, we're going to make a few modifications. Change:
 * *Source for the reference genome to align against* to Use a genome from history
 * *Select the reference genome* to 14: Homo_sapiens.GRCh38.dna.chromosome.9.fa
+* *Single end or paired end?* to Individual paired reads
+* *Forward reads* to multiple datasets (hold ctrl/cmd on your keyboard to select multiple files)
+* *Reverse reads* to multiple datasets (hold ctrl/cmd on your keyboard to select multiple files)
 
 Now in the forward reads, we're going to go ahead and select all our read1 reads. For the reverse reads, we're going to select the read2 reads. The screen should look as follows:
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy14.JPG?raw=true" alt="HiSat modified" width="1000" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/IntegrativeAssignment/Images/Hisat2_setup.JPG?raw=true" alt="HiSat modified" width="1000" /> 
 
 Now just press run. You should see the following:
 
@@ -145,7 +151,7 @@ Now instead of looking at example data, we can also look at workflows published 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy24_lookingatdatawhilewaiting.JPG?raw=true" alt="Looking at our gtf file 2" width="1000" />
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy25_lookingatdatawhilewaiting.JPG?raw=true" alt="Looking at our gtf file 2" width="1000" />
 
-Let's go back to the home page and see whether the alignment has finished.
+Let's go back to the home page and see whether the alignment has finished. Alternatively, we can download the aligned bams here: [carcinoma](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/bams_carcinoma.zip) and [normal](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/bams_normal.zip)
 
 ## Transcript assembly and quantification using Cufflinks
 
@@ -162,6 +168,7 @@ Make sure to select all the outputs in the _SAM or BAM of aligned RNA-Seq reads_
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy28.JPG?raw=true" alt="Running Cufflinks" width="1000" />
 
+You would expect the following [output](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/cufflinks.zip).
 
 ## Merging transcript quantification from Cufflinks
 
@@ -173,6 +180,8 @@ Next, we're going to combine our transcript abundances from Cufflinks using the 
 Select only the assembled Transcripts in the _GTF file(s) produced by Cufflinks_. Leave all other options on default, and press run.
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy31.JPG?raw=true" alt="Running Cuffmerge" width="1000" />
+
+The merged transcript will look as [follows](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/cuffmerge.zip)
 
 ## Differential expression analysis using Cuffdiff
 
@@ -189,7 +198,7 @@ Leave everything else on default, and execute the command.
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy32.JPG?raw=true" alt="Running Cuffdiff" width="1000" />
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy32_2.JPG?raw=true" alt="Running Cuffdiff" width="1000" />
 
-Cuffdiff will generate differential expression results based on genes, transcripts, TSS, promoters, CDS, and splicing. We're going to look into the gene based differential expression, but feel free to peer into the other files.
+Cuffdiff will generate differential expression results based on genes, transcripts, TSS, promoters, CDS, and splicing. We're going to look into the gene based differential expression, but feel free to peer into the [other files](https://github.com/bioinformaticsdotca/BiCG_2018/tree/master/IntegrativeAssignment/Data/cuffdiff.zip).
 
 Click on the eye of the _Cuffdiff on data 20, data 19, and others: gene differential expression testing_ to view the contents of the file. As we can see from the file, it contains the gene id, gene name, locus, the annotation for the samples, whether a test for significant differential expression was/could be performed, the normalized gene counts, log2 fold change, significance, false positive value, and finally whether the gene is significantly differentially expressed.
 

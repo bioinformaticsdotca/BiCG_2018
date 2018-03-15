@@ -30,7 +30,7 @@ The lab may take between 1-2 hours, depending on your familiarity with Cloud Com
    
 ### Requirments
 
-Set up a fresh VM by following the instructions in [Module 3 lab] (https://github.com/bioinformatics-ca/bioinformatics-ca.github.io/blob/master/2016_workshops/collaboratory/mod3/module3_lab.md), but with the following changes:
+Set up a fresh VM by following the instructions in [Module 10 lab] (https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/lab.md), but with the following changes:
 
 * choose flavor c1.large
 * don't assign a floating IP
@@ -47,17 +47,17 @@ ssh -i path_to_private_key ubuntu@10.0.0.XXX
 ### Install Java
 
 ```
-sudo add-apt-repository ppa:webupd8team/java (you will get some warnings, but hit Enter to add)
+sudo add-apt-repository ppa:webupd8team/java 
 sudo apt-get update
-sudo apt-get install oracle-java9-installer
+sudo apt-get install oracle-java8-installer
 ```
 
 ### Get the dockstore tool
+Latest instructions for installing Dockstore at https://dockstore.org/onboarding
 
 ```
 mkdir -p ~/sbin
 cd ~/sbin
-sudo apt-get install wget
 wget https://github.com/ga4gh/dockstore/releases/download/1.3.6/dockstore
 chmod u+x dockstore
 ```
@@ -105,35 +105,31 @@ use-cache=true
 ### Install docker 
 
 ```
-sudo apt-get install curl
 curl -sSL https://get.docker.com/ | sh
 ```
 
-This will take a few minutes. Detailed installation information can be found [here] (https://docs.docker.com/)
+This may take a few minutes. Detailed installation information can be found [here] (https://docs.docker.com/)
 
 #### Add your user to the docker user group
 
 This is so you can run `docker` without having to sudo every time.   
-After you execute the line below, you will need to **log out and log back in**.   
 
 ```
 sudo usermod -aG docker $USER
 ```
+After you execute the above below, you will need to ***log out and log back in***.   
+
 
 ### Get cwltool
 
 ```
 sudo apt install python-pip
-pip install setuptools==24.0.3
-pip install cwl-runner cwltool==1.0.20160712154127 schema-salad==1.14.20160708181155 avro==1.8.1
+pip install setuptools==36.5.0
+pip install cwl-runner cwltool==1.0.20170828135420 schema-salad==2.6.20170806163416 avro==1.8.1 ruamel.yaml==0.14.12 requests==2.18.4
 ```
 
-*Note:* If you are on **ubuntu 14**, you may also need `sudo pip install typing` and pip install commands will need to be run as `sudo`: 
+*Note:* If you are on **ubuntu 14**, you may need to run the pip install commands as `sudo`: 
 
-```
-sudo pip install setuptools==24.0.3 
-sudo pip install cwl-runner cwltool==1.0.20160712154127 schema-salad==1.14.20160708181155 avro==1.8.1 
-```
 
 ### Use the dockstore CLI to fetch the CWL
 
@@ -162,7 +158,7 @@ dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
 An existing input JSON file can be found here.  Edit it if you wish, but note that '~' if used in the JSON is not interpreted as home directory.
 
 ```
-wget https://raw.githubusercontent.com/bioinformatics-ca/bioinformatics-ca.github.io/master/2016_workshops/collaboratory/module5_lab/sample_input.json
+wget https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2018/master/module12_lab/sample_input.json
 ```
 
 ### Create a directory for the output data.  We use '~/tmp' in the example JSON.
@@ -171,7 +167,7 @@ wget https://raw.githubusercontent.com/bioinformatics-ca/bioinformatics-ca.githu
 mkdir ~/tmp
 ```
 
-You are ready to run BWA-Mem using the Dockstore CLI (see below).  However, if you have time, try downloading the input data (unaligned BAM) to your VM using the icgc-storage-client.  In Module 3, you ran icgc-storage-client as a Docker.  We'll now run it as a command line tool.  
+You are ready to run BWA-Mem using the Dockstore CLI (see below).  However, if you have time, try downloading the input data (unaligned BAM) to your VM using the icgc-storage-client.  In Module 10, you ran icgc-storage-client as a Docker.  We'll now run it as a command line tool.  
 
 ### Download unaligned BAMs using the icgc-storage-client
 
@@ -193,14 +189,14 @@ One way to download is to genereate a pre-signed URL, and download using curl or
 
 ```
 mkdir input
-icgc-storage-client-1.0.21/bin/icgc-storage-client --profile collab url --object-id 1039a928-a767-5fe4-a50a-4e7af8ced828
+icgc-storage-client-1.0.23/bin/icgc-storage-client --profile collab url --object-id 1039a928-a767-5fe4-a50a-4e7af8ced828
 wget -O input/hg19.chr22.5x.normal2.bam "<pre-signed URL>"
 ```
 
 A second way to download is to use the icgc-storage client which will handle multi-part download and resume after interruption.
 
 ```
-icgc-storage-client-1.0.21/bin/icgc-storage-client --profile collab download --object-id 26ed125c-bc28-552c-b82d-1de2561b3911 --output-layout bundle --output-dir input
+icgc-storage-client-1.0.23/bin/icgc-storage-client --profile collab download --object-id 26ed125c-bc28-552c-b82d-1de2561b3911 --output-layout bundle --output-dir input
 ```
 
 You may want to organize the files in your input directory. Then edit the JSON sample_input.json to update under "reads" the paths to 2 unaligned BAMs.
