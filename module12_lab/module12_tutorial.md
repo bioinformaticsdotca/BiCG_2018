@@ -185,7 +185,7 @@ hg19.chr22.5x.normal.bam	26ed125c-bc28-552c-b82d-1de2561b3911
 hg19.chr22.5x.normal2.bam	1039a928-a767-5fe4-a50a-4e7af8ced828
 ```
 
-One way to download is to genereate a pre-signed URL, and download using curl or wget.  Remember to put quotes for the URL in the wget command.  Otherwise, you'll get a 403 error.
+Method 1: Genereate a pre-signed URL, and download using curl or wget.  Remember to put quotes for the URL in the wget command.  Otherwise, you'll get a 403 error.
 
 ```
 mkdir input
@@ -193,17 +193,17 @@ icgc-storage-client-1.0.23/bin/icgc-storage-client --profile collab url --object
 wget -O input/hg19.chr22.5x.normal2.bam "<pre-signed URL>"
 ```
 
-A second way to download is to use the icgc-storage client which will handle multi-part download and resume after interruption.
+Method 2: Download using the icgc-storage client which will handle multi-part download and resume after interruption.
 
 ```
 icgc-storage-client-1.0.23/bin/icgc-storage-client --profile collab download --object-id 26ed125c-bc28-552c-b82d-1de2561b3911 --output-layout bundle --output-dir input
 ```
 
-You may want to organize the files in your input directory. Then edit the JSON sample_input.json to update under "reads" the paths to 2 unaligned BAMs.
+Organize the files in your input directory. Then edit the JSON sample_input.json to update under "reads" the paths to 2 unaligned BAMs.
 
 
 ### Run it locally with the Dockstore CLI
 
 ```
-dockstore tool launch --entry quay.io/pancancer/pcawg-bwa-mem-workflow:2.6.8-cwl1 --json sample_input.json 
+dockstore tool launch --entry quay.io/pancancer/pcawg-bwa-mem-workflow:2.6.8_1.2 --json sample_input.json 
 ```
