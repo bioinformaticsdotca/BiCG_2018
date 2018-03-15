@@ -46,7 +46,10 @@ EGA
 
 [GDC: Genomic Data Commons Data Portal](https://portal.gdc.cancer.gov/)  
 
-[Cancer Genome Collaboratory](https://www.cancercollaboratory.org)
+[Cancer Genome Collaboratory](https://www.cancercollaboratory.org)  
+
+[ChimerDB 3](http://ercsb.ewha.ac.kr/fusiongene)  
+* for browsing gene fusions
 
 ## Genome browsers
 
