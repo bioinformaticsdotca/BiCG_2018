@@ -69,4 +69,15 @@ Used to explore genomes. Can load "tracks" of extra info. Most common UCSC then 
 
 Reactome  
 
+## Command-line tricks
+
+Pipe output for column view and scrolling
+
+```
+your command that would output to the screen in messy columns | column -t | less -S
+```
+
+`column -t` makes your tab delimited output into nice columns  
+`less -S` makes content in less left/right scrollable instead of wrapping it to the next line  
+
 **can we do a network diagram with inputs, outputs, and flows**
