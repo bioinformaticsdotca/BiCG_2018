@@ -11,10 +11,10 @@ home: https://bioinformaticsdotca.github.io//bicg_2018
 # Day 4 - Integrative Assignment
 
 
-# Continuing with SNV calls
+## Continuing with SNV calls
 
 
-Make directory to work in
+Make a directory to work in
 
 
 Move there
@@ -30,11 +30,21 @@ cd ~/workspace/IA_thursday
 What does ANNOVAR do?
 
 
-This is what we ran:
+The following command is what we ran yesterday.
+
+(Note that we would need to redefine our environmental variable $ANNOVAR_DIR for this command to work.)
 ```
-$ANNOVAR_DIR/table_annovar.pl results/mutect/mutect_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/mutect -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . --vcfinput
+$ANNOVAR_DIR/table_annovar.pl \
+results/mutect/mutect_passed.vcf \
+$ANNOVAR_DIR/humandb/ \
+-buildver hg19 \
+-out results/annotated/mutect \
+-remove \
+-protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a \
+-operation g,r,r,f,f,f \
+-nastring . \
+--vcfinput
 ```
-Note that we would need to redefine our environmental variable $ANNOVAR_DIR for this command to work.
 
 
 Make environmental variables to refer to out input and output files:
@@ -44,6 +54,8 @@ in_file=$SNV_MODULE_DIR/results/mutect/mutect_passed.vcf
 out_file=$SNV_MODULE_DIR/results/annotated/mutect.hg19_multianno.vcf
 ```
 
+
+All header lines contain the phrase "INFO=". Pull them out with grep.  
 
 What is the difference between these headers?
 ```
@@ -56,10 +68,7 @@ To see the lines corresponding to (most of) our selected annotations
 grep "INFO=" $out_file | grep -E "refGene|cytoBand|genomicSuperDups|1000g2015aug_all|avsnp147|dbnsfp30a"
 ```
 
-Note that:
-
-
-"annotation provided by ANNOVAR" is not a terribly helpful descriptor
+Note that "annotation provided by ANNOVAR" is not a terribly helpful descriptor
 
 
 The ANNOVAR user-guide provides more info
@@ -74,10 +83,13 @@ Certain annotations provide a single piece of information:
 cytoBand = Position along chromosome based on Giemsa-stained chromosomes
 
 
-While others provide a pile of information:
+While others provide A LOT of information:
 
 
 dbnsfp30a = "SIFT, PolyPhen2 HDIV, PolyPhen2 HVAR, LRT, MutationTaster, MutationAssessor, FATHMM, MetaSVM, MetaLR, VEST, CADD, GERP++, DANN, fitCons, PhyloP and SiPhy scores, but ONLY on coding variants"
+
+
+To quickly touch on a few:
 
 
 [SIFT](http://sift.jcvi.org/) predicts whether an amino acid substitution affects protein function. 
@@ -88,6 +100,8 @@ dbnsfp30a = "SIFT, PolyPhen2 HDIV, PolyPhen2 HVAR, LRT, MutationTaster, Mutation
 
 [SiPhy](http://portals.broadinstitute.org/genome_bio/siphy/index.html) implements rigorous statistical tests to detect bases under selection from a multiple alignment data. 
 
+
+### Adding additional databases to ANNOVAR
 
 DO NOT run the following step today...
 
@@ -125,52 +139,48 @@ To further investigate this, use a web browser to navigate to St. Jude ProteinPa
 https://proteinpaint.stjude.org/
 ```
 
-Enter SOX15 for the gene name of interest.
+Perform the following steps to investigate one of our SNV calls:
 
-
-Turn on the "COSMIC" track.
-
-
+* Enter SOX15 for the gene name of interest.
+* Turn on the "COSMIC" track.
 "The Catalogue Of Somatic Mutations In Cancer, is the world's largest and most comprehensive resource for exploring the impact of somatic mutations in human cancer."
 
 
-Hide "silent" at bottom.
+* Hide "silent" at bottom.
+* Zoom in near the Orange 2 Nonsense at right. (Click and drag along top edge where it says "protein length".)
+* Further adjust zoom with In / Out near top
 
 
-Zoom in by dragging alone top edge "protein length"
-Aim near Orange 2 Nonsense at right.
-Adjust zoom with In / Out near top
-
-Hover along bottom legend, just beneath the orange line. 
-What is the genomic location? How does that compare with our SNP calls?
-Hover beneath the Orange 2 to make a 3 appear. Click 3.
-Look at the shaded circle that appears. Which cancer types exhibit this mutation?
-
-Within the shaded circle, click "List".
-Scroll right to see the full details. 
-Are any of the tumor samples familiar?
+* Hover along bottom legend, just beneath the orange line. 
+* What is the genomic location? How does that compare with our SNP calls?
+* Hover beneath the Orange 2 to make a 3 appear. 
+* Click 3.
+* Examin the shaded circle that appears. Which cancer types exhibit this mutation?
 
 
-Explore TP53 on your own.
-Can you find our SNV call?
-Does it appear to be more or less common than the mutation in SOX15?
-Is it particularly associated with breast cancer?
+* Within the shaded circle, click "List".
+* Scroll right to see the full details. 
+* Are any of the tumor samples familiar?
 
 
+* Explore TP53 on your own.
+* Can you find our SNV call?
+* Does it appear to be more or less common than the mutation in SOX15?
+* Is it particularly associated with breast cancer?
 
 
+### Additional commandline SNV practice
+
+If there is time and interest, we can try an additional subset of the data, following the Module7_snv lab from yesterday.
+
+Subset the reads by specifcying a sub-region of the exome bam files using samtools view.
+* b = output bam
+* h = include header
 
 
+This is another small region that should contain verified SNVs
 
-# If we have time
-# For additional commandline practice
-# Try an additional subset of the data, following the Module7 lab from yesterday
-
-# Subset the reads
-# b = output bam
-# h = include header
-
-# These regions for verified CNVs
+```
 samtools view -bh \
 /home/ubuntu/CourseData/CG_data/sample_data/2017_datasets/Module5/HCC1395/HCC1395_exome_normal.ordered.bam \
 12:48000000-50000000 \
@@ -180,3 +190,4 @@ samtools view -bh \
 /home/ubuntu/CourseData/CG_data/sample_data/2017_datasets/Module5/HCC1395/HCC1395_exome_tumour.ordered.bam \
 12:48000000-50000000 \
 -o /home/ubuntu/CourseData/CG_data/sample_data/HCC1395_subset/HCC1395_exome_tumour.12.48MB-50MB.bam
+```
