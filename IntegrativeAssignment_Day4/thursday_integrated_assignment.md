@@ -195,11 +195,11 @@ samtools view -bh \
 
 
 
-## Some cool resources
+# Some cool resources
 
 
-### Database resources
-#### UCSC Genome Browser
+## Database resources
+### UCSC Genome Browser
 ```
 https://genome.ucsc.edu/
 ```
@@ -217,30 +217,40 @@ cat *.fa > hg38_all.fa
 ```
 
 
-#### TCGA
-#### moved to "Genomic Data Commons"
+### TCGA (moved to "Genomic Data Commons")
 ```
 https://gdc.cancer.gov/
 ```
 * Launch Data Portal
 
-#### cBioPortal
+### cBioPortal
 Data for cancer genomics
 ```
 http://www.cbioportal.org/
 ```
 
-
-### StatQuest YouTube Series (Joshua Starmer @ UNC-Chapel Hill)
+## StatQuest YouTube Series (Joshua Starmer @ UNC-Chapel Hill)
 [StatQuest Home](https://www.youtube.com/user/joshstarmer/about)
 
 Some personal favorites:
 [RPKM, FPKM and TPM](https://www.youtube.com/watch?v=TTUrtCY2k-w)
+
+
 [Principal Component Analysis (PCA)](https://www.youtube.com/watch?v=_UVHneBUBW0)
+
+
 [FDR and the Benjamini-Hochberg Method](https://www.youtube.com/watch?v=K8LQSvtjcEo)
 
 
-### Fastq Screen
+## Some cool tools
+### FastQC
+Quickly checking the quality of a sequencing run
+```
+https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+```
+
+
+### FastQ Screen
 A cool tool for checking for contamination in your sequencing libraries
 
 ```
