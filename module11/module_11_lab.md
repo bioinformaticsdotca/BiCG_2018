@@ -718,3 +718,85 @@ In addition there are a few Docker alternatives including:
 
 * [Rkt](https://coreos.com/rkt/docs/latest/rkt-vs-other-projects.html): alternative from CoreOS
 * [Singularity](http://geekyap.blogspot.com/2016/11/docker-vs-singularity-vs-shifter-in-hpc.html): focused on HPC
+
+### Example WDL Workflow
+
+WDL is an alternative workflow language that is gaining in popularity.
+Like CWL, it is a document-oriented workflow language that can
+run in an increasing number of platforms.  
+
+It distinguishes itself from CWL in having a simplified syntax
+but still affords many of the important features of CWL such as
+scatter-gather.
+
+Here's an example WDL workflow, compare this with the CWL
+BEA alignment workflow above.
+
+```
+task Seqware_BWA_Workflow {
+    Array[File] reads
+    File reference_gz
+    File reference_gz_fai
+    File reference_gz_amb
+    File reference_gz_ann
+    File reference_gz_bwt
+    File reference_gz_pac
+    File reference_gz_sa
+    String output_dir
+    String output_file_basename
+    String download_reference_files
+
+    command {
+        python /home/seqware/Seqware-BWA-Workflow/run_seqware_workflow.py \
+        --files ${sep=' ' reads} \
+        --output-dir ${output_dir} \
+        --output-file-basename ${output_file_basename} \
+        --download-reference-files ${download_reference_files} \
+        --reference-gz ${reference_gz} \
+        --reference-gz-fai ${reference_gz_fai} \
+        --reference-gz-amb ${reference_gz_amb} \
+        --reference-gz-ann ${reference_gz_ann} \
+        --reference-gz-bwt ${reference_gz_bwt} \
+        --reference-gz-pac ${reference_gz_pac} \
+        --reference-gz-sa ${reference_gz_sa}
+    }
+
+    output {
+        File merged_output_bam = '${output_dir}/${output_file_basename}.bam'
+        File merged_output_bai = '${output_dir}/${output_file_basename}.bam.bai'
+        File merged_output_metrics = '${output_dir}/${output_file_basename}.bam.metrics'
+        File merged_output_unmapped_bam = '${output_dir}/${output_file_basename}.unmapped.bam'
+        File merged_output_unmapped_bai = '${output_dir}/${output_file_basename}.unmapped.bam.bai'
+        File merged_output_unmapped_metrics = '${output_dir}/${output_file_basename}.unmapped.bam.metrics'
+    }
+
+    runtime {
+        docker: 'quay.io/pancancer/pcawg-bwa-mem-workflow:2.6.8'
+    }
+}
+
+workflow Seqware_BWA_Workflow {
+    call Seqware_BWA_Workflow
+}
+```
+
+And the corresponding JSON parameterization file:
+
+```
+{
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.reads": ["https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/data_for_testing/hg19.chr22.5x.normal.bam", "https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/data_for_testing/hg19.chr22.5x.normal2.bam"],
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.download_reference_files": "True",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.reference_gz": "https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/pcawg-bwa-mem/genome.fa.gz",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.reference_gz_fai": "https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/pcawg-bwa-mem/genome.fa.gz.fai",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.reference_gz_bwt": "https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/pcawg-bwa-mem/genome.fa.gz.64.bwt",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.reference_gz_amb": "https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/pcawg-bwa-mem/genome.fa.gz.64.amb",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.reference_gz_ann": "https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/pcawg-bwa-mem/genome.fa.gz.64.ann",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.reference_gz_sa": "https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/pcawg-bwa-mem/genome.fa.gz.64.sa",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.reference_gz_pac": "https://dcc.icgc.org/api/v1/download?fn=/PCAWG/reference_data/pcawg-bwa-mem/genome.fa.gz.64.pac",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.output_dir": "/datastore/",
+  "Seqware_BWA_Workflow.Seqware_BWA_Workflow.output_file_basename": "hg19.chr22.5x.normal"
+}
+```
+
+Like CWL, the Dockstore command line can run WDL workflows.
+For a more complex WDL example, see https://dockstore.org/workflows/gatk-workflows%2Fbroad-prod-wgs-germline-snps-indels
