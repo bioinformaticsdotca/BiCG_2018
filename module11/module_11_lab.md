@@ -682,28 +682,6 @@ You many find that many of these Docker-based tools can be used directly and
 others you may find it best to "fork" their code to your own GitHub repository,
 customize, and then build your own tools or workflows derived from the original.
 
-## Executing at Scale
-
-In this tutorial we build and ran "locally" on our VM using the Dockstore
-command line.  This is fine for testing and development but often times
-you want to run a given tool or workflow on hundreds, thousands, or even tens of thousands of
-samples.  There are several open source and commercial platforms that enable
-this I recommend you look at:
-
-### Commercial Platforms
-
-* [Curoverse](https://curoverse.com/): CWL
-* [DNAnexus](https://www.dnanexus.com/): WDL
-* [DNAstack](https://www.dnastack.com/#/): WDL
-* [Seven Bridges](https://www.sevenbridges.com/): CWL
-
-### Open Source Platforms
-
-* [Cromwell](https://github.com/broadinstitute/cromwell): supports WDL (see below) and CWL (dev support) on Google (other clouds soon)
-* [Galaxy](https://github.com/galaxyproject/planemo): Planemo supports CWL
-* [Toil](http://toil.ucsc-cgl.org/): supports CWL and WDL on multiple clouds
-* [Nextflow](https://www.nextflow.io/): its own language and framework
-
 ## Other Technologies
 
 Its been mentioned in passing but there are actually several workflow
@@ -800,3 +778,25 @@ And the corresponding JSON parameterization file:
 
 Like CWL, the Dockstore command line can run WDL workflows.
 For a more complex WDL example, see https://dockstore.org/workflows/gatk-workflows%2Fbroad-prod-wgs-germline-snps-indels
+
+## Executing at Scale
+
+In this tutorial we build and ran "locally" on our VM using the Dockstore
+command line.  This is fine for testing and development but often times
+you want to run a given tool or workflow on hundreds, thousands, or even tens of thousands of
+samples.  There are several open source and commercial platforms that enable
+this I recommend you look at:
+
+### Commercial Platforms
+
+* [Curoverse](https://curoverse.com/): CWL
+* [DNAnexus](https://www.dnanexus.com/): WDL
+* [DNAstack](https://www.dnastack.com/#/): WDL
+* [Seven Bridges](https://www.sevenbridges.com/): CWL
+
+### Open Source Platforms
+
+* [Cromwell](https://github.com/broadinstitute/cromwell): supports WDL (see below) and CWL (dev support) on Google (other clouds soon)
+* [Galaxy](https://github.com/galaxyproject/planemo): Planemo supports CWL
+* [Toil](http://toil.ucsc-cgl.org/): supports CWL and WDL on multiple clouds
+* [Nextflow](https://www.nextflow.io/): its own language and framework
