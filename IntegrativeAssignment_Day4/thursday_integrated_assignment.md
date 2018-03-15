@@ -10,6 +10,148 @@ home: https://bioinformaticsdotca.github.io/bicg_2018
 
 # Day 4 - Integrative Assignment
 
+## What did chmod 777 do?
+
+[This link](https://www.maketecheasier.com/file-permissions-what-does-chmod-777-means/) describes what the numbers mean. (Scroll to What’s about the number?). The number 7 is equivalent the binary number 1-1-1, which is interpreted by chmod as +r+w+x. It is repeated three times for the *u*ser, *g*roup, and *o*thers.
+
+The following two commands are equivalent:
+```
+chmod 777 $my_file
+
+chmod ugo+rwx $my_file
+```
+
+
+
+## Installing programs without root access
+
+Let's install bowtie!
+
+#### With root access:
+
+```
+which bowtie
+```
+This gives no output. Bowtie cannot be found on our path. If it is installed, it is lost somewhere inside the computer.
+
+
+Can we find bowtie on the linux repositories?
+
+First, update the list of packages available
+```
+sudo apt-get update
+```
+
+Next, search for bowtie within the repositories.
+```
+apt-cache search bowtie
+```
+If you cannot find the name of your package here, use a search engine to find the name of the package you need.
+
+
+Great. We found it. Now install.
+
+```
+sudo apt-get install bowtie
+```
+Now test that it can be found, and that it functions (ideally with a small test dataset)
+
+```
+which bowtie
+
+bowtie
+```
+
+Done!
+
+
+
+
+
+#### Without root access
+
+Try to install as we did before:
+
+```
+sudo apt-get install bowtie
+```
+Sadness. No software for you.
+
+This is because the default installation directory is "/usr/bin" or something similar. Without the correct permissions, you cannot write to these directories, therefore this installation method will fail.
+
+Fortunately, there are many, MANY, MAAAAANY bioinformatics packages available through conda - a python-based package manager. Let's install that into OUR HOME DIRECTORY which we have permissions to modify.
+
+First, make a directory where we will install our software.
+```
+SOFTWARE_HOME=/home/ubuntu/software
+mkdir -p $SOFTWARE_HOME
+cd $SOFTWARE_HOME
+```
+
+[Download the Anaconda installer from here](https://www.anaconda.com/download/#linux)
+* 64-Bit (x86) Installer (533 MB)
+* Right-click / copy link address
+* Should be: https://repo.continuum.io/archive/Anaconda2-5.1.0-Linux-x86_64.sh
+
+Download from commandline
+```
+wget https://repo.continuum.io/archive/Anaconda2-5.1.0-Linux-x86_64.sh
+```
+
+Run the install script:
+```
+bash Anaconda2-5.1.0-Linux-x86_64.sh
+```
+* Hold Enter to skip Readme
+* Type yes
+* Install to: /home/ubuntu/software/anaconda (or wherever you would like to keep this forever)
+* "no" do not modify .bashrc (although you could if you want this to be maintained permanently)
+* no do not get microsoft thing
+
+
+Add conda to path
+```
+export PATH="/home/ubuntu/software/anaconda/bin:$PATH"
+```
+This line is what the conda installer offered to add to ~/.bashrc
+
+You can add this manually if you would like.
+
+
+Setup conda channels to download packages from
+```
+conda config --add channels r
+conda config --add channels bioconda
+conda config --add channels BioBuilds
+```
+
+Now you can install packages:
+
+```
+conda install bowtie
+```
+
+Or many packages at once:
+
+```
+conda install \
+samtools \
+picard \
+igvtools \
+bowtie \
+bowtie2 \
+gmap \
+bwa \
+chimerascan \
+defuse \
+perl-threaded \
+perl-set-intervaltree \
+star \
+trinity
+```
+
+
+
 
 ## Continuing with SNV calls
 
@@ -20,8 +162,9 @@ Make a directory to work in
 Move there
 
 ```
-mkdir ~/workspace/IA_thursday
-cd ~/workspace/IA_thursday
+IA_HOME=/home/ubuntu/workspace/IA_thursday
+mkdir -p $IA_HOME
+cd $IA_HOME
 ```
 
 ### ANNOVAR Annotations
@@ -89,7 +232,7 @@ While others provide A LOT of information:
 dbnsfp30a = "SIFT, PolyPhen2 HDIV, PolyPhen2 HVAR, LRT, MutationTaster, MutationAssessor, FATHMM, MetaSVM, MetaLR, VEST, CADD, GERP++, DANN, fitCons, PhyloP and SiPhy scores, but ONLY on coding variants"
 
 
-To quickly touch on a few:
+Explore a few with the following links:
 
 
 [SIFT](http://sift.jcvi.org/) predicts whether an amino acid substitution affects protein function. 
