@@ -720,7 +720,7 @@ on first login.  This includes linking your accounts.
 You need to link at least GitHub and Quay.io for
 this tutorial:
 
-![bamstat.png](images/screen13.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen13.png?raw=true" width="750" />
 
 You can essentially skip the rest of the onboarding
 wizard since you did this previously.
@@ -729,15 +729,15 @@ Next, click on "My Tools" and click the refresh button:
 
 You should now see the bamstat repo I just created:
 
-![bamstat.png](images/screen14.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen14.png?raw=true" width="750" />
 
 Next, we'll set 1.0 as the default version and point it to the right files:
 
-![bamstat.png](images/screen15.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen15.png?raw=true" width="750" />
 
 Then click the "Publish" button.  You can now find `dockstore-tool-bamstats-class` on the public Dockstore site:
 
-![bamstat.png](images/screen16.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen16.png?raw=true" width="750" />
 
 ### Sharing the Workflow on Dockstore
 
@@ -761,7 +761,7 @@ do the following:
 
 Log into github and create a new repository:
 
-![screen1.png](images/screen17.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen17.png?raw=true" width="750" />
 
 Now check this out on your local VM, for example:
 
@@ -782,7 +782,7 @@ Now copy the contents of `bamstat_tool` to your new repo and check in:
 
 Use the release feature of GitHub to name a release.
 
-![bamstat.png](images/screen18.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen18.png?raw=true" width="750" />
 
 #### Sharing your Workflow on Dockstore
 
@@ -803,7 +803,7 @@ on first login.  This includes linking your accounts.
 You need to link at least GitHub and Quay.io for
 this tutorial:
 
-![bamstat.png](images/screen13.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen13.png?raw=true" width="750" />
 
 You can essentially skip the rest of the onboarding
 wizard since you did this previously.
@@ -812,15 +812,15 @@ Next, click on "My Workflows" and click the refresh button:
 
 You should now see the alignment repo I just created:
 
-![bamstat.png](images/screen19.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen19.png?raw=true" width="750" />
 
 Next, we'll set 1.0 as the default version and point it to the right files and change any paths you need:
 
-![bamstat.png](images/screen20.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen20.png?raw=true" width="750" />
 
 Then click the "Publish" button.  You can now find `dockstore-workflow-alignment-class` on the public Dockstore site:
 
-![bamstat.png](images/screen21.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen21.png?raw=true" width="750" />
 
 ### Additional Documentation
 
