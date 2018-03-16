@@ -753,11 +753,9 @@ do the following:
 
 * create a new GitHub public repository and store your workflow (and associated tool) CWL files there
 * make one or more releases in GitHub
-* on Dockstore, log in, select 'my workflows', and click the '+' button on the organization you created this new GitHub repo in.
-* fill in the information about the new GitHub repo and also the path to the workflow CWL (or WDL) file.
+* on Dockstore, log in, select 'my workflows', refresh, and browse to that workflow.
+* fill in the information for the path to the workflow CWL (or WDL) file.
 * you have the option of specifying a test parameterization file for your workflow, something that we highly recommend!
-
-<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/new_workflow.png?raw=true" width="750" />
 
 #### Creating a Repository on GitHub
 
