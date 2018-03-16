@@ -1,14 +1,14 @@
 ---
 layout: tutorial_page
 permalink: /bicg_2018_lab_8_gprofiler
-title: BiCG Module 8
+title: BiCG Module 13
 header1: Bioinformatics for Cancer Genomics 2018
-header2: Lab Module 8 - gProfiler
+header2: Lab Module 13 - gProfiler
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 ---
 
-# Lab Module 8 - Pathway Over-representation Analysis
+# Lab Module 13 - Pathway Over-representation Analysis
 
 By Jüri Reimand
 
@@ -26,11 +26,9 @@ Highlights:
 * These significantly mutated genes are involved in a wide range of cellular processes, including transcription factors/regulators, histone modifiers, genome integrity, receptor tyrosine kinase signalling, cell cycle, mitogen- activated protein kinases (MAPK) signalling, phosphatidylinositol-3-OH kinase (PI(3)K) signalling, Wnt/b-catenin signalling, histones, ubiquitin- mediated proteolysis, and splicing (Fig. 2).  
 
 Supplementary Data, Table 4  
-* globally significant, frequency >= 1% for glioblastoma multiforme (GBM): 46  
-* globally significant, frequency >= 1% for kidney renal clear cell carcinoma (KIRC): 53  
+* globally significant, frequency >= 1% for glioblastoma multiforme (GBM): 46   
 
 [GBM gene list](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/Genelist_GBM.txt)  
-[KIRC gene list](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/Genelist_KIRC.txt)  
 
 ## Let’s use g:Profiler to obtain enrichment results
 
@@ -42,7 +40,7 @@ First set the parameters and filter gene sets to be analysed:
 
 Note that input genes are ordered according to p-value so the **Ordered Query** option is appropriate.  
 
-Then paste the gene list (GBM shown here) and press **g:Profile** to start the analysis.  
+Then paste the GBM gene list and press **g:Profile** to start the analysis.  
 
 Scroll down to see significantly enriched pathways and processes. Scroll right to see gene annotations of GO processes (colored) and Reactome pathways (black; scroll further down).  
             
@@ -75,22 +73,20 @@ Scroll down to see significantly enriched pathways and processes. Scroll right t
 ## Building an Enrichment Map visualization in Cytoscape
 
 1.	From the main menu, select Apps>Enrichment Map>Create Enrichment Map. If you don’t have this app, install version 2.2.1 using Cytoscape App Manager or [Cytoscape App Store](http://apps.cytoscape.org/apps/enrichmentmap).  
-2.	First load all the files:  
+2.	First click on (+) to add a new analysis. Load all the files:  
 * [GMT file](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module8/hsapiens.pathways.NAME.gmt): has gene-set definitions  
-* [Enrichment of data-set 1](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/GBM_gprofiler_results_1048466457480.txt): has enrichment statistics for GBM  
-* [Enrichment of data-set 2](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/KIRC_gprofiler_results_1048466457480.txt): has enrichment statistics for KIRC  
+* [Enrichment of data-set](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/GBM_gprofiler_results_1048466457480.txt): has enrichment statistics for GBM gene list   
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic1.png?raw=true" alt="Cytoscape1" width="750" />  
 
-3.	Set analysis parameters.   
+3.	Set analysis parameters under Advanced Options.   
 a.	FDR-corrected P-values are filtered in g:Profiler and no further filtering is needed in Enrichment map.  
 b.	Jaccard coefficient + overlap combined defines the stringency edges between gene sets and the granularity of the map. Use this parameter to create denser or sparser networks. The value 0.66 provides relatively stringent similarity cutoffs and leads to sparser maps. 
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic2.png?raw=true" alt="Cytoscape2" width="750" />
 
 4.	Click ‘Build’. An enrichment map will be generated. 
-5.	The resulting map links nodes to first gene list (GBM) and edges of nodes to second gene list (KIRC). Entirely red nodes are pathways with significant enrichment in both gene lists. Red nodes with gray edges are only significant in first gene list and grey nodes with red edges are only significant in the second list. 
-6.	Map the second gene list to blue tones to make this visualization easier to read. The simplest way involves a spreadsheet editor such as Excel. Edit the phenotype column and replace all values with -1. Make sure you save the file as text file. Review the new text file in a text editor to verify that no extra symbols or quotes have been added by Excel. See https://www.ncbi.nlm.nih.gov/pubmed/27552985. 
-7.	Build the enrichment map again and KIRC pathways will map to blue tones. 
+5.	The resulting map  shows groups of enriched pathways. Pathways are connected by edges if they share a large fraction of related genes. That fraction is determined in point 3b above.   
+
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic3.png?raw=true" alt="Cytoscape3" width="750" />
