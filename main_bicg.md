@@ -210,7 +210,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lab Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1JqKJ5PNwltwgDtxwweIJsXrPmIGobcEd/view?usp=sharing)
 
-[Lab Practical]()  
+[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2018_module8d_lab)  
 
 
 ## Module 9: Clinical Data Integration
