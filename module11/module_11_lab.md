@@ -38,6 +38,7 @@ Things to know before you start:
 
 Set up a fresh VM by following the instructions in the [Module 10 lab] (https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/lab.md), with the following characteristics:
 
+* use the snapshot `20180316_BiCG_module_11_v2`
 * choose flavor c1.large
 * assign a floating IP
 
@@ -698,6 +699,46 @@ And this corresponds to the docker URL:
 
     quay.io/briandoconnor/dockstore-tool-bamstats-class:1.0
 
+#### Sharing your Docker Image on Dockstore
+
+Now that you've built your Docker image automatically
+on quay.io everyone can use it and pull the image.  To
+increase visibility for the scientific community
+you can register the tool on Dockstore.  This gives
+you a bunch of nice features such as integrating
+documentation into your page (quay.io doesn't provide this),
+providing a place for your CWL, providing a command line
+that easily allows people to run your tool, etc.
+
+>**Tip:** you need a GitHub account to use Dockstore.org.
+
+Log into [Dockstore](https://dockstore.org)
+
+You will automatically be directed to setup Dockstore
+on first login.  This includes linking your accounts.
+
+You need to link at least GitHub and Quay.io for
+this tutorial:
+
+![bamstat.png](images/screen13.png)
+
+You can essentially skip the rest of the onboarding
+wizard since you did this previously.
+
+Next, click on "My Tools" and click the refresh button:
+
+You should now see the bamstat repo I just created:
+
+![bamstat.png](images/screen14.png)
+
+Next, we'll set 1.0 as the default version and point it to the right files:
+
+![bamstat.png](images/screen15.png)
+
+Then click the "Publish" button.  You can now find `dockstore-tool-bamstats-class` on the public Dockstore site:
+
+![bamstat.png](images/screen16.png)
+
 ### Sharing the Workflow on Dockstore
 
 > **Tip**: If you want to share your workflows with others sign up for [Dockstore.org](https://dockstore.org/) and [GitHub](https://github.com) accounts.
@@ -718,7 +759,70 @@ do the following:
 
 ![new_workflow.png](images/new_workflow.png)
 
-> **Tip**: Dockstore can also help you share tools in addition to workflows.  It's a slightly more complex process since you need to link a Docker tool on quay.io to a CWL/WDL descriptor on GitHub and then can register on Dockstore.  Still, this is nice if you're a tool author and want to share your tool with a wide audience.
+#### Creating a Repository on GitHub
+
+Log into github and create a new repository:
+
+![screen1.png](images/screen17.png)
+
+Now check this out on your local VM, for example:
+
+    cd Development/gitroot/briandoconnor/
+    git clone git@github.com:briandoconnor/dockstore-workflow-alignment-class.git
+
+#### Add the CWL Workflow Descriptor
+
+Now copy the contents of `bamstat_tool` to your new repo and check in:
+
+    cp -r alignment_workflow/*  /Users/brianoconnor/Development/gitroot/briandoconnor/dockstore-workflow-alignment-class/
+    cd /Users/brianoconnor/Development/gitroot/briandoconnor/dockstore-workflow-alignment-class/
+    git add *
+    git commit -a -m 'adding initial checkin'
+    git push
+
+#### Make a Release on Github
+
+Use the release feature of GitHub to name a release.
+
+![bamstat.png](images/screen18.png)
+
+#### Sharing your Workflow on Dockstore
+
+Now that you've released your workflow you can share on Dockstore to
+increase visibility for the scientific community.  This gives
+you a bunch of nice features such as integrating
+documentation into your page,
+providing a place for your CWL, providing a command line
+that easily allows people to run your tool, etc.
+
+>**Tip:** you need a GitHub account to use Dockstore.org.
+
+Log into [Dockstore](https://dockstore.org)
+
+You will automatically be directed to setup Dockstore
+on first login.  This includes linking your accounts.
+
+You need to link at least GitHub and Quay.io for
+this tutorial:
+
+![bamstat.png](images/screen13.png)
+
+You can essentially skip the rest of the onboarding
+wizard since you did this previously.
+
+Next, click on "My Workflows" and click the refresh button:
+
+You should now see the alignment repo I just created:
+
+![bamstat.png](images/screen19.png)
+
+Next, we'll set 1.0 as the default version and point it to the right files and change any paths you need:
+
+![bamstat.png](images/screen20.png)
+
+Then click the "Publish" button.  You can now find `dockstore-workflow-alignment-class` on the public Dockstore site:
+
+![bamstat.png](images/screen21.png)
 
 ### Additional Documentation
 
