@@ -77,16 +77,16 @@ Scroll down to see significantly enriched pathways and processes. Scroll right t
 * [GMT file](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module8/hsapiens.pathways.NAME.gmt): has gene-set definitions  
 * [Enrichment of data-set](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/GBM_gprofiler_results_1048466457480.txt): has enrichment statistics for GBM gene list   
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic1.png?raw=true" alt="Cytoscape1" width="750" />  
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module8/pic4.jpg?raw=true" alt="Cytoscape1" width="750" />  
 
 3.	Set analysis parameters under Advanced Options.   
 a.	FDR-corrected P-values are filtered in g:Profiler and no further filtering is needed in Enrichment map.  
 b.	Jaccard coefficient + overlap combined defines the stringency edges between gene sets and the granularity of the map. Use this parameter to create denser or sparser networks. The value 0.66 provides relatively stringent similarity cutoffs and leads to sparser maps. 
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic2.png?raw=true" alt="Cytoscape2" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module8/pic5.jpg?raw=true" alt="Cytoscape2" width="750" />
 
 4.	Click ‘Build’. An enrichment map will be generated. 
 5.	The resulting map  shows groups of enriched pathways. Pathways are connected by edges if they share a large fraction of related genes. That fraction is determined in point 3b above.   
 
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic3.png?raw=true" alt="Cytoscape3" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module8/pic6.jpg?raw=true" alt="Cytoscape3" width="750" />
