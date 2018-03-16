@@ -16,10 +16,11 @@ As the modules mentioned, there are multiple workflows that have been developed 
 * [Detecting germline SNVs/Indels](https://software.broadinstitute.org/gatk/best-practices/workflow?id=11145)
 * [Detecting somatic CNVs](https://software.broadinstitute.org/gatk/best-practices/workflow?id=11147)
 
-In addition to the workflows determined by the Broad institute, a few other workflows can be found here:
+In addition to the workflows determined by the Broad institute, a few other workflows can be found here. These are meant :
 
 * *RNA-Sequencing pipeline*
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/Workflows/Images/RNA_workflow_diffexp.jpg?raw=true" alt="Differential Expression" width="850" />
 
 
-
+* *SNV Detection Workflow*
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/Workflows/Images/SNV_workflow.jpg?raw=true" alt="SNV Detection" width="850" />
