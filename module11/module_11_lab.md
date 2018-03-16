@@ -375,7 +375,7 @@ scp -i path_to_private_key ubuntu@10.0.0.XXX:/tmp/bamstats_report.zip
 You may have to transfer from your VM, to the jump host, then to your local
 computer for viewing.  Here's what the report looks like:
 
-![bamstat_report.png](images/bamstat_report.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/bamstat_report.png?raw=true" width="750" />
 
 ## Creating a CWL Workflow
 
@@ -583,7 +583,7 @@ sys     0m2.336s
 
 Here's an example of one of the plots from this report:
 
-![Coverage_boxAndWhisker.png](images/Coverage_boxAndWhisker.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/Coverage_boxAndWhisker.png?raw=true" width="750" />
 
 ## Sharing Your Work
 
@@ -629,7 +629,7 @@ do the following:
 
 Log into github and create a new repository:
 
-![screen1.png](images/screen1.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen1.png?raw=true" width="750" />
 
 Now check this out on your local VM, for example:
 
@@ -650,49 +650,49 @@ Now copy the contents of `bamstat_tool` to your new repo and check in:
 
 Use the release feature of GitHub to name a release.
 
-![screen.png](images/screen2.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen2.png?raw=true" width="750" />
 
 #### Setup Quay.io to Build and Share your Docker Image
 
 Log onto Quay.io and create a new repository.
 
-![quay.png](images/screen3.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen3.png?raw=true" width="750" />
 
 Link to your Github user account:
 
-![quay.png](images/screen4.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen4.png?raw=true" width="750" />
 
 Choose your github repo:
 
-![quay.png](images/screen5.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen5.png?raw=true" width="750" />
 
 Trigger for everything:
 
-![quay.png](images/screen6.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen6.png?raw=true" width="750" />
 
 Choose the Dockerfile:
 
-![quay.png](images/screen7.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen7.png?raw=true" width="750" />
 
 Select the directory to build from:
 
-![quay.png](images/screen8.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen8.png?raw=true" width="750" />
 
 Finish the registration:
 
-![quay.png](images/screen9.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen9.png?raw=true" width="750" />
 
 Now trigger your first build:
 
-![quay.png](images/screen10.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen10.png?raw=true" width="750" />
 
 Look for run trigger now and select 1.0:
 
-![quay.png](images/screen11.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen11.png?raw=true" width="750" />
 
 Once setup, here's an example of what the bamstat tool looks like in quay.io
 
-![bamstat.png](images/screen12.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/screen12.png?raw=true" width="750" />
 
 And this corresponds to the docker URL:
 
@@ -716,7 +716,7 @@ do the following:
 * fill in the information about the new GitHub repo and also the path to the workflow CWL (or WDL) file.
 * you have the option of specifying a test parameterization file for your workflow, something that we highly recommend!
 
-![new_workflow.png](images/new_workflow.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module11/images/new_workflow.png?raw=true" width="750" />
 
 > **Tip**: Dockstore can also help you share tools in addition to workflows.  It's a slightly more complex process since you need to link a Docker tool on quay.io to a CWL/WDL descriptor on GitHub and then can register on Dockstore.  Still, this is nice if you're a tool author and want to share your tool with a wide audience.
 
