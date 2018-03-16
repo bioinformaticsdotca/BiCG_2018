@@ -19,7 +19,7 @@ As the modules mentioned, there are multiple workflows that have been developed 
 In addition to the workflows determined by the Broad institute, a few other workflows can be found here:
 
 * *RNA-Sequencing pipeline*
-<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/Workflows/Images/RNA_workflow_diffexp.tif?raw=true" alt="Differential Expression" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/Workflows/Images/RNA_workflow_diffexp.jpg?raw=true" alt="Differential Expression" width="850" />
 
 
 
