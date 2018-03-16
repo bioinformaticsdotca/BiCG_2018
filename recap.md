@@ -48,6 +48,10 @@ EGA
 
 [Cancer Genome Collaboratory](https://www.cancercollaboratory.org)  
 
+### Variation databases
+
+[dbSNP](https://www.ncbi.nlm.nih.gov/SNP/)  
+
 ### Gene fusion databases
 
 [ChimerDB 3](http://ercsb.ewha.ac.kr/fusiongene)  
@@ -64,6 +68,32 @@ Used to explore genomes. Can load "tracks" of extra info. Most common UCSC then 
 ## Alignment vs Assembly
 
 ## CNVs, SNVs, and Fusions
+
+### Tools for CNVs
+
+CRMAv2: http://www.aroma-project.org/vignettes/CRMAv2  
+DNACopy: http://www.bioconductor.org/packages/release/bioc/html/DNAcopy.html  
+HMM-Dosage: http://compbio.bccrc.ca/software/hmm-dosage/  
+PICNIC: http://www.sanger.ac.uk/genetics/CGP/Software/PICNIC/  
+OncoSNP: https://sites.google.com/site/oncosnp/  
+HMMCopy: http://compbio.bccrc.ca/software/hmmcopy/  
+Apolloh: http://compbio.bccrc.ca/software/apolloh/  
+Control-FreeC: http://bioinfo-out.curie.fr/projects/freec/  
+ASCAT: https://www.crick.ac.uk/peter-van-loo/software/ASCAT  
+ABSOLUTE: http://software.broadinstitute.org/cancer/software/genepattern/modules/docs/ABSOLUTE/1  
+TITAN: http://compbio.bccrc.ca/software/titan/  
+
+### Tools for SNVs
+
+GATK: http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit  
+SamTools: http://samtools.sourceforge.net/  
+MuTect: http://www.broadinstitute.org/software/cprg/?q=node/34  
+Strelka (from Illumina): https://sites.google.com/site/strelkasomaticvariantcaller/  
+
+### Tools for Annotation
+
+ANNOVAR: http://www.openbioinformatics.org/annovar/  
+SNPEFF: http://snpeff.sourceforge.net/  
 
 ## Pathway and Network Analysis
 
