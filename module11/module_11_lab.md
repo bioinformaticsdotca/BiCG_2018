@@ -399,7 +399,7 @@ file and also the report zip file.
 Let's take a look at the workflow that calls alignment then bamstats.  
 Notice we define inputs and outputs in a simpler fashion than the individual
 tools.  And then connect steps by referencing the output of one step as
-the input of the next step.
+the input of the next step.  Here is `alignment_workflow/alignment.cwl`:
 
 ```
 #!/usr/bin/env cwl-runner
@@ -482,7 +482,7 @@ steps:
 ### Prepare your JSON input file
 
 I've collected the inputs and reference files for you already, see the configuration
-file below:
+file below, this is from `alignment_workflow/Dockstore_cwl_local.json`:
 
 ```
 {
@@ -604,7 +604,7 @@ extremely easy to share with others.
 A key part of scientific research is reproducibility.  So as you
 develop workflows, perform analysis, and write your papers, sharing your tools and workflows with the community is absolutely critical. Docker and CWL allow you to share tools and workflows much more successfully than systems used in the past.  Here we cover at a high level the steps you can use to share your portable tools and workflows with others.
 
-### Sharing Docker-based Tool on Quay.io
+### Sharing Docker-based Tool on Quay.io & Dockstore
 
 > **Tip**: If you want to share your Docker-based tools with others sign up for [Quay.io](https://quay.io/) and [GitHub](https://github.com) accounts.
 
@@ -625,7 +625,70 @@ do the following:
 * on Quay.io, create a new repository and link this to your GitHub repository
 * Quay.io will automatically build and host your Docker-based tool!
 
-![quay.png](images/quay.png)
+#### Creating a Repository on GitHub
+
+Log into github and create a new repository:
+
+![screen1.png](images/screen1.png)
+
+Now check this out on your local VM, for example:
+
+    cd Development/gitroot/briandoconnor/
+    git clone git@github.com:briandoconnor/dockstore-tool-bamstat-class.git
+
+#### Add the Dockerfile and CWL Tool Descriptor
+
+Now copy the contents of `bamstat_tool` to your new repo and check in:
+
+    cp -r bamstat_tool/* /Users/brianoconnor/Development/gitroot/briandoconnor/dockstore-tool-bamstat-class
+    cd /Users/brianoconnor/Development/gitroot/briandoconnor/dockstore-tool-bamstat-class
+    git add *
+    git commit -a -m 'adding initial checkin'
+    git push
+
+#### Make a Release on Github
+
+Use the release feature of GitHub to name a release.
+
+![screen.png](images/screen2.png)
+
+#### Setup Quay.io to Build and Share your Docker Image
+
+Log onto Quay.io and create a new repository.
+
+![quay.png](images/screen3.png)
+
+Link to your Github user account:
+
+![quay.png](images/screen4.png)
+
+Choose your github repo:
+
+![quay.png](images/screen5.png)
+
+Trigger for everything:
+
+![quay.png](images/screen6.png)
+
+Choose the Dockerfile:
+
+![quay.png](images/screen7.png)
+
+Select the directory to build from:
+
+![quay.png](images/screen8.png)
+
+Finish the registration:
+
+![quay.png](images/screen9.png)
+
+Now trigger your first build:
+
+![quay.png](images/screen10.png)
+
+Look for run trigger now and select 1.0:
+
+![quay.png](images/screen11.png)
 
 Once setup, here's an example of what the bamstat tool looks like in quay.io
 
@@ -633,7 +696,7 @@ Once setup, here's an example of what the bamstat tool looks like in quay.io
 
 And this corresponds to the docker URL:
 
-    quay.io/briandoconnor/dockstore-tool-bamstats:1.25-11
+    quay.io/briandoconnor/dockstore-tool-bamstats-class:1.0
 
 ### Sharing the Workflow on Dockstore
 
