@@ -174,7 +174,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1lBfGQBGDAZWgLdLxoVg9X8z5TVJWXoY_/view?usp=sharing)  
 
-[Lab practical]()  
+[Lab practical](https://bioinformaticsdotca.github.io/BiCG_2018_module11)  
 
 ## Module 12: Big Data Analytics in the Cloud  
 
