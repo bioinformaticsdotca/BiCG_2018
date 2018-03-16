@@ -692,7 +692,7 @@ Look for run trigger now and select 1.0:
 
 Once setup, here's an example of what the bamstat tool looks like in quay.io
 
-![bamstat.png](images/bamstats.png)
+![bamstat.png](images/screen12.png)
 
 And this corresponds to the docker URL:
 
