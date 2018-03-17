@@ -25,6 +25,11 @@ In addition to the workflows determined by the Broad institute, a few other work
 * *SNV Detection Workflow*
 <img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/Workflows/Images/SNV_workflow.jpg?raw=true" alt="SNV Detection" width="850" />
 
+
+* *CNV Detection Workflow*
+<img src="https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/Workflows/Images/CNV_workflow.jpg?raw=true" alt="CNV Detection" width="850" />
+
+
 # File formats
 
 * GenBank Flat File: file format for genbank intended to be human readable
@@ -102,7 +107,10 @@ TITAN: http://compbio.bccrc.ca/software/titan/
 GATK: http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit  
 SamTools: http://samtools.sourceforge.net/  
 MuTect: http://www.broadinstitute.org/software/cprg/?q=node/34  
-Strelka (from Illumina): https://sites.google.com/site/strelkasomaticvariantcaller/  
+MuTect2: https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_cancer_m2_MuTect2.php
+Strelka (from Illumina): https://sites.google.com/site/strelkasomaticvariantcaller/
+SomaticSniper: http://gmt.genome.wustl.edu/packages/somatic-sniper/
+VarScan: http://varscan.sourceforge.net/
 
 ## Tools for Annotation
 
