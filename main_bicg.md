@@ -228,5 +228,5 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 ***
 
-
+Thank you for attending the Bioinformatics for Cancer Genomics workshop! Help us make this workshop better by filling out [our survey](https://goo.gl/forms/FznYbJNewJLArj7t1).
 
