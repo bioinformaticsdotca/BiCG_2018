@@ -219,9 +219,9 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1CMHXfBonu4xry5cuCiVQC_YWukjJROcw/view?usp=sharing)
 
-[Lab Practical]()  
+[Lab Practical](https://drive.google.com/a/bioinformatics.ca/file/d/1FZy349vf-e3G3MDeowRjNYDJJ-AwjeX7/view?usp=sharing)  
 
-[Lab Script](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module9/CBW-CancerGenomics-June2017-Lab-participant-script.r)  
+[Lab Script](https://drive.google.com/a/bioinformatics.ca/file/d/1Wxz3BRWvu2iAFhJB-voz44mGSAZ0vI9l/view?usp=sharing)  
 
 [Data for lab part 1](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module9/CBW-CancerGenomics-June2017-Lab-Data-Half1.RData)   
 [Data for lab part 2](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module9/CBW-CancerGenomics-June2017-Lab-Data-Half2.RData)   
