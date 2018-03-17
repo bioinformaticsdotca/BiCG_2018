@@ -213,7 +213,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 [Lab Practical](https://bioinformaticsdotca.github.io/bicg_2018_module8d_lab)  
 
 
-## Module 9: Clinical Data Integration
+## Module 15: Clinical Data Integration
 
 *<font color="#827e9c">Lauren Erdman</font>* 
 
@@ -225,6 +225,10 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Data for lab part 1](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module9/CBW-CancerGenomics-June2017-Lab-Data-Half1.RData)   
 [Data for lab part 2](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module9/CBW-CancerGenomics-June2017-Lab-Data-Half2.RData)   
+
+## Recap
+
+[Overview of workshop](https://bioinformaticsdotca.github.io/bicg_2018_recap)  
 
 ***
 
