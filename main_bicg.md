@@ -208,7 +208,7 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 *<font color="#827e9c">Molly Hammell</font>*
 
-[Lecture]()
+[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1CvvMUG-h1kScfvWJKktaepG7MOXsSPmC/view?usp=sharing)
 
 ## Module 14: Variants to Networks
 
