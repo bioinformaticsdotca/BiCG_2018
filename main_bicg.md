@@ -39,17 +39,23 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1r8vVlVxYzkaLV9G3rSM3z9YfPJKWbG0-/view?usp=sharing)  
 
+[Recording](https://youtu.be/eC69KqQZLoQ)
+
 ## Module 2: Ethics of Data Usage and Security
 
 *<font color="#827e9c">Mark Phillips</font>*
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1VXZfRkk7TriPeZUYDJcHRToyuVD8WXk2/view?usp=sharing)
 
+[Recording](https://youtu.be/vMezmnzCL48)
+
 ## Module 3a: Cancer Databases
 
 *<font color="#827e9c">Francis Ouellette</font>* 
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1XZghbyTCmyc5xmo7twj_LjvDP4BMhgxA/view?usp=sharing)
+
+[Recording](https://youtu.be/80J4C2E6tQo)
 
 ## Module 3b: Visualization Tools
 
@@ -86,6 +92,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1HG-ZTnA9pJYcpMs55Ky3f1diERq9etVI/view?usp=sharing)  
 
+[Recording](https://youtu.be/jA8RI4u_hd8)
+
 [Lab Practical](https://bioinformaticsdotca.github.io/BiCG_2018_mod3_mapping)  
 
 
@@ -93,7 +101,9 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 *<font color="#827e9c">Jared Simpson</font>* 
 
-[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/17PJc8mogWpfl4C8vmINwtYVpgHDuXz_p/view?usp=sharing)  
+[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/17PJc8mogWpfl4C8vmINwtYVpgHDuXz_p/view?usp=sharing)
+
+[Recording](https://youtu.be/V2xIGdEkA5U)
 
 [Lab Practical](https://bioinformaticsdotca.github.io/BiCG_2018_mod3_assembly)  
 
@@ -102,6 +112,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 *<font color="#827e9c">Sorana Morrissy</font>* 
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1cO1Vqznqvcd0PDjnzYhOUW_V4cdwyKG5/view?usp=sharing)  
+
+[Recording](https://youtu.be/zc_MK-5wFqc)
 
 [Lab Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1WrPblzAsi2x4sb_PnzZ4cK89Rvhtv9ZC/view?usp=sharing)  
 
@@ -123,6 +135,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 *<font color="#827e9c">Sorana Morrissy</font>* 
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1loSEwod3wt-gs5xJF-RcgbeUHdSUls-U/view?usp=sharing)  
+
+[Recording](https://youtu.be/hHzOxHxyMRg)
   
 [Lab Practical](https://bioinformaticsdotca.github.io/bicg_2018_lab_7)  
 
@@ -131,6 +145,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 *<font color="#827e9c">Fouad Yousif</font>* 
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1B4TAAm9pHQPeVpGV3HE34zPCqJCQ9FF8/view?usp=sharing)  
+
+[Recording](https://youtu.be/RLICyV5Tqcs)
  
 [Ballgown code](https://drive.google.com/a/bioinformatics.ca/file/d/0B2tkpG9cB9bdbFlCeHEzcDBDSmZ4aTZ4dHpiQUVET0c1TU1j/view?usp=sharing)  
 
@@ -156,6 +172,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1YM4fh1CZNZHmUeITCfvw8y1-dKZPHxOj/view?usp=sharing)  
 
+[Recording](https://youtu.be/TzjxFkDHO4M)
+
 [Lab Practical - CTAT Fusion Toolkit](https://bioinformaticsdotca.github.io/BiCG_2018_module9_star_fusion)
 
 [Lab Practical - DISCASM and GMAP-Fusion](https://bioinformaticsdotca.github.io/BiCG_2018_module9_discasm)
@@ -164,7 +182,9 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 *<font color="#827e9c">George Mihaiescu</font>*
 
-[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1Z70mWcwNPKrMiCHOZhKeY4bbM7Unh367/view?usp=sharing)  
+[Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1Z70mWcwNPKrMiCHOZhKeY4bbM7Unh367/view?usp=sharing)
+
+[Recording](https://youtu.be/HGKBxGSG54c)
 
 [Lab practical](https://bioinformaticsdotca.github.io/BiCG_2018_module10)  
 
@@ -182,6 +202,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1lBfGQBGDAZWgLdLxoVg9X8z5TVJWXoY_/view?usp=sharing)  
 
+[Recording](https://youtu.be/1c6kxOUhAmY)
+
 [Lab practical](https://bioinformaticsdotca.github.io/BiCG_2018_module11)  
 
 ## Module 12: Big Data Analytics in the Cloud  
@@ -190,6 +212,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1SUpP8pFMnmEyksKCCwtyyFnij59f4b1c/view?usp=sharing)  
 
+[Recording](https://youtu.be/Dmbvffpat1A)
+
 [Lab practical](https://bioinformaticsdotca.github.io/BiCG_2018_module12)  
 
 ## Module 13: Genes to Pathways
@@ -197,6 +221,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 *<font color="#827e9c">Jüri Reimand</font>* 
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/14hVisQRtn30K6pycWfCYj3TKlX3v1fiz/view?usp=sharing)  
+
+[Recording](https://youtu.be/LLWiczheL8g)
 
 [Lab Practical - gProfiler](https://bioinformaticsdotca.github.io/bicg_2018_lab_8_gprofiler)  
 
@@ -216,6 +242,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1SfWBmY-ugrnuVt5sGc_lw5v9ogtZM2Nr/view?usp=sharing)
 
+[Recording](https://youtu.be/Mpl3wMfz_yI)
+
 [Lab Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1JqKJ5PNwltwgDtxwweIJsXrPmIGobcEd/view?usp=sharing)
 
 [Lab Practical](https://bioinformaticsdotca.github.io/bicg_2018_module8d_lab)  
@@ -226,6 +254,8 @@ You can download the printed course manual [here](https://drive.google.com/a/bio
 *<font color="#827e9c">Lauren Erdman</font>* 
 
 [Lecture](https://drive.google.com/a/bioinformatics.ca/file/d/1CMHXfBonu4xry5cuCiVQC_YWukjJROcw/view?usp=sharing)
+
+[Recording](https://youtu.be/SyU0Uhd_PVQ)
 
 [Lab Practical](https://drive.google.com/a/bioinformatics.ca/file/d/1FZy349vf-e3G3MDeowRjNYDJJ-AwjeX7/view?usp=sharing)  
 
