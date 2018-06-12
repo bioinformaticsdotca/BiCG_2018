@@ -6,6 +6,9 @@ header1: Bioinformatics for Cancer Genomics 2018
 header2: Integrative Assignment using Galaxy
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
+description: Integrative Assignment using Galaxy
+author: Hamza Farooq
+modified: March 14th, 2018
 ---
 
 # Galaxy
