@@ -6,6 +6,9 @@ header1: Bioinformatics for Cancer Genomics 2018
 header2: Lab Module 13 - gProfiler
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
+description: BiCG Module 13 Lab
+author: Jüri Reimand
+modified: March 16th, 2018
 ---
 
 # Lab Module 13 - Pathway Over-representation Analysis
