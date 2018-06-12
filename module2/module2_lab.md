@@ -6,6 +6,9 @@ header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
+description: BiCG Lab 2 IGV
+author: Sorana Morrissy and Florence Cavalli
+modified: March 13th, 2018
 ---
 
 # CBW BiCG Module 3 - IGV lab
