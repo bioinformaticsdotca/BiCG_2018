@@ -5,6 +5,10 @@ title: Bioinformatics for Cancer Genomics
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics
 image: /site_images/CBW_cancerDNA_icon-16.jpg
+keywords: Visualize genomic data, pathway analysis, integrate clinical data
+description: Course covers the key bioinformatics concepts and tools required to analyze cancer genomic data sets and access and work with data sets in the cloud. 
+instructors: Jared Simpson, Trevor Pugh, Francis Ouellette, Andrew McPherson, Sorana Morrissy, Juri Reimand, Lincoln Stein, Robin Haw, Anna Goldenberg, Fouad Yousif, Mark Phillips, Brian O'Connor, Christina Yung, George Mihaiescu, Zhibin Lu
+length: 6 days
 ---
 
 # Welcome <a id="welcome"></a>
