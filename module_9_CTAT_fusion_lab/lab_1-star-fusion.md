@@ -6,6 +6,9 @@ header1: Bioinformatics for Cancer Genomics 2018
 header2: Gene Fusions Tutorial - Star Fusion
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
+description: Gene Fusions Tutorial
+author: Brian Haas
+modified: March 15th, 2018
 ---
 
 # Tutorial for the CTAT Fusion Toolkit, leveraging STAR-Fusion, FusionInspector, and Trinity
