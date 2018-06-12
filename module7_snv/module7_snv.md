@@ -6,6 +6,9 @@ header1: Bioinformatics for Cancer Genomics 2018
 header2: Lab Module 7 - Somatic Mutations and Annotation
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io//bicg_2018
+description: BiCG Lab 7
+author: Sorana Morrissy
+modified: March 15th, 2018
 ---
 
 # Lab Module 7 - Somatic Mutations and Annotation
