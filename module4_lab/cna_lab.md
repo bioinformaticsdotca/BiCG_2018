@@ -6,6 +6,9 @@ header1: Workshop Pages for Students
 header2: Lab Module 6 - Copy Number Alterations
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
+description: Lab Module 6-Copy Number Alterations
+author: 
+Modified: March 15th, 2018
 ---
 
 # Table of Contents
