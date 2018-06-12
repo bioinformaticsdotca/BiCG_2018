@@ -6,6 +6,9 @@ header1: Bioinformatics for Cancer Genomics 2018
 header2: Integrative Assignment Day 2
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
+description: Integrative Assignment Day 2
+author: Hamza Farooq
+modified: Marh 16th, 2018
 ---
 
 # Integrated Assignment - Overview of Day 2
