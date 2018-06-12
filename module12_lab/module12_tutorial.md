@@ -6,6 +6,9 @@ header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
+description:  BiCG Lab 12
+author: Solomon Shorser
+modified: March 17th, 2018
 ---
 
 # Bioinformatics for Cancer Genomics 12 Lab
