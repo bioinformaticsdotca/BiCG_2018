@@ -6,6 +6,9 @@ header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics 2018 Read Mapping Tutorial
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
+description: BiCG Module 4 Lab-Mapping
+author: Jared Simpson
+modified: March 13th, 2018
 ---
 
 This tutorial was created by Jared Simpson.
