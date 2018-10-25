@@ -8,14 +8,14 @@ image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2018
 description:  BiCG Lab 12
 author: Solomon Shorser
-modified: March 17th, 2018
+modified: October 25th, 2018
 ---
 
 # Bioinformatics for Cancer Genomics 12 Lab
 
 This lab was created by Solomon Shorser
 
-## Introduction 
+## Introduction
 
 ### Description of the lab
 
@@ -29,8 +29,8 @@ After this lab, you will be able to:
 
 Things to know before you start:
 
-The lab may take between 1-2 hours, depending on your familiarity with Cloud Computing and alignment tasks. 
-   
+The lab may take between 1-2 hours, depending on your familiarity with Cloud Computing and alignment tasks.
+
 ### Requirments
 
 Set up a fresh VM by following the instructions in [Module 10 lab] (https://github.com/bioinformaticsdotca/BiCG_2018/blob/master/module10/lab.md), but with the following changes:
@@ -50,22 +50,22 @@ ssh -i path_to_private_key ubuntu@10.0.0.XXX
 ### Install Java
 
 ```
-sudo add-apt-repository ppa:webupd8team/java 
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update && sudo apt-get install -y oracle-java8-set-default
 ```
 
 ### Get the dockstore tool
-Latest instructions for installing Dockstore at https://dockstore.org/onboarding
+Latest instructions for installing Dockstore at https://dockstore.org/quick-start
 
 ```
-mkdir -p ~/sbin
-cd ~/sbin
-wget https://github.com/ga4gh/dockstore/releases/download/1.3.6/dockstore
-chmod u+x dockstore
+mkdir -p ~/bin
+curl -L -o ~/bin/dockstore https://github.com/ga4gh/dockstore/releases/download/1.5.1/dockstore
+chmod +x ~/bin/dockstore
+echo 'export PATH=~/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
 ```
 
-### Add the location of the dockstore script to $PATH. 
+### Add the location of the dockstore script to $PATH.
 
 Using your favourite text editor (try pico if you don't have one), add this line to the end of ~/.bashrc:
 
@@ -89,7 +89,7 @@ touch ~/.dockstore/config
 server-url: https://dockstore.org:8443
 ```
 
-##### A token 
+##### A token
 
 You only need a valid token if you want to push data TO dockstore. To pull data, "DUMMY" is fine.
 
@@ -105,13 +105,60 @@ Turn on caching to prevent the same input files from being downloaded again and 
 use-cache=true
 ```
 
-### Install docker 
+### Install docker
+The full instructions are on Docker's website: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+##### Fast Method
 
 ```
-curl -sSL https://get.docker.com/ | sh
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 ```
 
-This may take a few minutes. Detailed installation information can be found [here] (https://docs.docker.com/)
+##### Manual Method
+If the Fast Method does not work, you can try the manual process described below.
+
+First, install prerequisite software:
+```
+sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+```
+
+Add Docker’s official GPG key:
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+
+Add the Docker repository (for x86_64/amd64 architecture):
+```
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+```
+Set `arch` in the command above to `armhf` for armhf platforms, `ppc64el` for IBM PPC, or `s390x` for IBM Z s390x.
+
+Now that you've added a new repository, run `apt update`:
+```
+sudo apt-get update
+```
+
+Install docker:
+```
+sudo apt-get install docker-ce
+```
+
+#### Testing Docker
+
+You can test your docker installation by running:
+```
+sudo docker run hello-world
+```
+This command will tell you if docker was successfully installed.
 
 #### Add your user to the docker user group
 
@@ -124,14 +171,23 @@ After you execute the above below, you will need to ***log out and log back in**
 
 
 ### Get cwltool
+Install Python's package manager pip (if it is not already installed) and then download the appropriate requirements file and have pip install cwltool. If you are using Python 2:
 
 ```
 sudo apt install python-pip
-pip install setuptools==36.5.0
-pip install cwl-runner cwltool==1.0.20170828135420 schema-salad==2.6.20170806163416 avro==1.8.1 ruamel.yaml==0.14.12 requests==2.18.4
+curl -o requirements.txt "https://dockstore.org:443/api/metadata/runner_dependencies?client_version=1.5.1&python_version=2"
+pip install -r requirements.txt
 ```
 
-*Note:* If you are on **ubuntu 14**, you may need to run the pip install commands as `sudo`: 
+If you are using Python 3:
+
+```
+sudo apt install python-pip
+curl -o requirements.txt curl -o requirements.txt "https://dockstore.org:443/api/metadata/runner_dependencies?client_version=1.5.1&python_version=3"
+pip install -r requirements.txt
+```
+
+*Note:* You may need to run the pip install commands as `sudo`:
 
 
 ### Use the dockstore CLI to fetch the CWL
@@ -208,5 +264,5 @@ Organize the files in your input directory. Then edit the JSON sample_input.json
 ### Run it locally with the Dockstore CLI
 
 ```
-dockstore tool launch --entry quay.io/pancancer/pcawg-bwa-mem-workflow:2.6.8_1.2 --json sample_input.json 
+dockstore tool launch --entry quay.io/pancancer/pcawg-bwa-mem-workflow:2.6.8_1.2 --json sample_input.json
 ```
